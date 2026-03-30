@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:sqlite:${BOONTORY_DB_PATH:./data/boontory.db}
+    driver-class-name: org.sqlite.JDBC
+  jpa:
+    database-platform: org.sqlite.hibernate.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+  jackson:
+    default-property-inclusion: non_null
+
+server:
+  port: ${SERVER_PORT:8080}
+
+boontory:
+  open-library-base-url: https://openlibrary.org
+  frontend-origin: ${FRONTEND_ORIGIN:http://localhost:5173}

@@ -1,0 +1,53 @@
+# Production Docker Compose — Boontory
+# Deploy as a Coolify docker-compose application.
+# Routing: Coolify auto-generates Traefik labels from docker_compose_domains.
+#   https://boontory.etharlia.com  → boontory-frontend (nginx proxies /api/ → backend)
+
+networks:
+  coolify:
+    external: true
+
+volumes:
+  boontory_backend_data:
+
+services:
+
+  boontory-backend:
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+      - boontory_backend_data:/app/data
+    networks:
+      - coolify
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8000/api/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+  boontory-frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    restart: unless-stopped
+    environment:
+      BACKEND_URL: http://boontory-backend:8000
+    networks:
+      - coolify
+    depends_on:
+      boontory-backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    labels:
+      - traefik.docker.network=coolify
+      - traefik.http.services.boontory-frontend.loadbalancer.server.port=80
+      - traefik.http.routers.http-0-h8u6904scb3b6rkuu5xlavt1-boontory-frontend.service=boontory-frontend
+      - traefik.http.routers.https-0-h8u6904scb3b6rkuu5xlavt1-boontory-frontend.service=boontory-frontend

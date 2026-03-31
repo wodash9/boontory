@@ -28,6 +28,8 @@ services:
   frontend:
     build:
       context: ./frontend
+    environment:
+      SERVICE_FQDN_FRONTEND_80: https://boontory.etharlia.com
     depends_on:
       backend:
         condition: service_healthy
@@ -40,17 +42,8 @@ services:
       retries: 5
       start_period: 15s
     labels:
-      - traefik.enable=true
       - traefik.docker.network=coolify
       - traefik.http.services.boontory-frontend.loadbalancer.server.port=80
-      - traefik.http.routers.http-boontory.entrypoints=http
-      - traefik.http.routers.http-boontory.middlewares=redirect-to-https
-      - traefik.http.routers.http-boontory.rule=Host(`boontory.etharlia.com`)
-      - traefik.http.routers.http-boontory.service=boontory-frontend
-      - traefik.http.routers.https-boontory.entrypoints=https
-      - traefik.http.routers.https-boontory.middlewares=gzip
-      - traefik.http.routers.https-boontory.rule=Host(`boontory.etharlia.com`)
-      - traefik.http.routers.https-boontory.service=boontory-frontend
-      - traefik.http.routers.https-boontory.tls=true
-      - traefik.http.routers.https-boontory.tls.certresolver=letsencrypt
+      - traefik.http.routers.https-0-lu77pbrihi658dl9ym6zbpc1-frontend.service=boontory-frontend
+      - traefik.http.routers.http-0-lu77pbrihi658dl9ym6zbpc1-frontend.service=boontory-frontend
     restart: unless-stopped

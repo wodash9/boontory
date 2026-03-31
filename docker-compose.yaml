@@ -1,6 +1,10 @@
 volumes:
   backend-data:
 
+networks:
+  coolify:
+    external: true
+
 services:
   backend:
     build:
@@ -11,6 +15,8 @@ services:
       FRONTEND_ORIGIN: https://boontory.etharlia.com
     volumes:
       - backend-data:/app/data
+    networks:
+      - coolify
     healthcheck:
       test: ["CMD-SHELL", "wget -qO- http://localhost:8080/api/books >/dev/null || exit 1"]
       interval: 15s
@@ -22,15 +28,29 @@ services:
   frontend:
     build:
       context: ./frontend
-    environment:
-      SERVICE_FQDN_FRONTEND_80: https://boontory.etharlia.com
     depends_on:
       backend:
         condition: service_healthy
+    networks:
+      - coolify
     healthcheck:
       test: ["CMD-SHELL", "wget -qO- http://localhost/ >/dev/null || exit 1"]
       interval: 15s
       timeout: 5s
       retries: 5
       start_period: 15s
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=coolify
+      - traefik.http.services.boontory-frontend.loadbalancer.server.port=80
+      - traefik.http.routers.http-boontory.entrypoints=http
+      - traefik.http.routers.http-boontory.middlewares=redirect-to-https
+      - traefik.http.routers.http-boontory.rule=Host(`boontory.etharlia.com`)
+      - traefik.http.routers.http-boontory.service=boontory-frontend
+      - traefik.http.routers.https-boontory.entrypoints=https
+      - traefik.http.routers.https-boontory.middlewares=gzip
+      - traefik.http.routers.https-boontory.rule=Host(`boontory.etharlia.com`)
+      - traefik.http.routers.https-boontory.service=boontory-frontend
+      - traefik.http.routers.https-boontory.tls=true
+      - traefik.http.routers.https-boontory.tls.certresolver=letsencrypt
     restart: unless-stopped

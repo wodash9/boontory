@@ -28,8 +28,6 @@ services:
   frontend:
     build:
       context: ./frontend
-    environment:
-      SERVICE_FQDN_FRONTEND_80: https://boontory.etharlia.com
     depends_on:
       backend:
         condition: service_healthy
@@ -44,6 +42,6 @@ services:
     labels:
       - traefik.docker.network=coolify
       - traefik.http.services.boontory-frontend.loadbalancer.server.port=80
-      - traefik.http.routers.https-0-lu77pbrihi658dl9ym6zbpc1-frontend.service=boontory-frontend
-      - traefik.http.routers.http-0-lu77pbrihi658dl9ym6zbpc1-frontend.service=boontory-frontend
+      - traefik.http.routers.https-0-p7naj0uvggxjs36fifqgsyuh-frontend.service=boontory-frontend
+      - traefik.http.routers.http-0-p7naj0uvggxjs36fifqgsyuh-frontend.service=boontory-frontend
     restart: unless-stopped

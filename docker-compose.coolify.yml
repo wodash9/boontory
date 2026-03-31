@@ -5,7 +5,7 @@ services:
     environment:
       SERVER_PORT: 8080
       BOONTORY_DB_PATH: /app/data/boontory.db
-      FRONTEND_ORIGIN: https://your-domain.example
+      FRONTEND_ORIGIN: https://boontory.etharlia.com
     volumes:
       - backend-data:/app/data
     restart: unless-stopped
@@ -13,10 +13,10 @@ services:
   frontend:
     build:
       context: ./frontend
+    environment:
+      SERVICE_FQDN_FRONTEND_80: https://boontory.etharlia.com
     depends_on:
       - backend
-    ports:
-      - "80:80"
     restart: unless-stopped
 
 volumes:

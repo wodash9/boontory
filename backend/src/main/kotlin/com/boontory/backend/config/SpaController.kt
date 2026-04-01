@@ -5,7 +5,12 @@ import org.springframework.web.bind.annotation.RequestMapping
 
 @Controller
 class SpaController {
-    // Forward all non-file, non-api routes to index.html for Vue Router history mode
-    @RequestMapping("/{path:[^\\.]*}", "/{path:(?!api)[^\\.]*}/**")
+    // Forward Vue Router routes to index.html.
+    // Each segment regex [^\\.]* ensures no dots → never matches static files like /assets/app.js
+    @RequestMapping(
+        "/{a:[^\\.]*}",
+        "/{a:[^\\.]*}/{b:[^\\.]*}",
+        "/{a:[^\\.]*}/{b:[^\\.]*}/{c:[^\\.]*}"
+    )
     fun forward(): String = "forward:/index.html"
 }

@@ -2,17 +2,24 @@
 import { computed, onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import BookForm from '../components/BookForm.vue'
-import { booksApi } from '../services/api'
-import type { Book, UpsertBookPayload } from '../types/models'
+import { booksApi, shelvesApi } from '../services/api'
+import type { Book, Shelf, UpsertBookPayload } from '../types/models'
 
 const route = useRoute()
 const router = useRouter()
 const book = ref<Book | null>(null)
+const shelves = ref<Shelf[]>([])
 const error = ref('')
 
 const isEdit = computed(() => Boolean(route.params.id))
 
 onMounted(async () => {
+  try {
+    shelves.value = await shelvesApi.list()
+  } catch (err) {
+    error.value = err instanceof Error ? err.message : 'Unable to load shelves'
+  }
+
   if (!isEdit.value) return
   try {
     book.value = await booksApi.get(route.params.id as string)
@@ -43,6 +50,7 @@ async function saveBook(payload: UpsertBookPayload) {
     <BookForm
       :initial-value="book ?? undefined"
       :submit-label="isEdit ? 'Save Changes' : 'Create Book'"
+      :shelves="shelves"
       @submit="saveBook"
     />
   </section>

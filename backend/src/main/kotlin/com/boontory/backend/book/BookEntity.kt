@@ -2,6 +2,7 @@ package com.boontory.backend.book
 
 import java.time.Instant
 import java.time.LocalDate
+import javax.persistence.FetchType
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.EnumType
@@ -9,9 +10,12 @@ import javax.persistence.Enumerated
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
+import javax.persistence.JoinColumn
+import javax.persistence.ManyToOne
 import javax.persistence.PrePersist
 import javax.persistence.PreUpdate
 import javax.persistence.Table
+import com.boontory.backend.shelf.ShelfEntity
 
 @Entity
 @Table(name = "books")
@@ -46,6 +50,11 @@ class BookEntity(
 
     var publishedYear: Int? = null,
     var dateRead: LocalDate? = null,
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "shelf_id")
+    var shelf: ShelfEntity? = null,
+
     var createdAt: Instant? = null,
     var updatedAt: Instant? = null,
 ) {

@@ -3,21 +3,23 @@ import { computed, onMounted, ref, watch } from 'vue'
 import { RouterLink } from 'vue-router'
 import BookCard from '../components/BookCard.vue'
 import EmptyState from '../components/EmptyState.vue'
-import { booksApi } from '../services/api'
-import type { Book, ReadingStatus } from '../types/models'
+import { booksApi, shelvesApi } from '../services/api'
+import type { Book, ReadingStatus, Shelf } from '../types/models'
 import { statusOptions } from '../utils/status'
 
 const books = ref<Book[]>([])
+const shelves = ref<Shelf[]>([])
 const loading = ref(false)
 const error = ref('')
 const query = ref('')
 const status = ref<ReadingStatus | ''>('')
+const shelfId = ref<number | ''>('')
 
 async function loadBooks() {
   loading.value = true
   error.value = ''
   try {
-    books.value = await booksApi.list(query.value, status.value || undefined)
+    books.value = await booksApi.list(query.value, status.value || undefined, shelfId.value || undefined)
   } catch (err) {
     error.value = err instanceof Error ? err.message : 'Unable to load books'
   } finally {
@@ -25,10 +27,18 @@ async function loadBooks() {
   }
 }
 
-onMounted(loadBooks)
-watch([query, status], loadBooks)
+onMounted(async () => {
+  await Promise.allSettled([
+    loadBooks(),
+    shelvesApi.list().then((value) => {
+      shelves.value = value
+    }),
+  ])
+})
+watch([query, status, shelfId], loadBooks)
 
 const hasBooks = computed(() => books.value.length > 0)
+const isFiltered = computed(() => Boolean(query.value || status.value || shelfId.value))
 </script>
 
 <template>
@@ -38,6 +48,12 @@ const hasBooks = computed(() => books.value.length > 0)
       <option value="">All statuses</option>
       <option v-for="option in statusOptions" :key="option.value" :value="option.value">
         {{ option.label }}
+      </option>
+    </select>
+    <select v-model="shelfId">
+      <option value="">All shelves</option>
+      <option v-for="shelf in shelves" :key="shelf.id" :value="shelf.id">
+        {{ shelf.name }}
       </option>
     </select>
     <RouterLink class="add" to="/library/new">New Book</RouterLink>
@@ -54,8 +70,8 @@ const hasBooks = computed(() => books.value.length > 0)
 
   <EmptyState
     v-else-if="!loading"
-    title="Your library is empty"
-    description="Scan a barcode, search Open Library, or add a book manually."
+    :title="isFiltered ? 'No books match these filters' : 'Your library is empty'"
+    :description="isFiltered ? 'Try a different search, status, or shelf filter.' : 'Scan a barcode, search Open Library, or add a book manually.'"
   />
 </template>
 
@@ -67,7 +83,7 @@ const hasBooks = computed(() => books.value.length > 0)
 }
 
 .toolbar {
-  grid-template-columns: 1.6fr 1fr auto;
+  grid-template-columns: 1.6fr 1fr 1fr auto;
   margin-bottom: 18px;
 }
 

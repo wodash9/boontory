@@ -6,6 +6,7 @@ import DashboardPage from '../pages/DashboardPage.vue'
 import LibraryPage from '../pages/LibraryPage.vue'
 import ScanPage from '../pages/ScanPage.vue'
 import SearchPage from '../pages/SearchPage.vue'
+import ShelvesPage from '../pages/ShelvesPage.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -21,6 +22,7 @@ const router = createRouter({
         { path: 'library/:id/edit', name: 'book-edit', component: BookEditorPage, props: true },
         { path: 'scan', name: 'scan', component: ScanPage },
         { path: 'search', name: 'search', component: SearchPage },
+        { path: 'shelves', name: 'shelves', component: ShelvesPage },
       ],
     },
   ],

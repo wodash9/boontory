@@ -7,6 +7,7 @@ const route = useRoute()
 const items = [
   { label: 'Home', to: '/' },
   { label: 'Library', to: '/library' },
+  { label: 'Shelves', to: '/shelves' },
   { label: 'Scan', to: '/scan' },
   { label: 'Search', to: '/search' },
 ]
@@ -35,7 +36,7 @@ const activePath = computed(() => route.path)
   bottom: 16px;
   transform: translateX(-50%);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 8px;
   width: min(94vw, 560px);
   padding: 10px;

@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { nextTick, onBeforeUnmount, ref } from 'vue'
+import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import SearchResultCard from '../components/SearchResultCard.vue'
+import ShelfSelectField from '../components/ShelfSelectField.vue'
 import ScannerViewfinder from '../components/ScannerViewfinder.vue'
-import { booksApi, catalogApi } from '../services/api'
+import { booksApi, catalogApi, shelvesApi } from '../services/api'
 import { scanIsbnFromVideo } from '../services/barcodeScanner'
-import type { CatalogBook } from '../types/models'
+import type { CatalogBook, Shelf } from '../types/models'
 
 const router = useRouter()
 const videoRef = ref<HTMLVideoElement | null>(null)
@@ -15,6 +16,8 @@ const scanning = ref(false)
 const error = ref('')
 const foundBook = ref<CatalogBook | null>(null)
 const detectedIsbn = ref('')
+const shelves = ref<Shelf[]>([])
+const selectedShelfId = ref<number | null>(null)
 
 let stopScanner: (() => void) | null = null
 
@@ -70,6 +73,7 @@ async function addDetectedBook() {
     notes: '',
     publishedYear: foundBook.value.publishedYear,
     dateRead: null,
+    shelfId: selectedShelfId.value,
   })
   await router.push(`/library/${created.id}`)
 }
@@ -80,6 +84,13 @@ function resetScan() {
 }
 
 onBeforeUnmount(() => stopScanner?.())
+onMounted(async () => {
+  try {
+    shelves.value = await shelvesApi.list()
+  } catch {
+    // non-blocking helper data
+  }
+})
 </script>
 
 <template>
@@ -102,8 +113,19 @@ onBeforeUnmount(() => stopScanner?.())
     </div>
 
     <section v-if="foundBook" class="result">
-      <SearchResultCard :book="foundBook" @add="addDetectedBook" />
-      <button type="button" class="secondary" @click="resetScan">Scan Again</button>
+      <SearchResultCard :book="foundBook" hide-action />
+      <div class="post-scan">
+        <ShelfSelectField
+          v-model="selectedShelfId"
+          :shelves="shelves"
+          label="Assign after scan"
+          helper="Optional now, easy to change later."
+        />
+        <div class="result-actions">
+          <button type="button" class="primary" @click="addDetectedBook">Add to Library</button>
+          <button type="button" class="secondary" @click="resetScan">Scan Again</button>
+        </div>
+      </div>
     </section>
   </section>
 </template>
@@ -115,6 +137,16 @@ onBeforeUnmount(() => stopScanner?.())
 .result {
   display: grid;
   gap: 16px;
+}
+
+.post-scan,
+.result-actions {
+  display: grid;
+  gap: 12px;
+}
+
+.result-actions {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .viewer {
@@ -174,7 +206,8 @@ button {
 }
 
 @media (max-width: 640px) {
-  .manual {
+  .manual,
+  .result-actions {
     grid-template-columns: 1fr;
   }
 }

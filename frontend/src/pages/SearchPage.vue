@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import EmptyState from '../components/EmptyState.vue'
 import SearchResultCard from '../components/SearchResultCard.vue'
-import { booksApi, catalogApi } from '../services/api'
-import type { CatalogBook, CatalogSearchResponse } from '../types/models'
+import ShelfSelectField from '../components/ShelfSelectField.vue'
+import { booksApi, catalogApi, shelvesApi } from '../services/api'
+import type { CatalogBook, CatalogSearchResponse, Shelf } from '../types/models'
 
 const router = useRouter()
 const query = ref('')
@@ -12,6 +13,8 @@ const results = ref<CatalogSearchResponse | null>(null)
 const loading = ref(false)
 const error = ref('')
 const addingIsbn = ref('')
+const shelves = ref<Shelf[]>([])
+const selectedShelfId = ref<number | null>(null)
 
 async function runSearch() {
   loading.value = true
@@ -39,6 +42,7 @@ async function addBook(book: CatalogBook) {
       notes: '',
       publishedYear: book.publishedYear,
       dateRead: null,
+      shelfId: selectedShelfId.value,
     })
     await router.push(`/library/${created.id}`)
   } catch (err) {
@@ -47,6 +51,14 @@ async function addBook(book: CatalogBook) {
     addingIsbn.value = ''
   }
 }
+
+onMounted(async () => {
+  try {
+    shelves.value = await shelvesApi.list()
+  } catch {
+    // optional helper data
+  }
+})
 </script>
 
 <template>
@@ -54,6 +66,13 @@ async function addBook(book: CatalogBook) {
     <input v-model="query" placeholder="Search Open Library by title or author" />
     <button type="submit">Search</button>
   </form>
+
+  <ShelfSelectField
+    v-model="selectedShelfId"
+    :shelves="shelves"
+    label="Default shelf for search results"
+    helper="Applies when you add a result to your library."
+  />
 
   <p v-if="error" class="error">{{ error }}</p>
   <p v-if="loading" class="muted">Searching catalog…</p>

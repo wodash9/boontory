@@ -1,19 +1,27 @@
 <script setup lang="ts">
 import { reactive, watch } from 'vue'
-import type { Book, ReadingStatus, UpsertBookPayload } from '../types/models'
+import type { Book, ReadingStatus, Shelf, UpsertBookPayload } from '../types/models'
 import { statusOptions } from '../utils/status'
 import RatingStars from './RatingStars.vue'
+import ShelfSelectField from './ShelfSelectField.vue'
 
 const props = defineProps<{
   initialValue?: Partial<Book>
   submitLabel?: string
+  shelves?: Shelf[]
 }>()
 
 const emit = defineEmits<{
   (event: 'submit', value: UpsertBookPayload): void
 }>()
 
-const form = reactive<UpsertBookPayload>({
+interface BookFormState extends Omit<UpsertBookPayload, 'publishedYear' | 'dateRead' | 'shelfId'> {
+  publishedYear?: number
+  dateRead: string
+  shelfId: number | null
+}
+
+const form = reactive<BookFormState>({
   isbn: '',
   title: '',
   authors: [],
@@ -24,6 +32,7 @@ const form = reactive<UpsertBookPayload>({
   notes: '',
   publishedYear: undefined,
   dateRead: '',
+  shelfId: null,
 })
 
 watch(
@@ -39,6 +48,7 @@ watch(
     form.notes = value?.notes ?? ''
     form.publishedYear = value?.publishedYear ?? undefined
     form.dateRead = value?.dateRead ?? ''
+    form.shelfId = value?.shelf?.id ?? null
   },
   { immediate: true },
 )
@@ -51,6 +61,7 @@ function handleSubmit() {
     description: form.description?.trim() || null,
     notes: form.notes?.trim() || null,
     dateRead: form.dateRead || null,
+    shelfId: form.shelfId || null,
     authors: Array.from(
       new Set(
         form.authors
@@ -82,6 +93,7 @@ function handleSubmit() {
       <span>ISBN</span>
       <input v-model="form.isbn" placeholder="9780261103344" />
     </label>
+    <ShelfSelectField v-model="form.shelfId" :shelves="props.shelves ?? []" />
     <div class="grid">
       <label>
         <span>Status</span>

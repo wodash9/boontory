@@ -1,5 +1,7 @@
 package com.boontory.backend.book
 
+import com.boontory.backend.shelf.ShelfSummaryDto
+import com.boontory.backend.shelf.toSummaryDto
 import java.time.Instant
 import java.time.LocalDate
 import javax.validation.constraints.Max
@@ -19,6 +21,7 @@ data class BookDto(
     val notes: String?,
     val publishedYear: Int?,
     val dateRead: LocalDate?,
+    val shelf: ShelfSummaryDto?,
     val createdAt: Instant?,
     val updatedAt: Instant?,
 )
@@ -34,6 +37,7 @@ data class UpsertBookRequest(
     @field:Size(max = 4000) val notes: String? = null,
     val publishedYear: Int? = null,
     val dateRead: LocalDate? = null,
+    val shelfId: Long? = null,
 )
 
 data class LibraryStatsDto(
@@ -55,6 +59,7 @@ fun BookEntity.toDto(): BookDto =
         notes = notes,
         publishedYear = publishedYear,
         dateRead = dateRead,
+        shelf = shelf?.toSummaryDto(),
         createdAt = createdAt,
         updatedAt = updatedAt,
     )

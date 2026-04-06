@@ -1,5 +1,14 @@
 export type ReadingStatus = 'WANT_TO_READ' | 'READING' | 'READ'
 
+export interface Shelf {
+  id: number
+  name: string
+  columns: number
+  rows: number
+  layoutCapacity: number
+  bookCount: number
+}
+
 export interface Book {
   id: number
   isbn?: string | null
@@ -12,6 +21,7 @@ export interface Book {
   notes?: string | null
   publishedYear?: number | null
   dateRead?: string | null
+  shelf?: Shelf | null
   createdAt?: string | null
   updatedAt?: string | null
 }
@@ -27,6 +37,13 @@ export interface UpsertBookPayload {
   notes?: string | null
   publishedYear?: number | null
   dateRead?: string | null
+  shelfId?: number | null
+}
+
+export interface UpsertShelfPayload {
+  name: string
+  columns: number
+  rows: number
 }
 
 export interface LibraryStats {

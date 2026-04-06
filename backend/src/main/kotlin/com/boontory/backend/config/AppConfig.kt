@@ -11,7 +11,7 @@ import java.time.Duration
 
 @Configuration
 class AppConfig(
-    @Value("\${boontory.frontend-origin}") private val frontendOrigin: String,
+    @Value("\${boontory.frontend-origin-patterns}") private val frontendOriginPatterns: String,
 ) {
     @Bean
     fun restTemplate(builder: RestTemplateBuilder): RestTemplate =
@@ -24,8 +24,14 @@ class AppConfig(
     fun corsConfigurer(): WebMvcConfigurer =
         object : WebMvcConfigurer {
             override fun addCorsMappings(registry: CorsRegistry) {
+                val originPatterns = frontendOriginPatterns
+                    .split(',')
+                    .map(String::trim)
+                    .filter(String::isNotBlank)
+                    .toTypedArray()
+
                 registry.addMapping("/api/**")
-                    .allowedOrigins(frontendOrigin)
+                    .allowedOriginPatterns(*originPatterns)
                     .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
             }
         }

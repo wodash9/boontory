@@ -22,7 +22,8 @@ class BookController(
     fun list(
         @RequestParam(required = false) query: String?,
         @RequestParam(required = false) status: ReadingStatus?,
-    ): List<BookDto> = bookService.list(query, status)
+        @RequestParam(required = false) shelfId: Long?,
+    ): List<BookDto> = bookService.list(query, status, shelfId)
 
     @GetMapping("/{id}")
     fun get(@PathVariable id: Long): BookDto = bookService.get(id)

@@ -4,6 +4,7 @@ import type { CatalogBook } from '../types/models'
 defineProps<{
   book: CatalogBook
   busy?: boolean
+  hideAction?: boolean
 }>()
 
 defineEmits<{
@@ -24,9 +25,9 @@ defineEmits<{
         <p>{{ book.authors.join(', ') || 'Unknown author' }}</p>
       </div>
       <p class="desc">{{ book.description || 'No description available.' }}</p>
-      <div class="footer">
+      <div class="footer" :class="{ solo: hideAction }">
         <span>{{ book.publishedYear || 'Unknown year' }}</span>
-        <button type="button" class="btn" :disabled="busy" @click="$emit('add')">
+        <button v-if="!hideAction" type="button" class="btn" :disabled="busy" @click="$emit('add')">
           {{ busy ? 'Adding…' : 'Add to Library' }}
         </button>
       </div>
@@ -70,6 +71,10 @@ p {
 .footer {
   grid-template-columns: 1fr auto;
   align-items: center;
+}
+
+.footer.solo {
+  grid-template-columns: 1fr;
 }
 
 .btn {

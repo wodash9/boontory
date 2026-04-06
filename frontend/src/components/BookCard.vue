@@ -25,6 +25,7 @@ defineProps<{ book: Book }>()
       <p class="meta">
         <span v-if="book.isbn">ISBN {{ book.isbn }}</span>
         <span v-if="book.publishedYear">{{ book.publishedYear }}</span>
+        <span v-if="book.shelf">Shelf {{ book.shelf.name }}</span>
       </p>
     </div>
   </article>

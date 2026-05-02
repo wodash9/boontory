@@ -1,11 +1,11 @@
 # Graph Report - .  (2026-05-02)
 
 ## Corpus Check
-- 84 files · ~106,057 words
+- 87 files · ~106,696 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 290 nodes · 257 edges · 80 communities detected
+- 309 nodes · 273 edges · 83 communities detected
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
@@ -90,6 +90,9 @@
 - [[_COMMUNITY_Community 77|Community 77]]
 - [[_COMMUNITY_Community 78|Community 78]]
 - [[_COMMUNITY_Community 79|Community 79]]
+- [[_COMMUNITY_Community 80|Community 80]]
+- [[_COMMUNITY_Community 81|Community 81]]
+- [[_COMMUNITY_Community 82|Community 82]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `KeycloakService` - 14 edges
@@ -99,9 +102,9 @@
 5. `ShelfService` - 8 edges
 6. `BookController` - 7 edges
 7. `OpenLibraryService` - 7 edges
-8. `ApiSecurityTest` - 6 edges
-9. `ShelfController` - 6 edges
-10. `CrudService` - 6 edges
+8. `GoogleBooksCatalogProvider` - 7 edges
+9. `ApiSecurityTest` - 6 edges
+10. `ShelfController` - 6 edges
 
 ## Surprising Connections (you probably didn't know these)
 - None detected - all connections are within the same source files.
@@ -145,128 +148,128 @@ Cohesion: 0.25
 Nodes (1): OpenLibraryService
 
 ### Community 9 - "Community 9"
-Cohesion: 0.48
-Nodes (4): closeForm(), deleteShelf(), loadShelves(), saveShelf()
+Cohesion: 0.25
+Nodes (1): GoogleBooksCatalogProvider
 
 ### Community 10 - "Community 10"
 Cohesion: 0.48
-Nodes (5): bootstrapAuth(), createAuthRuntime(), createMockAuthRuntime(), requireConfigValue(), syncState()
+Nodes (4): closeForm(), deleteShelf(), loadShelves(), saveShelf()
 
 ### Community 11 - "Community 11"
+Cohesion: 0.48
+Nodes (5): bootstrapAuth(), createAuthRuntime(), createMockAuthRuntime(), requireConfigValue(), syncState()
+
+### Community 12 - "Community 12"
 Cohesion: 0.29
 Nodes (1): ShelfController
 
-### Community 12 - "Community 12"
+### Community 13 - "Community 13"
+Cohesion: 0.29
+Nodes (1): CatalogProviderPipeline
+
+### Community 14 - "Community 14"
 Cohesion: 0.4
 Nodes (2): getPreferredLabel(), getString()
 
-### Community 13 - "Community 13"
+### Community 15 - "Community 15"
 Cohesion: 0.33
 Nodes (1): KeycloakJwtAuthoritiesConverterTest
 
-### Community 14 - "Community 14"
+### Community 16 - "Community 16"
 Cohesion: 0.33
 Nodes (3): BookDto, LibraryStatsDto, UpsertBookRequest
 
-### Community 15 - "Community 15"
+### Community 17 - "Community 17"
 Cohesion: 0.33
 Nodes (1): BookRepository
 
-### Community 16 - "Community 16"
+### Community 18 - "Community 18"
 Cohesion: 0.5
 Nodes (3): HttpError, mapError(), stringifyUnknown()
 
-### Community 17 - "Community 17"
+### Community 19 - "Community 19"
 Cohesion: 0.7
 Nodes (4): optionalValue(), readAuthConfig(), readAuthMode(), requireValue()
 
-### Community 18 - "Community 18"
+### Community 20 - "Community 20"
 Cohesion: 0.4
 Nodes (1): JwtClientAccessEvaluatorTest
 
-### Community 19 - "Community 19"
+### Community 21 - "Community 21"
 Cohesion: 0.4
 Nodes (1): ApiExceptionHandler
 
-### Community 20 - "Community 20"
+### Community 22 - "Community 22"
 Cohesion: 0.4
 Nodes (2): ShelfSummaryDto, UpsertShelfRequest
 
-### Community 21 - "Community 21"
+### Community 23 - "Community 23"
 Cohesion: 0.4
 Nodes (1): SecurityConfig
 
-### Community 22 - "Community 22"
-Cohesion: 0.5
-Nodes (0):
-
-### Community 23 - "Community 23"
-Cohesion: 0.5
-Nodes (1): ApiAuthDisabledTest
-
 ### Community 24 - "Community 24"
 Cohesion: 0.5
-Nodes (1): ShelfRepository
+Nodes (0):
 
 ### Community 25 - "Community 25"
 Cohesion: 0.5
-Nodes (1): ShelfEntity
+Nodes (1): ApiAuthDisabledTest
 
 ### Community 26 - "Community 26"
 Cohesion: 0.5
-Nodes (1): BookEntity
+Nodes (1): ShelfRepository
 
 ### Community 27 - "Community 27"
 Cohesion: 0.5
-Nodes (1): CatalogController
+Nodes (1): ShelfEntity
 
 ### Community 28 - "Community 28"
 Cohesion: 0.5
-Nodes (3): CatalogBookDto, CatalogSearchResponse, IsbnLookupResponse
+Nodes (1): BookEntity
 
 ### Community 29 - "Community 29"
 Cohesion: 0.5
-Nodes (1): AppConfig
+Nodes (1): CatalogController
 
 ### Community 30 - "Community 30"
 Cohesion: 0.5
-Nodes (1): KeycloakJwtAuthoritiesConverter
+Nodes (3): CatalogBookDto, CatalogSearchResponse, IsbnLookupResponse
 
 ### Community 31 - "Community 31"
-Cohesion: 0.67
-Nodes (0):
+Cohesion: 0.5
+Nodes (1): CatalogProvider
 
 ### Community 32 - "Community 32"
-Cohesion: 1.0
-Nodes (2): buildHeaders(), request()
+Cohesion: 0.5
+Nodes (1): AppConfig
 
 ### Community 33 - "Community 33"
-Cohesion: 1.0
-Nodes (2): createBarcodeScanner(), scanIsbnFromVideo()
+Cohesion: 0.5
+Nodes (1): KeycloakJwtAuthoritiesConverter
 
 ### Community 34 - "Community 34"
 Cohesion: 0.67
-Nodes (1): BoontoryBackendApplication
+Nodes (0):
 
 ### Community 35 - "Community 35"
+Cohesion: 1.0
+Nodes (2): buildHeaders(), request()
+
+### Community 36 - "Community 36"
+Cohesion: 1.0
+Nodes (2): createBarcodeScanner(), scanIsbnFromVideo()
+
+### Community 37 - "Community 37"
+Cohesion: 0.67
+Nodes (1): BoontoryBackendApplication
+
+### Community 38 - "Community 38"
 Cohesion: 0.67
 Nodes (1): JwtClientAccessEvaluator
 
-### Community 36 - "Community 36"
+### Community 39 - "Community 39"
 Cohesion: 0.67
 Nodes (1): SpaController
-
-### Community 37 - "Community 37"
-Cohesion: 1.0
-Nodes (0):
-
-### Community 38 - "Community 38"
-Cohesion: 1.0
-Nodes (0):
-
-### Community 39 - "Community 39"
-Cohesion: 1.0
-Nodes (0):
 
 ### Community 40 - "Community 40"
 Cohesion: 1.0
@@ -290,7 +293,7 @@ Nodes (0):
 
 ### Community 45 - "Community 45"
 Cohesion: 1.0
-Nodes (1): ReadingStatus
+Nodes (0):
 
 ### Community 46 - "Community 46"
 Cohesion: 1.0
@@ -302,7 +305,7 @@ Nodes (0):
 
 ### Community 48 - "Community 48"
 Cohesion: 1.0
-Nodes (0):
+Nodes (1): ReadingStatus
 
 ### Community 49 - "Community 49"
 Cohesion: 1.0
@@ -428,101 +431,113 @@ Nodes (0):
 Cohesion: 1.0
 Nodes (0):
 
+### Community 80 - "Community 80"
+Cohesion: 1.0
+Nodes (0):
+
+### Community 81 - "Community 81"
+Cohesion: 1.0
+Nodes (0):
+
+### Community 82 - "Community 82"
+Cohesion: 1.0
+Nodes (0):
+
 ## Knowledge Gaps
 - **10 isolated node(s):** `BoontoryBackendApplication`, `ShelfSummaryDto`, `UpsertShelfRequest`, `ReadingStatus`, `BookDto` (+5 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Community 37`** (2 nodes): `createEnv()`, `coolify.test.ts`
+- **Thin community `Community 40`** (2 nodes): `createEnv()`, `coolify.test.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 38`** (2 nodes): `parseEnv()`, `env.ts`
+- **Thin community `Community 41`** (2 nodes): `parseEnv()`, `env.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 39`** (2 nodes): `logToStderr()`, `logging.ts`
+- **Thin community `Community 42`** (2 nodes): `logToStderr()`, `logging.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 40`** (2 nodes): `createKeycloakStub()`, `authState.spec.ts`
+- **Thin community `Community 43`** (2 nodes): `createKeycloakStub()`, `authState.spec.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 41`** (2 nodes): `App.vue`, `main.ts`
+- **Thin community `Community 44`** (2 nodes): `App.vue`, `main.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 42`** (2 nodes): `guards.ts`, `createAuthGuard()`
+- **Thin community `Community 45`** (2 nodes): `guards.ts`, `createAuthGuard()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 43`** (2 nodes): `keycloakClient.ts`, `createKeycloakClient()`
+- **Thin community `Community 46`** (2 nodes): `keycloakClient.ts`, `createKeycloakClient()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 44`** (2 nodes): `status.ts`, `getStatusLabel()`
+- **Thin community `Community 47`** (2 nodes): `status.ts`, `getStatusLabel()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 45`** (2 nodes): `ReadingStatus.kt`, `ReadingStatus`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 46`** (1 nodes): `vitest.config.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 47`** (1 nodes): `shared.test.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 48`** (1 nodes): `vite.config.ts`
+- **Thin community `Community 48`** (2 nodes): `ReadingStatus.kt`, `ReadingStatus`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 49`** (1 nodes): `vitest.config.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 50`** (1 nodes): `setup.ts`
+- **Thin community `Community 50`** (1 nodes): `shared.test.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 51`** (1 nodes): `api.spec.ts`
+- **Thin community `Community 51`** (1 nodes): `vite.config.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 52`** (1 nodes): `guards.spec.ts`
+- **Thin community `Community 52`** (1 nodes): `vitest.config.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 53`** (1 nodes): `authConfig.spec.ts`
+- **Thin community `Community 53`** (1 nodes): `setup.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 54`** (1 nodes): `env.d.ts`
+- **Thin community `Community 54`** (1 nodes): `api.spec.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 55`** (1 nodes): `index.ts`
+- **Thin community `Community 55`** (1 nodes): `guards.spec.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 56`** (1 nodes): `ScanPage.vue`
+- **Thin community `Community 56`** (1 nodes): `authConfig.spec.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 57`** (1 nodes): `BookDetailPage.vue`
+- **Thin community `Community 57`** (1 nodes): `env.d.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 58`** (1 nodes): `SearchPage.vue`
+- **Thin community `Community 58`** (1 nodes): `index.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 59`** (1 nodes): `BookEditorPage.vue`
+- **Thin community `Community 59`** (1 nodes): `ScanPage.vue`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 60`** (1 nodes): `LibraryPage.vue`
+- **Thin community `Community 60`** (1 nodes): `BookDetailPage.vue`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 61`** (1 nodes): `LandingPage.vue`
+- **Thin community `Community 61`** (1 nodes): `SearchPage.vue`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 62`** (1 nodes): `DashboardPage.vue`
+- **Thin community `Community 62`** (1 nodes): `BookEditorPage.vue`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 63`** (1 nodes): `AppShell.vue`
+- **Thin community `Community 63`** (1 nodes): `LibraryPage.vue`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 64`** (1 nodes): `RatingStars.vue`
+- **Thin community `Community 64`** (1 nodes): `LandingPage.vue`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 65`** (1 nodes): `StatusBadge.vue`
+- **Thin community `Community 65`** (1 nodes): `DashboardPage.vue`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 66`** (1 nodes): `ShelfSelectField.vue`
+- **Thin community `Community 66`** (1 nodes): `AppShell.vue`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 67`** (1 nodes): `BookForm.vue`
+- **Thin community `Community 67`** (1 nodes): `RatingStars.vue`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 68`** (1 nodes): `ShelfForm.vue`
+- **Thin community `Community 68`** (1 nodes): `StatusBadge.vue`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 69`** (1 nodes): `BottomNav.vue`
+- **Thin community `Community 69`** (1 nodes): `ShelfSelectField.vue`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 70`** (1 nodes): `StatCard.vue`
+- **Thin community `Community 70`** (1 nodes): `BookForm.vue`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 71`** (1 nodes): `BookCard.vue`
+- **Thin community `Community 71`** (1 nodes): `ShelfForm.vue`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 72`** (1 nodes): `ScannerViewfinder.vue`
+- **Thin community `Community 72`** (1 nodes): `BottomNav.vue`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 73`** (1 nodes): `ShelfPreviewGrid.vue`
+- **Thin community `Community 73`** (1 nodes): `StatCard.vue`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 74`** (1 nodes): `SearchResultCard.vue`
+- **Thin community `Community 74`** (1 nodes): `BookCard.vue`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 75`** (1 nodes): `EmptyState.vue`
+- **Thin community `Community 75`** (1 nodes): `ScannerViewfinder.vue`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 76`** (1 nodes): `AuthGate.vue`
+- **Thin community `Community 76`** (1 nodes): `ShelfPreviewGrid.vue`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 77`** (1 nodes): `models.ts`
+- **Thin community `Community 77`** (1 nodes): `SearchResultCard.vue`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 78`** (1 nodes): `build.gradle.kts`
+- **Thin community `Community 78`** (1 nodes): `EmptyState.vue`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 79`** (1 nodes): `settings.gradle.kts`
+- **Thin community `Community 79`** (1 nodes): `AuthGate.vue`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 80`** (1 nodes): `models.ts`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 81`** (1 nodes): `build.gradle.kts`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 82`** (1 nodes): `settings.gradle.kts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `KeycloakService` connect `Community 3` to `Community 2`?**
-  _High betweenness centrality (0.011) - this node is a cross-community bridge._
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._
 - **What connects `BoontoryBackendApplication`, `ShelfSummaryDto`, `UpsertShelfRequest` to the rest of the system?**
   _10 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**

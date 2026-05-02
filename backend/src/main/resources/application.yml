@@ -29,6 +29,8 @@ management:
 
 boontory:
   open-library-base-url: https://openlibrary.org
+  google-books-base-url: https://www.googleapis.com/books/v1
+  google-books-api-key: ${GOOGLE_BOOKS_API_KEY:}
   frontend-origin-patterns: ${FRONTEND_ORIGIN_PATTERNS:http://localhost:5173,http://127.0.0.1:5173,https://boontory.etharlia.com}
   security:
     keycloak-client-id: ${KEYCLOAK_CLIENT_ID:boontory-frontend}

@@ -9,7 +9,7 @@
       "source_file": "mcp/vitest.config.ts",
       "source_location": "L1",
       "id": "mcp_vitest_config_ts",
-      "community": 46,
+      "community": 49,
       "norm_label": "vitest.config.ts"
     },
     {
@@ -18,7 +18,7 @@
       "source_file": "mcp/tests/keycloak.test.ts",
       "source_location": "L1",
       "id": "mcp_tests_keycloak_test_ts",
-      "community": 31,
+      "community": 34,
       "norm_label": "keycloak.test.ts"
     },
     {
@@ -27,7 +27,7 @@
       "source_file": "mcp/tests/keycloak.test.ts",
       "source_location": "L10",
       "id": "keycloak_test_createenv",
-      "community": 31,
+      "community": 34,
       "norm_label": "createenv()"
     },
     {
@@ -36,7 +36,7 @@
       "source_file": "mcp/tests/keycloak.test.ts",
       "source_location": "L20",
       "id": "keycloak_test_createadminclient",
-      "community": 31,
+      "community": 34,
       "norm_label": "createadminclient()"
     },
     {
@@ -45,7 +45,7 @@
       "source_file": "mcp/tests/shared.test.ts",
       "source_location": "L1",
       "id": "mcp_tests_shared_test_ts",
-      "community": 47,
+      "community": 50,
       "norm_label": "shared.test.ts"
     },
     {
@@ -54,7 +54,7 @@
       "source_file": "mcp/tests/coolify.test.ts",
       "source_location": "L1",
       "id": "mcp_tests_coolify_test_ts",
-      "community": 37,
+      "community": 40,
       "norm_label": "coolify.test.ts"
     },
     {
@@ -63,7 +63,7 @@
       "source_file": "mcp/tests/coolify.test.ts",
       "source_location": "L6",
       "id": "coolify_test_createenv",
-      "community": 37,
+      "community": 40,
       "norm_label": "createenv()"
     },
     {
@@ -477,7 +477,7 @@
       "source_file": "mcp/src/shared/mcp.ts",
       "source_location": "L1",
       "id": "mcp_src_shared_mcp_ts",
-      "community": 22,
+      "community": 24,
       "norm_label": "mcp.ts"
     },
     {
@@ -486,7 +486,7 @@
       "source_file": "mcp/src/shared/mcp.ts",
       "source_location": "L28",
       "id": "mcp_definetool",
-      "community": 22,
+      "community": 24,
       "norm_label": "definetool()"
     },
     {
@@ -495,7 +495,7 @@
       "source_file": "mcp/src/shared/mcp.ts",
       "source_location": "L40",
       "id": "mcp_textresponse",
-      "community": 22,
+      "community": 24,
       "norm_label": "textresponse()"
     },
     {
@@ -504,7 +504,7 @@
       "source_file": "mcp/src/shared/mcp.ts",
       "source_location": "L46",
       "id": "mcp_requireconfirm",
-      "community": 22,
+      "community": 24,
       "norm_label": "requireconfirm()"
     },
     {
@@ -513,7 +513,7 @@
       "source_file": "mcp/src/shared/env.ts",
       "source_location": "L1",
       "id": "mcp_src_shared_env_ts",
-      "community": 38,
+      "community": 41,
       "norm_label": "env.ts"
     },
     {
@@ -522,7 +522,7 @@
       "source_file": "mcp/src/shared/env.ts",
       "source_location": "L6",
       "id": "env_parseenv",
-      "community": 38,
+      "community": 41,
       "norm_label": "parseenv()"
     },
     {
@@ -531,7 +531,7 @@
       "source_file": "mcp/src/shared/format.ts",
       "source_location": "L1",
       "id": "mcp_src_shared_format_ts",
-      "community": 12,
+      "community": 14,
       "norm_label": "format.ts"
     },
     {
@@ -540,7 +540,7 @@
       "source_file": "mcp/src/shared/format.ts",
       "source_location": "L1",
       "id": "format_isrecord",
-      "community": 12,
+      "community": 14,
       "norm_label": "isrecord()"
     },
     {
@@ -549,7 +549,7 @@
       "source_file": "mcp/src/shared/format.ts",
       "source_location": "L5",
       "id": "format_getstring",
-      "community": 12,
+      "community": 14,
       "norm_label": "getstring()"
     },
     {
@@ -558,7 +558,7 @@
       "source_file": "mcp/src/shared/format.ts",
       "source_location": "L9",
       "id": "format_getpreferredlabel",
-      "community": 12,
+      "community": 14,
       "norm_label": "getpreferredlabel()"
     },
     {
@@ -567,7 +567,7 @@
       "source_file": "mcp/src/shared/format.ts",
       "source_location": "L32",
       "id": "format_formatdetails",
-      "community": 12,
+      "community": 14,
       "norm_label": "formatdetails()"
     },
     {
@@ -576,7 +576,7 @@
       "source_file": "mcp/src/shared/format.ts",
       "source_location": "L37",
       "id": "format_formatcollection",
-      "community": 12,
+      "community": 14,
       "norm_label": "formatcollection()"
     },
     {
@@ -585,7 +585,7 @@
       "source_file": "mcp/src/shared/errors.ts",
       "source_location": "L1",
       "id": "mcp_src_shared_errors_ts",
-      "community": 16,
+      "community": 18,
       "norm_label": "errors.ts"
     },
     {
@@ -594,7 +594,7 @@
       "source_file": "mcp/src/shared/errors.ts",
       "source_location": "L1",
       "id": "errors_httperror",
-      "community": 16,
+      "community": 18,
       "norm_label": "httperror"
     },
     {
@@ -603,7 +603,7 @@
       "source_file": "mcp/src/shared/errors.ts",
       "source_location": "L5",
       "id": "errors_httperror_constructor",
-      "community": 16,
+      "community": 18,
       "norm_label": ".constructor()"
     },
     {
@@ -612,7 +612,7 @@
       "source_file": "mcp/src/shared/errors.ts",
       "source_location": "L13",
       "id": "errors_stringifyunknown",
-      "community": 16,
+      "community": 18,
       "norm_label": "stringifyunknown()"
     },
     {
@@ -621,7 +621,7 @@
       "source_file": "mcp/src/shared/errors.ts",
       "source_location": "L25",
       "id": "errors_maperror",
-      "community": 16,
+      "community": 18,
       "norm_label": "maperror()"
     },
     {
@@ -630,7 +630,7 @@
       "source_file": "mcp/src/shared/logging.ts",
       "source_location": "L1",
       "id": "mcp_src_shared_logging_ts",
-      "community": 39,
+      "community": 42,
       "norm_label": "logging.ts"
     },
     {
@@ -639,7 +639,7 @@
       "source_file": "mcp/src/shared/logging.ts",
       "source_location": "L1",
       "id": "logging_logtostderr",
-      "community": 39,
+      "community": 42,
       "norm_label": "logtostderr()"
     },
     {
@@ -648,7 +648,7 @@
       "source_file": "frontend/vite.config.ts",
       "source_location": "L1",
       "id": "frontend_vite_config_ts",
-      "community": 48,
+      "community": 51,
       "norm_label": "vite.config.ts"
     },
     {
@@ -657,7 +657,7 @@
       "source_file": "frontend/vitest.config.ts",
       "source_location": "L1",
       "id": "frontend_vitest_config_ts",
-      "community": 49,
+      "community": 52,
       "norm_label": "vitest.config.ts"
     },
     {
@@ -666,7 +666,7 @@
       "source_file": "frontend/tests/setup.ts",
       "source_location": "L1",
       "id": "frontend_tests_setup_ts",
-      "community": 50,
+      "community": 53,
       "norm_label": "setup.ts"
     },
     {
@@ -675,7 +675,7 @@
       "source_file": "frontend/tests/services/api.spec.ts",
       "source_location": "L1",
       "id": "frontend_tests_services_api_spec_ts",
-      "community": 51,
+      "community": 54,
       "norm_label": "api.spec.ts"
     },
     {
@@ -684,7 +684,7 @@
       "source_file": "frontend/tests/router/guards.spec.ts",
       "source_location": "L1",
       "id": "frontend_tests_router_guards_spec_ts",
-      "community": 52,
+      "community": 55,
       "norm_label": "guards.spec.ts"
     },
     {
@@ -693,7 +693,7 @@
       "source_file": "frontend/tests/auth/authConfig.spec.ts",
       "source_location": "L1",
       "id": "frontend_tests_auth_authconfig_spec_ts",
-      "community": 53,
+      "community": 56,
       "norm_label": "authconfig.spec.ts"
     },
     {
@@ -702,7 +702,7 @@
       "source_file": "frontend/tests/auth/authState.spec.ts",
       "source_location": "L1",
       "id": "frontend_tests_auth_authstate_spec_ts",
-      "community": 40,
+      "community": 43,
       "norm_label": "authstate.spec.ts"
     },
     {
@@ -711,7 +711,7 @@
       "source_file": "frontend/tests/auth/authState.spec.ts",
       "source_location": "L4",
       "id": "authstate_spec_createkeycloakstub",
-      "community": 40,
+      "community": 43,
       "norm_label": "createkeycloakstub()"
     },
     {
@@ -720,7 +720,7 @@
       "source_file": "frontend/src/main.ts",
       "source_location": "L1",
       "id": "frontend_src_main_ts",
-      "community": 41,
+      "community": 44,
       "norm_label": "main.ts"
     },
     {
@@ -729,7 +729,7 @@
       "source_file": "frontend/src/App.vue",
       "source_location": "L1",
       "id": "frontend_src_app_vue",
-      "community": 41,
+      "community": 44,
       "norm_label": "app.vue"
     },
     {
@@ -738,7 +738,7 @@
       "source_file": "frontend/src/env.d.ts",
       "source_location": "L1",
       "id": "frontend_src_env_d_ts",
-      "community": 54,
+      "community": 57,
       "norm_label": "env.d.ts"
     },
     {
@@ -747,7 +747,7 @@
       "source_file": "frontend/src/services/api.ts",
       "source_location": "L1",
       "id": "frontend_src_services_api_ts",
-      "community": 32,
+      "community": 35,
       "norm_label": "api.ts"
     },
     {
@@ -756,7 +756,7 @@
       "source_file": "frontend/src/services/api.ts",
       "source_location": "L14",
       "id": "api_buildheaders",
-      "community": 32,
+      "community": 35,
       "norm_label": "buildheaders()"
     },
     {
@@ -765,7 +765,7 @@
       "source_file": "frontend/src/services/api.ts",
       "source_location": "L25",
       "id": "api_request",
-      "community": 32,
+      "community": 35,
       "norm_label": "request()"
     },
     {
@@ -774,7 +774,7 @@
       "source_file": "frontend/src/services/barcodeScanner.ts",
       "source_location": "L1",
       "id": "frontend_src_services_barcodescanner_ts",
-      "community": 33,
+      "community": 36,
       "norm_label": "barcodescanner.ts"
     },
     {
@@ -783,7 +783,7 @@
       "source_file": "frontend/src/services/barcodeScanner.ts",
       "source_location": "L4",
       "id": "barcodescanner_createbarcodescanner",
-      "community": 33,
+      "community": 36,
       "norm_label": "createbarcodescanner()"
     },
     {
@@ -792,7 +792,7 @@
       "source_file": "frontend/src/services/barcodeScanner.ts",
       "source_location": "L10",
       "id": "barcodescanner_scanisbnfromvideo",
-      "community": 33,
+      "community": 36,
       "norm_label": "scanisbnfromvideo()"
     },
     {
@@ -801,7 +801,7 @@
       "source_file": "frontend/src/router/index.ts",
       "source_location": "L1",
       "id": "frontend_src_router_index_ts",
-      "community": 55,
+      "community": 58,
       "norm_label": "index.ts"
     },
     {
@@ -810,7 +810,7 @@
       "source_file": "frontend/src/router/guards.ts",
       "source_location": "L1",
       "id": "frontend_src_router_guards_ts",
-      "community": 42,
+      "community": 45,
       "norm_label": "guards.ts"
     },
     {
@@ -819,7 +819,7 @@
       "source_file": "frontend/src/router/guards.ts",
       "source_location": "L10",
       "id": "guards_createauthguard",
-      "community": 42,
+      "community": 45,
       "norm_label": "createauthguard()"
     },
     {
@@ -828,7 +828,7 @@
       "source_file": "frontend/src/pages/ScanPage.vue",
       "source_location": "L1",
       "id": "frontend_src_pages_scanpage_vue",
-      "community": 56,
+      "community": 59,
       "norm_label": "scanpage.vue"
     },
     {
@@ -837,7 +837,7 @@
       "source_file": "frontend/src/pages/BookDetailPage.vue",
       "source_location": "L1",
       "id": "frontend_src_pages_bookdetailpage_vue",
-      "community": 57,
+      "community": 60,
       "norm_label": "bookdetailpage.vue"
     },
     {
@@ -846,7 +846,7 @@
       "source_file": "frontend/src/pages/SearchPage.vue",
       "source_location": "L1",
       "id": "frontend_src_pages_searchpage_vue",
-      "community": 58,
+      "community": 61,
       "norm_label": "searchpage.vue"
     },
     {
@@ -855,7 +855,7 @@
       "source_file": "frontend/src/pages/BookEditorPage.vue",
       "source_location": "L1",
       "id": "frontend_src_pages_bookeditorpage_vue",
-      "community": 59,
+      "community": 62,
       "norm_label": "bookeditorpage.vue"
     },
     {
@@ -864,7 +864,7 @@
       "source_file": "frontend/src/pages/LibraryPage.vue",
       "source_location": "L1",
       "id": "frontend_src_pages_librarypage_vue",
-      "community": 60,
+      "community": 63,
       "norm_label": "librarypage.vue"
     },
     {
@@ -873,7 +873,7 @@
       "source_file": "frontend/src/pages/LandingPage.vue",
       "source_location": "L1",
       "id": "frontend_src_pages_landingpage_vue",
-      "community": 61,
+      "community": 64,
       "norm_label": "landingpage.vue"
     },
     {
@@ -882,7 +882,7 @@
       "source_file": "frontend/src/pages/ShelvesPage.vue",
       "source_location": "L1",
       "id": "frontend_src_pages_shelvespage_vue",
-      "community": 9,
+      "community": 10,
       "norm_label": "shelvespage.vue"
     },
     {
@@ -891,7 +891,7 @@
       "source_file": "frontend/src/pages/ShelvesPage.vue",
       "source_location": "L19",
       "id": "shelvespage_loadshelves",
-      "community": 9,
+      "community": 10,
       "norm_label": "loadshelves()"
     },
     {
@@ -900,7 +900,7 @@
       "source_file": "frontend/src/pages/ShelvesPage.vue",
       "source_location": "L31",
       "id": "shelvespage_opencreate",
-      "community": 9,
+      "community": 10,
       "norm_label": "opencreate()"
     },
     {
@@ -909,7 +909,7 @@
       "source_file": "frontend/src/pages/ShelvesPage.vue",
       "source_location": "L36",
       "id": "shelvespage_openedit",
-      "community": 9,
+      "community": 10,
       "norm_label": "openedit()"
     },
     {
@@ -918,7 +918,7 @@
       "source_file": "frontend/src/pages/ShelvesPage.vue",
       "source_location": "L41",
       "id": "shelvespage_closeform",
-      "community": 9,
+      "community": 10,
       "norm_label": "closeform()"
     },
     {
@@ -927,7 +927,7 @@
       "source_file": "frontend/src/pages/ShelvesPage.vue",
       "source_location": "L46",
       "id": "shelvespage_saveshelf",
-      "community": 9,
+      "community": 10,
       "norm_label": "saveshelf()"
     },
     {
@@ -936,7 +936,7 @@
       "source_file": "frontend/src/pages/ShelvesPage.vue",
       "source_location": "L64",
       "id": "shelvespage_deleteshelf",
-      "community": 9,
+      "community": 10,
       "norm_label": "deleteshelf()"
     },
     {
@@ -945,7 +945,7 @@
       "source_file": "frontend/src/pages/DashboardPage.vue",
       "source_location": "L1",
       "id": "frontend_src_pages_dashboardpage_vue",
-      "community": 62,
+      "community": 65,
       "norm_label": "dashboardpage.vue"
     },
     {
@@ -954,7 +954,7 @@
       "source_file": "frontend/src/auth/authState.ts",
       "source_location": "L1",
       "id": "frontend_src_auth_authstate_ts",
-      "community": 10,
+      "community": 11,
       "norm_label": "authstate.ts"
     },
     {
@@ -963,7 +963,7 @@
       "source_file": "frontend/src/auth/authState.ts",
       "source_location": "L18",
       "id": "authstate_appendrdparam",
-      "community": 10,
+      "community": 11,
       "norm_label": "appendrdparam()"
     },
     {
@@ -972,7 +972,7 @@
       "source_file": "frontend/src/auth/authState.ts",
       "source_location": "L23",
       "id": "authstate_createauthruntime",
-      "community": 10,
+      "community": 11,
       "norm_label": "createauthruntime()"
     },
     {
@@ -981,7 +981,7 @@
       "source_file": "frontend/src/auth/authState.ts",
       "source_location": "L107",
       "id": "authstate_createmockauthruntime",
-      "community": 10,
+      "community": 11,
       "norm_label": "createmockauthruntime()"
     },
     {
@@ -990,7 +990,7 @@
       "source_file": "frontend/src/auth/authState.ts",
       "source_location": "L151",
       "id": "authstate_syncstate",
-      "community": 10,
+      "community": 11,
       "norm_label": "syncstate()"
     },
     {
@@ -999,7 +999,7 @@
       "source_file": "frontend/src/auth/authState.ts",
       "source_location": "L158",
       "id": "authstate_requireconfigvalue",
-      "community": 10,
+      "community": 11,
       "norm_label": "requireconfigvalue()"
     },
     {
@@ -1008,7 +1008,7 @@
       "source_file": "frontend/src/auth/authState.ts",
       "source_location": "L163",
       "id": "authstate_bootstrapauth",
-      "community": 10,
+      "community": 11,
       "norm_label": "bootstrapauth()"
     },
     {
@@ -1017,7 +1017,7 @@
       "source_file": "frontend/src/auth/authConfig.ts",
       "source_location": "L1",
       "id": "frontend_src_auth_authconfig_ts",
-      "community": 17,
+      "community": 19,
       "norm_label": "authconfig.ts"
     },
     {
@@ -1026,7 +1026,7 @@
       "source_file": "frontend/src/auth/authConfig.ts",
       "source_location": "L21",
       "id": "authconfig_requirevalue",
-      "community": 17,
+      "community": 19,
       "norm_label": "requirevalue()"
     },
     {
@@ -1035,7 +1035,7 @@
       "source_file": "frontend/src/auth/authConfig.ts",
       "source_location": "L29",
       "id": "authconfig_optionalvalue",
-      "community": 17,
+      "community": 19,
       "norm_label": "optionalvalue()"
     },
     {
@@ -1044,7 +1044,7 @@
       "source_file": "frontend/src/auth/authConfig.ts",
       "source_location": "L34",
       "id": "authconfig_readauthmode",
-      "community": 17,
+      "community": 19,
       "norm_label": "readauthmode()"
     },
     {
@@ -1053,7 +1053,7 @@
       "source_file": "frontend/src/auth/authConfig.ts",
       "source_location": "L40",
       "id": "authconfig_readauthconfig",
-      "community": 17,
+      "community": 19,
       "norm_label": "readauthconfig()"
     },
     {
@@ -1062,7 +1062,7 @@
       "source_file": "frontend/src/auth/keycloakClient.ts",
       "source_location": "L1",
       "id": "frontend_src_auth_keycloakclient_ts",
-      "community": 43,
+      "community": 46,
       "norm_label": "keycloakclient.ts"
     },
     {
@@ -1071,7 +1071,7 @@
       "source_file": "frontend/src/auth/keycloakClient.ts",
       "source_location": "L14",
       "id": "keycloakclient_createkeycloakclient",
-      "community": 43,
+      "community": 46,
       "norm_label": "createkeycloakclient()"
     },
     {
@@ -1080,7 +1080,7 @@
       "source_file": "frontend/src/utils/status.ts",
       "source_location": "L1",
       "id": "frontend_src_utils_status_ts",
-      "community": 44,
+      "community": 47,
       "norm_label": "status.ts"
     },
     {
@@ -1089,7 +1089,7 @@
       "source_file": "frontend/src/utils/status.ts",
       "source_location": "L9",
       "id": "status_getstatuslabel",
-      "community": 44,
+      "community": 47,
       "norm_label": "getstatuslabel()"
     },
     {
@@ -1098,7 +1098,7 @@
       "source_file": "frontend/src/layouts/AppShell.vue",
       "source_location": "L1",
       "id": "frontend_src_layouts_appshell_vue",
-      "community": 63,
+      "community": 66,
       "norm_label": "appshell.vue"
     },
     {
@@ -1107,7 +1107,7 @@
       "source_file": "frontend/src/components/RatingStars.vue",
       "source_location": "L1",
       "id": "frontend_src_components_ratingstars_vue",
-      "community": 64,
+      "community": 67,
       "norm_label": "ratingstars.vue"
     },
     {
@@ -1116,7 +1116,7 @@
       "source_file": "frontend/src/components/StatusBadge.vue",
       "source_location": "L1",
       "id": "frontend_src_components_statusbadge_vue",
-      "community": 65,
+      "community": 68,
       "norm_label": "statusbadge.vue"
     },
     {
@@ -1125,7 +1125,7 @@
       "source_file": "frontend/src/components/ShelfSelectField.vue",
       "source_location": "L1",
       "id": "frontend_src_components_shelfselectfield_vue",
-      "community": 66,
+      "community": 69,
       "norm_label": "shelfselectfield.vue"
     },
     {
@@ -1134,7 +1134,7 @@
       "source_file": "frontend/src/components/BookForm.vue",
       "source_location": "L1",
       "id": "frontend_src_components_bookform_vue",
-      "community": 67,
+      "community": 70,
       "norm_label": "bookform.vue"
     },
     {
@@ -1143,7 +1143,7 @@
       "source_file": "frontend/src/components/ShelfForm.vue",
       "source_location": "L1",
       "id": "frontend_src_components_shelfform_vue",
-      "community": 68,
+      "community": 71,
       "norm_label": "shelfform.vue"
     },
     {
@@ -1152,7 +1152,7 @@
       "source_file": "frontend/src/components/BottomNav.vue",
       "source_location": "L1",
       "id": "frontend_src_components_bottomnav_vue",
-      "community": 69,
+      "community": 72,
       "norm_label": "bottomnav.vue"
     },
     {
@@ -1161,7 +1161,7 @@
       "source_file": "frontend/src/components/StatCard.vue",
       "source_location": "L1",
       "id": "frontend_src_components_statcard_vue",
-      "community": 70,
+      "community": 73,
       "norm_label": "statcard.vue"
     },
     {
@@ -1170,7 +1170,7 @@
       "source_file": "frontend/src/components/BookCard.vue",
       "source_location": "L1",
       "id": "frontend_src_components_bookcard_vue",
-      "community": 71,
+      "community": 74,
       "norm_label": "bookcard.vue"
     },
     {
@@ -1179,7 +1179,7 @@
       "source_file": "frontend/src/components/ScannerViewfinder.vue",
       "source_location": "L1",
       "id": "frontend_src_components_scannerviewfinder_vue",
-      "community": 72,
+      "community": 75,
       "norm_label": "scannerviewfinder.vue"
     },
     {
@@ -1188,7 +1188,7 @@
       "source_file": "frontend/src/components/ShelfPreviewGrid.vue",
       "source_location": "L1",
       "id": "frontend_src_components_shelfpreviewgrid_vue",
-      "community": 73,
+      "community": 76,
       "norm_label": "shelfpreviewgrid.vue"
     },
     {
@@ -1197,7 +1197,7 @@
       "source_file": "frontend/src/components/SearchResultCard.vue",
       "source_location": "L1",
       "id": "frontend_src_components_searchresultcard_vue",
-      "community": 74,
+      "community": 77,
       "norm_label": "searchresultcard.vue"
     },
     {
@@ -1206,7 +1206,7 @@
       "source_file": "frontend/src/components/EmptyState.vue",
       "source_location": "L1",
       "id": "frontend_src_components_emptystate_vue",
-      "community": 75,
+      "community": 78,
       "norm_label": "emptystate.vue"
     },
     {
@@ -1215,7 +1215,7 @@
       "source_file": "frontend/src/components/auth/AuthGate.vue",
       "source_location": "L1",
       "id": "frontend_src_components_auth_authgate_vue",
-      "community": 76,
+      "community": 79,
       "norm_label": "authgate.vue"
     },
     {
@@ -1224,7 +1224,7 @@
       "source_file": "frontend/src/types/models.ts",
       "source_location": "L1",
       "id": "frontend_src_types_models_ts",
-      "community": 77,
+      "community": 80,
       "norm_label": "models.ts"
     },
     {
@@ -1233,7 +1233,7 @@
       "source_file": "backend/build.gradle.kts",
       "source_location": "L1",
       "id": "backend_build_gradle_kts",
-      "community": 78,
+      "community": 81,
       "norm_label": "build.gradle.kts"
     },
     {
@@ -1242,7 +1242,7 @@
       "source_file": "backend/settings.gradle.kts",
       "source_location": "L1",
       "id": "backend_settings_gradle_kts",
-      "community": 79,
+      "community": 82,
       "norm_label": "settings.gradle.kts"
     },
     {
@@ -1251,7 +1251,7 @@
       "source_file": "backend/src/test/kotlin/com/boontory/backend/KeycloakJwtAuthoritiesConverterTest.kt",
       "source_location": "L1",
       "id": "backend_src_test_kotlin_com_boontory_backend_keycloakjwtauthoritiesconvertertest_kt",
-      "community": 13,
+      "community": 15,
       "norm_label": "keycloakjwtauthoritiesconvertertest.kt"
     },
     {
@@ -1260,7 +1260,7 @@
       "source_file": "backend/src/test/kotlin/com/boontory/backend/KeycloakJwtAuthoritiesConverterTest.kt",
       "source_location": "L8",
       "id": "keycloakjwtauthoritiesconvertertest_keycloakjwtauthoritiesconvertertest",
-      "community": 13,
+      "community": 15,
       "norm_label": "keycloakjwtauthoritiesconvertertest"
     },
     {
@@ -1269,7 +1269,7 @@
       "source_file": "backend/src/test/kotlin/com/boontory/backend/KeycloakJwtAuthoritiesConverterTest.kt",
       "source_location": "L11",
       "id": "keycloakjwtauthoritiesconvertertest_keycloakjwtauthoritiesconvertertest_maps_realm_and_target_client_roles_to_spring_authorities",
-      "community": 13,
+      "community": 15,
       "norm_label": ".`maps realm and target client roles to spring authorities`()"
     },
     {
@@ -1278,7 +1278,7 @@
       "source_file": "backend/src/test/kotlin/com/boontory/backend/KeycloakJwtAuthoritiesConverterTest.kt",
       "source_location": "L30",
       "id": "keycloakjwtauthoritiesconvertertest_keycloakjwtauthoritiesconvertertest_ignores_unrelated_client_roles",
-      "community": 13,
+      "community": 15,
       "norm_label": ".`ignores unrelated client roles`()"
     },
     {
@@ -1287,7 +1287,7 @@
       "source_file": "backend/src/test/kotlin/com/boontory/backend/KeycloakJwtAuthoritiesConverterTest.kt",
       "source_location": "L48",
       "id": "keycloakjwtauthoritiesconvertertest_keycloakjwtauthoritiesconvertertest_ignores_malformed_claims",
-      "community": 13,
+      "community": 15,
       "norm_label": ".`ignores malformed claims`()"
     },
     {
@@ -1296,7 +1296,7 @@
       "source_file": "backend/src/test/kotlin/com/boontory/backend/KeycloakJwtAuthoritiesConverterTest.kt",
       "source_location": "L62",
       "id": "keycloakjwtauthoritiesconvertertest_keycloakjwtauthoritiesconvertertest_dedupes_duplicate_roles_across_claims",
-      "community": 13,
+      "community": 15,
       "norm_label": ".`dedupes duplicate roles across claims`()"
     },
     {
@@ -1375,7 +1375,7 @@
       "label": ".createShelf()",
       "file_type": "code",
       "source_file": "backend/src/test/kotlin/com/boontory/backend/ApiEndpointsTest.kt",
-      "source_location": "L338",
+      "source_location": "L442",
       "id": "apiendpointstest_apiendpointstest_createshelf",
       "community": 4,
       "norm_label": ".createshelf()"
@@ -1384,7 +1384,7 @@
       "label": ".createBook()",
       "file_type": "code",
       "source_file": "backend/src/test/kotlin/com/boontory/backend/ApiEndpointsTest.kt",
-      "source_location": "L355",
+      "source_location": "L459",
       "id": "apiendpointstest_apiendpointstest_createbook",
       "community": 4,
       "norm_label": ".createbook()"
@@ -1393,7 +1393,7 @@
       "label": ".bookJson()",
       "file_type": "code",
       "source_file": "backend/src/test/kotlin/com/boontory/backend/ApiEndpointsTest.kt",
-      "source_location": "L376",
+      "source_location": "L480",
       "id": "apiendpointstest_apiendpointstest_bookjson",
       "community": 4,
       "norm_label": ".bookjson()"
@@ -1402,7 +1402,7 @@
       "label": ".json()",
       "file_type": "code",
       "source_file": "backend/src/test/kotlin/com/boontory/backend/ApiEndpointsTest.kt",
-      "source_location": "L397",
+      "source_location": "L501",
       "id": "apiendpointstest_apiendpointstest_json",
       "community": 4,
       "norm_label": ".json()"
@@ -1411,7 +1411,7 @@
       "label": "configureProperties()",
       "file_type": "code",
       "source_file": "backend/src/test/kotlin/com/boontory/backend/ApiEndpointsTest.kt",
-      "source_location": "L402",
+      "source_location": "L506",
       "id": "apiendpointstest_configureproperties",
       "community": 4,
       "norm_label": "configureproperties()"
@@ -1422,7 +1422,7 @@
       "source_file": "backend/src/test/kotlin/com/boontory/backend/JwtClientAccessEvaluatorTest.kt",
       "source_location": "L1",
       "id": "backend_src_test_kotlin_com_boontory_backend_jwtclientaccessevaluatortest_kt",
-      "community": 18,
+      "community": 20,
       "norm_label": "jwtclientaccessevaluatortest.kt"
     },
     {
@@ -1431,7 +1431,7 @@
       "source_file": "backend/src/test/kotlin/com/boontory/backend/JwtClientAccessEvaluatorTest.kt",
       "source_location": "L9",
       "id": "jwtclientaccessevaluatortest_jwtclientaccessevaluatortest",
-      "community": 18,
+      "community": 20,
       "norm_label": "jwtclientaccessevaluatortest"
     },
     {
@@ -1440,7 +1440,7 @@
       "source_file": "backend/src/test/kotlin/com/boontory/backend/JwtClientAccessEvaluatorTest.kt",
       "source_location": "L12",
       "id": "jwtclientaccessevaluatortest_jwtclientaccessevaluatortest_accepts_token_when_azp_matches_boontory_client",
-      "community": 18,
+      "community": 20,
       "norm_label": ".`accepts token when azp matches boontory client`()"
     },
     {
@@ -1449,7 +1449,7 @@
       "source_file": "backend/src/test/kotlin/com/boontory/backend/JwtClientAccessEvaluatorTest.kt",
       "source_location": "L25",
       "id": "jwtclientaccessevaluatortest_jwtclientaccessevaluatortest_accepts_token_when_audience_contains_boontory_client",
-      "community": 18,
+      "community": 20,
       "norm_label": ".`accepts token when audience contains boontory client`()"
     },
     {
@@ -1458,7 +1458,7 @@
       "source_file": "backend/src/test/kotlin/com/boontory/backend/JwtClientAccessEvaluatorTest.kt",
       "source_location": "L38",
       "id": "jwtclientaccessevaluatortest_jwtclientaccessevaluatortest_rejects_token_when_azp_and_audience_target_another_client",
-      "community": 18,
+      "community": 20,
       "norm_label": ".`rejects token when azp and audience target another client`()"
     },
     {
@@ -1467,7 +1467,7 @@
       "source_file": "backend/src/test/kotlin/com/boontory/backend/ApiAuthDisabledTest.kt",
       "source_location": "L1",
       "id": "backend_src_test_kotlin_com_boontory_backend_apiauthdisabledtest_kt",
-      "community": 23,
+      "community": 25,
       "norm_label": "apiauthdisabledtest.kt"
     },
     {
@@ -1476,7 +1476,7 @@
       "source_file": "backend/src/test/kotlin/com/boontory/backend/ApiAuthDisabledTest.kt",
       "source_location": "L14",
       "id": "apiauthdisabledtest_apiauthdisabledtest",
-      "community": 23,
+      "community": 25,
       "norm_label": "apiauthdisabledtest"
     },
     {
@@ -1485,7 +1485,7 @@
       "source_file": "backend/src/test/kotlin/com/boontory/backend/ApiAuthDisabledTest.kt",
       "source_location": "L20",
       "id": "apiauthdisabledtest_apiauthdisabledtest_local_qa_mode_permits_api_requests_without_keycloak",
-      "community": 23,
+      "community": 25,
       "norm_label": ".`local qa mode permits api requests without keycloak`()"
     },
     {
@@ -1494,7 +1494,7 @@
       "source_file": "backend/src/test/kotlin/com/boontory/backend/ApiAuthDisabledTest.kt",
       "source_location": "L29",
       "id": "apiauthdisabledtest_configureproperties",
-      "community": 23,
+      "community": 25,
       "norm_label": "configureproperties()"
     },
     {
@@ -1575,7 +1575,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/BoontoryBackendApplication.kt",
       "source_location": "L1",
       "id": "backend_src_main_kotlin_com_boontory_backend_boontorybackendapplication_kt",
-      "community": 34,
+      "community": 37,
       "norm_label": "boontorybackendapplication.kt"
     },
     {
@@ -1584,7 +1584,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/BoontoryBackendApplication.kt",
       "source_location": "L6",
       "id": "boontorybackendapplication_boontorybackendapplication",
-      "community": 34,
+      "community": 37,
       "norm_label": "boontorybackendapplication"
     },
     {
@@ -1593,7 +1593,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/BoontoryBackendApplication.kt",
       "source_location": "L9",
       "id": "boontorybackendapplication_main",
-      "community": 34,
+      "community": 37,
       "norm_label": "main()"
     },
     {
@@ -1602,7 +1602,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/common/ApiExceptionHandler.kt",
       "source_location": "L1",
       "id": "backend_src_main_kotlin_com_boontory_backend_common_apiexceptionhandler_kt",
-      "community": 19,
+      "community": 21,
       "norm_label": "apiexceptionhandler.kt"
     },
     {
@@ -1611,7 +1611,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/common/ApiExceptionHandler.kt",
       "source_location": "L10",
       "id": "apiexceptionhandler_apiexceptionhandler",
-      "community": 19,
+      "community": 21,
       "norm_label": "apiexceptionhandler"
     },
     {
@@ -1620,7 +1620,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/common/ApiExceptionHandler.kt",
       "source_location": "L12",
       "id": "apiexceptionhandler_apiexceptionhandler_handlevalidationexception",
-      "community": 19,
+      "community": 21,
       "norm_label": ".handlevalidationexception()"
     },
     {
@@ -1629,7 +1629,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/common/ApiExceptionHandler.kt",
       "source_location": "L21",
       "id": "apiexceptionhandler_apiexceptionhandler_handleresponsestatusexception",
-      "community": 19,
+      "community": 21,
       "norm_label": ".handleresponsestatusexception()"
     },
     {
@@ -1638,7 +1638,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/common/ApiExceptionHandler.kt",
       "source_location": "L25",
       "id": "apiexceptionhandler_apiexceptionhandler_handlegenericexception",
-      "community": 19,
+      "community": 21,
       "norm_label": ".handlegenericexception()"
     },
     {
@@ -1728,7 +1728,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/shelf/ShelfRepository.kt",
       "source_location": "L1",
       "id": "backend_src_main_kotlin_com_boontory_backend_shelf_shelfrepository_kt",
-      "community": 24,
+      "community": 26,
       "norm_label": "shelfrepository.kt"
     },
     {
@@ -1737,7 +1737,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/shelf/ShelfRepository.kt",
       "source_location": "L5",
       "id": "shelfrepository_shelfrepository",
-      "community": 24,
+      "community": 26,
       "norm_label": "shelfrepository"
     },
     {
@@ -1746,7 +1746,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/shelf/ShelfRepository.kt",
       "source_location": "L6",
       "id": "shelfrepository_shelfrepository_findallbyorderbynameasc",
-      "community": 24,
+      "community": 26,
       "norm_label": ".findallbyorderbynameasc()"
     },
     {
@@ -1755,7 +1755,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/shelf/ShelfRepository.kt",
       "source_location": "L8",
       "id": "shelfrepository_shelfrepository_findbynameignorecase",
-      "community": 24,
+      "community": 26,
       "norm_label": ".findbynameignorecase()"
     },
     {
@@ -1764,7 +1764,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/shelf/ShelfEntity.kt",
       "source_location": "L1",
       "id": "backend_src_main_kotlin_com_boontory_backend_shelf_shelfentity_kt",
-      "community": 25,
+      "community": 27,
       "norm_label": "shelfentity.kt"
     },
     {
@@ -1773,7 +1773,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/shelf/ShelfEntity.kt",
       "source_location": "L13",
       "id": "shelfentity_shelfentity",
-      "community": 25,
+      "community": 27,
       "norm_label": "shelfentity"
     },
     {
@@ -1782,7 +1782,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/shelf/ShelfEntity.kt",
       "source_location": "L32",
       "id": "shelfentity_shelfentity_prepersist",
-      "community": 25,
+      "community": 27,
       "norm_label": ".prepersist()"
     },
     {
@@ -1791,7 +1791,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/shelf/ShelfEntity.kt",
       "source_location": "L39",
       "id": "shelfentity_shelfentity_preupdate",
-      "community": 25,
+      "community": 27,
       "norm_label": ".preupdate()"
     },
     {
@@ -1800,7 +1800,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/shelf/ShelfDtos.kt",
       "source_location": "L1",
       "id": "backend_src_main_kotlin_com_boontory_backend_shelf_shelfdtos_kt",
-      "community": 20,
+      "community": 22,
       "norm_label": "shelfdtos.kt"
     },
     {
@@ -1809,7 +1809,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/shelf/ShelfDtos.kt",
       "source_location": "L8",
       "id": "shelfdtos_shelfsummarydto",
-      "community": 20,
+      "community": 22,
       "norm_label": "shelfsummarydto"
     },
     {
@@ -1818,7 +1818,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/shelf/ShelfDtos.kt",
       "source_location": "L17",
       "id": "shelfdtos_upsertshelfrequest",
-      "community": 20,
+      "community": 22,
       "norm_label": "upsertshelfrequest"
     },
     {
@@ -1827,7 +1827,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/shelf/ShelfDtos.kt",
       "source_location": "L23",
       "id": "shelfdtos_tosummarydto",
-      "community": 20,
+      "community": 22,
       "norm_label": "tosummarydto()"
     },
     {
@@ -1836,7 +1836,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/shelf/ShelfDtos.kt",
       "source_location": "L33",
       "id": "shelfdtos_applyto",
-      "community": 20,
+      "community": 22,
       "norm_label": "applyto()"
     },
     {
@@ -1845,7 +1845,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/shelf/ShelfController.kt",
       "source_location": "L1",
       "id": "backend_src_main_kotlin_com_boontory_backend_shelf_shelfcontroller_kt",
-      "community": 11,
+      "community": 12,
       "norm_label": "shelfcontroller.kt"
     },
     {
@@ -1854,7 +1854,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/shelf/ShelfController.kt",
       "source_location": "L16",
       "id": "shelfcontroller_shelfcontroller",
-      "community": 11,
+      "community": 12,
       "norm_label": "shelfcontroller"
     },
     {
@@ -1863,7 +1863,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/shelf/ShelfController.kt",
       "source_location": "L22",
       "id": "shelfcontroller_shelfcontroller_list",
-      "community": 11,
+      "community": 12,
       "norm_label": ".list()"
     },
     {
@@ -1872,7 +1872,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/shelf/ShelfController.kt",
       "source_location": "L25",
       "id": "shelfcontroller_shelfcontroller_get",
-      "community": 11,
+      "community": 12,
       "norm_label": ".get()"
     },
     {
@@ -1881,7 +1881,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/shelf/ShelfController.kt",
       "source_location": "L28",
       "id": "shelfcontroller_shelfcontroller_create",
-      "community": 11,
+      "community": 12,
       "norm_label": ".create()"
     },
     {
@@ -1890,7 +1890,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/shelf/ShelfController.kt",
       "source_location": "L31",
       "id": "shelfcontroller_shelfcontroller_update",
-      "community": 11,
+      "community": 12,
       "norm_label": ".update()"
     },
     {
@@ -1899,7 +1899,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/shelf/ShelfController.kt",
       "source_location": "L35",
       "id": "shelfcontroller_shelfcontroller_delete",
-      "community": 11,
+      "community": 12,
       "norm_label": ".delete()"
     },
     {
@@ -2070,7 +2070,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/book/ReadingStatus.kt",
       "source_location": "L1",
       "id": "backend_src_main_kotlin_com_boontory_backend_book_readingstatus_kt",
-      "community": 45,
+      "community": 48,
       "norm_label": "readingstatus.kt"
     },
     {
@@ -2079,7 +2079,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/book/ReadingStatus.kt",
       "source_location": "L3",
       "id": "readingstatus_readingstatus",
-      "community": 45,
+      "community": 48,
       "norm_label": "readingstatus"
     },
     {
@@ -2088,7 +2088,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/book/BookDtos.kt",
       "source_location": "L1",
       "id": "backend_src_main_kotlin_com_boontory_backend_book_bookdtos_kt",
-      "community": 14,
+      "community": 16,
       "norm_label": "bookdtos.kt"
     },
     {
@@ -2097,7 +2097,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/book/BookDtos.kt",
       "source_location": "L12",
       "id": "bookdtos_bookdto",
-      "community": 14,
+      "community": 16,
       "norm_label": "bookdto"
     },
     {
@@ -2106,7 +2106,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/book/BookDtos.kt",
       "source_location": "L29",
       "id": "bookdtos_upsertbookrequest",
-      "community": 14,
+      "community": 16,
       "norm_label": "upsertbookrequest"
     },
     {
@@ -2115,7 +2115,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/book/BookDtos.kt",
       "source_location": "L43",
       "id": "bookdtos_librarystatsdto",
-      "community": 14,
+      "community": 16,
       "norm_label": "librarystatsdto"
     },
     {
@@ -2124,7 +2124,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/book/BookDtos.kt",
       "source_location": "L49",
       "id": "bookdtos_todto",
-      "community": 14,
+      "community": 16,
       "norm_label": "todto()"
     },
     {
@@ -2133,7 +2133,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/book/BookDtos.kt",
       "source_location": "L67",
       "id": "bookdtos_applyto",
-      "community": 14,
+      "community": 16,
       "norm_label": "applyto()"
     },
     {
@@ -2142,7 +2142,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/book/BookRepository.kt",
       "source_location": "L1",
       "id": "backend_src_main_kotlin_com_boontory_backend_book_bookrepository_kt",
-      "community": 15,
+      "community": 17,
       "norm_label": "bookrepository.kt"
     },
     {
@@ -2151,7 +2151,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/book/BookRepository.kt",
       "source_location": "L8",
       "id": "bookrepository_bookrepository",
-      "community": 15,
+      "community": 17,
       "norm_label": "bookrepository"
     },
     {
@@ -2160,7 +2160,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/book/BookRepository.kt",
       "source_location": "L9",
       "id": "bookrepository_bookrepository_findbyisbn",
-      "community": 15,
+      "community": 17,
       "norm_label": ".findbyisbn()"
     },
     {
@@ -2169,7 +2169,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/book/BookRepository.kt",
       "source_location": "L11",
       "id": "bookrepository_bookrepository_countbyshelfid",
-      "community": 15,
+      "community": 17,
       "norm_label": ".countbyshelfid()"
     },
     {
@@ -2178,7 +2178,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/book/BookRepository.kt",
       "source_location": "L13",
       "id": "bookrepository_bookrepository_search",
-      "community": 15,
+      "community": 17,
       "norm_label": ".search()"
     },
     {
@@ -2187,7 +2187,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/book/BookRepository.kt",
       "source_location": "L32",
       "id": "bookrepository_bookrepository_clearshelfforshelf",
-      "community": 15,
+      "community": 17,
       "norm_label": ".clearshelfforshelf()"
     },
     {
@@ -2196,7 +2196,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/book/BookEntity.kt",
       "source_location": "L1",
       "id": "backend_src_main_kotlin_com_boontory_backend_book_bookentity_kt",
-      "community": 26,
+      "community": 28,
       "norm_label": "bookentity.kt"
     },
     {
@@ -2205,7 +2205,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/book/BookEntity.kt",
       "source_location": "L20",
       "id": "bookentity_bookentity",
-      "community": 26,
+      "community": 28,
       "norm_label": "bookentity"
     },
     {
@@ -2214,7 +2214,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/book/BookEntity.kt",
       "source_location": "L61",
       "id": "bookentity_bookentity_prepersist",
-      "community": 26,
+      "community": 28,
       "norm_label": ".prepersist()"
     },
     {
@@ -2223,7 +2223,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/book/BookEntity.kt",
       "source_location": "L68",
       "id": "bookentity_bookentity_preupdate",
-      "community": 26,
+      "community": 28,
       "norm_label": ".preupdate()"
     },
     {
@@ -2304,34 +2304,34 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogController.kt",
       "source_location": "L1",
       "id": "backend_src_main_kotlin_com_boontory_backend_catalog_catalogcontroller_kt",
-      "community": 27,
+      "community": 29,
       "norm_label": "catalogcontroller.kt"
     },
     {
       "label": "CatalogController",
       "file_type": "code",
       "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogController.kt",
-      "source_location": "L9",
+      "source_location": "L10",
       "id": "catalogcontroller_catalogcontroller",
-      "community": 27,
+      "community": 29,
       "norm_label": "catalogcontroller"
     },
     {
       "label": ".search()",
       "file_type": "code",
       "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogController.kt",
-      "source_location": "L14",
+      "source_location": "L16",
       "id": "catalogcontroller_catalogcontroller_search",
-      "community": 27,
+      "community": 29,
       "norm_label": ".search()"
     },
     {
       "label": ".lookupByIsbn()",
       "file_type": "code",
       "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogController.kt",
-      "source_location": "L17",
+      "source_location": "L29",
       "id": "catalogcontroller_catalogcontroller_lookupbyisbn",
-      "community": 27,
+      "community": 29,
       "norm_label": ".lookupbyisbn()"
     },
     {
@@ -2356,7 +2356,7 @@
       "label": ".search()",
       "file_type": "code",
       "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/OpenLibraryService.kt",
-      "source_location": "L17",
+      "source_location": "L19",
       "id": "openlibraryservice_openlibraryservice_search",
       "community": 8,
       "norm_label": ".search()"
@@ -2365,7 +2365,7 @@
       "label": ".lookupByIsbn()",
       "file_type": "code",
       "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/OpenLibraryService.kt",
-      "source_location": "L38",
+      "source_location": "L39",
       "id": "openlibraryservice_openlibraryservice_lookupbyisbn",
       "community": 8,
       "norm_label": ".lookupbyisbn()"
@@ -2374,7 +2374,7 @@
       "label": ".getJson()",
       "file_type": "code",
       "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/OpenLibraryService.kt",
-      "source_location": "L63",
+      "source_location": "L62",
       "id": "openlibraryservice_openlibraryservice_getjson",
       "community": 8,
       "norm_label": ".getjson()"
@@ -2383,7 +2383,7 @@
       "label": ".mapSearchDoc()",
       "file_type": "code",
       "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/OpenLibraryService.kt",
-      "source_location": "L70",
+      "source_location": "L69",
       "id": "openlibraryservice_openlibraryservice_mapsearchdoc",
       "community": 8,
       "norm_label": ".mapsearchdoc()"
@@ -2392,7 +2392,7 @@
       "label": ".mapBookNode()",
       "file_type": "code",
       "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/OpenLibraryService.kt",
-      "source_location": "L86",
+      "source_location": "L85",
       "id": "openlibraryservice_openlibraryservice_mapbooknode",
       "community": 8,
       "norm_label": ".mapbooknode()"
@@ -2401,7 +2401,7 @@
       "label": ".coverUrl()",
       "file_type": "code",
       "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/OpenLibraryService.kt",
-      "source_location": "L108",
+      "source_location": "L107",
       "id": "openlibraryservice_openlibraryservice_coverurl",
       "community": 8,
       "norm_label": ".coverurl()"
@@ -2412,7 +2412,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/OpenLibraryDtos.kt",
       "source_location": "L1",
       "id": "backend_src_main_kotlin_com_boontory_backend_catalog_openlibrarydtos_kt",
-      "community": 28,
+      "community": 30,
       "norm_label": "openlibrarydtos.kt"
     },
     {
@@ -2421,7 +2421,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/OpenLibraryDtos.kt",
       "source_location": "L3",
       "id": "openlibrarydtos_catalogbookdto",
-      "community": 28,
+      "community": 30,
       "norm_label": "catalogbookdto"
     },
     {
@@ -2430,7 +2430,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/OpenLibraryDtos.kt",
       "source_location": "L12",
       "id": "openlibrarydtos_catalogsearchresponse",
-      "community": 28,
+      "community": 30,
       "norm_label": "catalogsearchresponse"
     },
     {
@@ -2439,8 +2439,179 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/OpenLibraryDtos.kt",
       "source_location": "L17",
       "id": "openlibrarydtos_isbnlookupresponse",
-      "community": 28,
+      "community": 30,
       "norm_label": "isbnlookupresponse"
+    },
+    {
+      "label": "CatalogProviderPipeline.kt",
+      "file_type": "code",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogProviderPipeline.kt",
+      "source_location": "L1",
+      "id": "backend_src_main_kotlin_com_boontory_backend_catalog_catalogproviderpipeline_kt",
+      "community": 13,
+      "norm_label": "catalogproviderpipeline.kt"
+    },
+    {
+      "label": "CatalogProviderPipeline",
+      "file_type": "code",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogProviderPipeline.kt",
+      "source_location": "L5",
+      "id": "catalogproviderpipeline_catalogproviderpipeline",
+      "community": 13,
+      "norm_label": "catalogproviderpipeline"
+    },
+    {
+      "label": ".search()",
+      "file_type": "code",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogProviderPipeline.kt",
+      "source_location": "L9",
+      "id": "catalogproviderpipeline_catalogproviderpipeline_search",
+      "community": 13,
+      "norm_label": ".search()"
+    },
+    {
+      "label": ".lookupByIsbn()",
+      "file_type": "code",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogProviderPipeline.kt",
+      "source_location": "L25",
+      "id": "catalogproviderpipeline_catalogproviderpipeline_lookupbyisbn",
+      "community": 13,
+      "norm_label": ".lookupbyisbn()"
+    },
+    {
+      "label": ".deduplicate()",
+      "file_type": "code",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogProviderPipeline.kt",
+      "source_location": "L34",
+      "id": "catalogproviderpipeline_catalogproviderpipeline_deduplicate",
+      "community": 13,
+      "norm_label": ".deduplicate()"
+    },
+    {
+      "label": ".dedupeKey()",
+      "file_type": "code",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogProviderPipeline.kt",
+      "source_location": "L39",
+      "id": "catalogproviderpipeline_catalogproviderpipeline_dedupekey",
+      "community": 13,
+      "norm_label": ".dedupekey()"
+    },
+    {
+      "label": "normalizeIsbn()",
+      "file_type": "code",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogProviderPipeline.kt",
+      "source_location": "L45",
+      "id": "catalogproviderpipeline_normalizeisbn",
+      "community": 13,
+      "norm_label": "normalizeisbn()"
+    },
+    {
+      "label": "CatalogProvider.kt",
+      "file_type": "code",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogProvider.kt",
+      "source_location": "L1",
+      "id": "backend_src_main_kotlin_com_boontory_backend_catalog_catalogprovider_kt",
+      "community": 31,
+      "norm_label": "catalogprovider.kt"
+    },
+    {
+      "label": "CatalogProvider",
+      "file_type": "code",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogProvider.kt",
+      "source_location": "L3",
+      "id": "catalogprovider_catalogprovider",
+      "community": 31,
+      "norm_label": "catalogprovider"
+    },
+    {
+      "label": ".search()",
+      "file_type": "code",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogProvider.kt",
+      "source_location": "L6",
+      "id": "catalogprovider_catalogprovider_search",
+      "community": 31,
+      "norm_label": ".search()"
+    },
+    {
+      "label": ".lookupByIsbn()",
+      "file_type": "code",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogProvider.kt",
+      "source_location": "L8",
+      "id": "catalogprovider_catalogprovider_lookupbyisbn",
+      "community": 31,
+      "norm_label": ".lookupbyisbn()"
+    },
+    {
+      "label": "GoogleBooksCatalogProvider.kt",
+      "file_type": "code",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/GoogleBooksCatalogProvider.kt",
+      "source_location": "L1",
+      "id": "backend_src_main_kotlin_com_boontory_backend_catalog_googlebookscatalogprovider_kt",
+      "community": 9,
+      "norm_label": "googlebookscatalogprovider.kt"
+    },
+    {
+      "label": "GoogleBooksCatalogProvider",
+      "file_type": "code",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/GoogleBooksCatalogProvider.kt",
+      "source_location": "L11",
+      "id": "googlebookscatalogprovider_googlebookscatalogprovider",
+      "community": 9,
+      "norm_label": "googlebookscatalogprovider"
+    },
+    {
+      "label": ".search()",
+      "file_type": "code",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/GoogleBooksCatalogProvider.kt",
+      "source_location": "L20",
+      "id": "googlebookscatalogprovider_googlebookscatalogprovider_search",
+      "community": 9,
+      "norm_label": ".search()"
+    },
+    {
+      "label": ".lookupByIsbn()",
+      "file_type": "code",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/GoogleBooksCatalogProvider.kt",
+      "source_location": "L33",
+      "id": "googlebookscatalogprovider_googlebookscatalogprovider_lookupbyisbn",
+      "community": 9,
+      "norm_label": ".lookupbyisbn()"
+    },
+    {
+      "label": ".volumesUri()",
+      "file_type": "code",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/GoogleBooksCatalogProvider.kt",
+      "source_location": "L47",
+      "id": "googlebookscatalogprovider_googlebookscatalogprovider_volumesuri",
+      "community": 9,
+      "norm_label": ".volumesuri()"
+    },
+    {
+      "label": ".getJson()",
+      "file_type": "code",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/GoogleBooksCatalogProvider.kt",
+      "source_location": "L59",
+      "id": "googlebookscatalogprovider_googlebookscatalogprovider_getjson",
+      "community": 9,
+      "norm_label": ".getjson()"
+    },
+    {
+      "label": ".mapVolume()",
+      "file_type": "code",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/GoogleBooksCatalogProvider.kt",
+      "source_location": "L66",
+      "id": "googlebookscatalogprovider_googlebookscatalogprovider_mapvolume",
+      "community": 9,
+      "norm_label": ".mapvolume()"
+    },
+    {
+      "label": ".normalizeCoverUrl()",
+      "file_type": "code",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/GoogleBooksCatalogProvider.kt",
+      "source_location": "L97",
+      "id": "googlebookscatalogprovider_googlebookscatalogprovider_normalizecoverurl",
+      "community": 9,
+      "norm_label": ".normalizecoverurl()"
     },
     {
       "label": "SecurityConfig.kt",
@@ -2448,7 +2619,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/config/SecurityConfig.kt",
       "source_location": "L1",
       "id": "backend_src_main_kotlin_com_boontory_backend_config_securityconfig_kt",
-      "community": 21,
+      "community": 23,
       "norm_label": "securityconfig.kt"
     },
     {
@@ -2457,7 +2628,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/config/SecurityConfig.kt",
       "source_location": "L15",
       "id": "securityconfig_securityconfig",
-      "community": 21,
+      "community": 23,
       "norm_label": "securityconfig"
     },
     {
@@ -2466,7 +2637,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/config/SecurityConfig.kt",
       "source_location": "L17",
       "id": "securityconfig_securityconfig_securityfilterchain",
-      "community": 21,
+      "community": 23,
       "norm_label": ".securityfilterchain()"
     },
     {
@@ -2475,7 +2646,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/config/SecurityConfig.kt",
       "source_location": "L48",
       "id": "securityconfig_securityconfig_keycloakjwtauthoritiesconverter",
-      "community": 21,
+      "community": 23,
       "norm_label": ".keycloakjwtauthoritiesconverter()"
     },
     {
@@ -2484,7 +2655,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/config/SecurityConfig.kt",
       "source_location": "L53",
       "id": "securityconfig_securityconfig_jwtauthenticationconverter",
-      "community": 21,
+      "community": 23,
       "norm_label": ".jwtauthenticationconverter()"
     },
     {
@@ -2493,7 +2664,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/config/JwtClientAccessEvaluator.kt",
       "source_location": "L1",
       "id": "backend_src_main_kotlin_com_boontory_backend_config_jwtclientaccessevaluator_kt",
-      "community": 35,
+      "community": 38,
       "norm_label": "jwtclientaccessevaluator.kt"
     },
     {
@@ -2502,7 +2673,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/config/JwtClientAccessEvaluator.kt",
       "source_location": "L8",
       "id": "jwtclientaccessevaluator_jwtclientaccessevaluator",
-      "community": 35,
+      "community": 38,
       "norm_label": "jwtclientaccessevaluator"
     },
     {
@@ -2511,7 +2682,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/config/JwtClientAccessEvaluator.kt",
       "source_location": "L13",
       "id": "jwtclientaccessevaluator_jwtclientaccessevaluator_hasboontoryclient",
-      "community": 35,
+      "community": 38,
       "norm_label": ".hasboontoryclient()"
     },
     {
@@ -2520,7 +2691,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/config/AppConfig.kt",
       "source_location": "L1",
       "id": "backend_src_main_kotlin_com_boontory_backend_config_appconfig_kt",
-      "community": 29,
+      "community": 32,
       "norm_label": "appconfig.kt"
     },
     {
@@ -2529,7 +2700,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/config/AppConfig.kt",
       "source_location": "L12",
       "id": "appconfig_appconfig",
-      "community": 29,
+      "community": 32,
       "norm_label": "appconfig"
     },
     {
@@ -2538,7 +2709,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/config/AppConfig.kt",
       "source_location": "L16",
       "id": "appconfig_appconfig_resttemplate",
-      "community": 29,
+      "community": 32,
       "norm_label": ".resttemplate()"
     },
     {
@@ -2547,7 +2718,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/config/AppConfig.kt",
       "source_location": "L23",
       "id": "appconfig_appconfig_corsconfigurer",
-      "community": 29,
+      "community": 32,
       "norm_label": ".corsconfigurer()"
     },
     {
@@ -2556,7 +2727,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/config/KeycloakJwtAuthoritiesConverter.kt",
       "source_location": "L1",
       "id": "backend_src_main_kotlin_com_boontory_backend_config_keycloakjwtauthoritiesconverter_kt",
-      "community": 30,
+      "community": 33,
       "norm_label": "keycloakjwtauthoritiesconverter.kt"
     },
     {
@@ -2565,7 +2736,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/config/KeycloakJwtAuthoritiesConverter.kt",
       "source_location": "L8",
       "id": "keycloakjwtauthoritiesconverter_keycloakjwtauthoritiesconverter",
-      "community": 30,
+      "community": 33,
       "norm_label": "keycloakjwtauthoritiesconverter"
     },
     {
@@ -2574,7 +2745,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/config/KeycloakJwtAuthoritiesConverter.kt",
       "source_location": "L11",
       "id": "keycloakjwtauthoritiesconverter_keycloakjwtauthoritiesconverter_convert",
-      "community": 30,
+      "community": 33,
       "norm_label": ".convert()"
     },
     {
@@ -2583,7 +2754,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/config/KeycloakJwtAuthoritiesConverter.kt",
       "source_location": "L26",
       "id": "keycloakjwtauthoritiesconverter_keycloakjwtauthoritiesconverter_extractroles",
-      "community": 30,
+      "community": 33,
       "norm_label": ".extractroles()"
     },
     {
@@ -2592,7 +2763,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/config/SpaController.kt",
       "source_location": "L1",
       "id": "backend_src_main_kotlin_com_boontory_backend_config_spacontroller_kt",
-      "community": 36,
+      "community": 39,
       "norm_label": "spacontroller.kt"
     },
     {
@@ -2601,7 +2772,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/config/SpaController.kt",
       "source_location": "L6",
       "id": "spacontroller_spacontroller",
-      "community": 36,
+      "community": 39,
       "norm_label": "spacontroller"
     },
     {
@@ -2610,7 +2781,7 @@
       "source_file": "backend/src/main/kotlin/com/boontory/backend/config/SpaController.kt",
       "source_location": "L10",
       "id": "spacontroller_spacontroller_forward",
-      "community": 36,
+      "community": 39,
       "norm_label": ".forward()"
     }
   ],
@@ -4263,7 +4434,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/test/kotlin/com/boontory/backend/ApiEndpointsTest.kt",
-      "source_location": "L402",
+      "source_location": "L506",
       "weight": 1.0,
       "_src": "backend_src_test_kotlin_com_boontory_backend_apiendpointstest_kt",
       "_tgt": "apiendpointstest_configureproperties",
@@ -4347,7 +4518,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/test/kotlin/com/boontory/backend/ApiEndpointsTest.kt",
-      "source_location": "L338",
+      "source_location": "L442",
       "weight": 1.0,
       "_src": "apiendpointstest_apiendpointstest",
       "_tgt": "apiendpointstest_apiendpointstest_createshelf",
@@ -4359,7 +4530,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/test/kotlin/com/boontory/backend/ApiEndpointsTest.kt",
-      "source_location": "L355",
+      "source_location": "L459",
       "weight": 1.0,
       "_src": "apiendpointstest_apiendpointstest",
       "_tgt": "apiendpointstest_apiendpointstest_createbook",
@@ -4371,7 +4542,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/test/kotlin/com/boontory/backend/ApiEndpointsTest.kt",
-      "source_location": "L376",
+      "source_location": "L480",
       "weight": 1.0,
       "_src": "apiendpointstest_apiendpointstest",
       "_tgt": "apiendpointstest_apiendpointstest_bookjson",
@@ -4383,7 +4554,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/test/kotlin/com/boontory/backend/ApiEndpointsTest.kt",
-      "source_location": "L397",
+      "source_location": "L501",
       "weight": 1.0,
       "_src": "apiendpointstest_apiendpointstest",
       "_tgt": "apiendpointstest_apiendpointstest_json",
@@ -5379,7 +5550,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogController.kt",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0,
       "_src": "backend_src_main_kotlin_com_boontory_backend_catalog_catalogcontroller_kt",
       "_tgt": "catalogcontroller_catalogcontroller",
@@ -5391,7 +5562,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogController.kt",
-      "source_location": "L14",
+      "source_location": "L16",
       "weight": 1.0,
       "_src": "catalogcontroller_catalogcontroller",
       "_tgt": "catalogcontroller_catalogcontroller_search",
@@ -5403,7 +5574,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogController.kt",
-      "source_location": "L17",
+      "source_location": "L29",
       "weight": 1.0,
       "_src": "catalogcontroller_catalogcontroller",
       "_tgt": "catalogcontroller_catalogcontroller_lookupbyisbn",
@@ -5427,7 +5598,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/OpenLibraryService.kt",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0,
       "_src": "openlibraryservice_openlibraryservice",
       "_tgt": "openlibraryservice_openlibraryservice_search",
@@ -5439,7 +5610,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/OpenLibraryService.kt",
-      "source_location": "L38",
+      "source_location": "L39",
       "weight": 1.0,
       "_src": "openlibraryservice_openlibraryservice",
       "_tgt": "openlibraryservice_openlibraryservice_lookupbyisbn",
@@ -5451,7 +5622,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/OpenLibraryService.kt",
-      "source_location": "L63",
+      "source_location": "L62",
       "weight": 1.0,
       "_src": "openlibraryservice_openlibraryservice",
       "_tgt": "openlibraryservice_openlibraryservice_getjson",
@@ -5463,7 +5634,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/OpenLibraryService.kt",
-      "source_location": "L70",
+      "source_location": "L69",
       "weight": 1.0,
       "_src": "openlibraryservice_openlibraryservice",
       "_tgt": "openlibraryservice_openlibraryservice_mapsearchdoc",
@@ -5475,7 +5646,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/OpenLibraryService.kt",
-      "source_location": "L86",
+      "source_location": "L85",
       "weight": 1.0,
       "_src": "openlibraryservice_openlibraryservice",
       "_tgt": "openlibraryservice_openlibraryservice_mapbooknode",
@@ -5487,7 +5658,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/OpenLibraryService.kt",
-      "source_location": "L108",
+      "source_location": "L107",
       "weight": 1.0,
       "_src": "openlibraryservice_openlibraryservice",
       "_tgt": "openlibraryservice_openlibraryservice_coverurl",
@@ -5529,6 +5700,198 @@
       "_tgt": "openlibrarydtos_isbnlookupresponse",
       "source": "backend_src_main_kotlin_com_boontory_backend_catalog_openlibrarydtos_kt",
       "target": "openlibrarydtos_isbnlookupresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogProviderPipeline.kt",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "backend_src_main_kotlin_com_boontory_backend_catalog_catalogproviderpipeline_kt",
+      "_tgt": "catalogproviderpipeline_catalogproviderpipeline",
+      "source": "backend_src_main_kotlin_com_boontory_backend_catalog_catalogproviderpipeline_kt",
+      "target": "catalogproviderpipeline_catalogproviderpipeline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogProviderPipeline.kt",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_src": "backend_src_main_kotlin_com_boontory_backend_catalog_catalogproviderpipeline_kt",
+      "_tgt": "catalogproviderpipeline_normalizeisbn",
+      "source": "backend_src_main_kotlin_com_boontory_backend_catalog_catalogproviderpipeline_kt",
+      "target": "catalogproviderpipeline_normalizeisbn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogProviderPipeline.kt",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "catalogproviderpipeline_catalogproviderpipeline",
+      "_tgt": "catalogproviderpipeline_catalogproviderpipeline_search",
+      "source": "catalogproviderpipeline_catalogproviderpipeline",
+      "target": "catalogproviderpipeline_catalogproviderpipeline_search",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogProviderPipeline.kt",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_src": "catalogproviderpipeline_catalogproviderpipeline",
+      "_tgt": "catalogproviderpipeline_catalogproviderpipeline_lookupbyisbn",
+      "source": "catalogproviderpipeline_catalogproviderpipeline",
+      "target": "catalogproviderpipeline_catalogproviderpipeline_lookupbyisbn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogProviderPipeline.kt",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_src": "catalogproviderpipeline_catalogproviderpipeline",
+      "_tgt": "catalogproviderpipeline_catalogproviderpipeline_deduplicate",
+      "source": "catalogproviderpipeline_catalogproviderpipeline",
+      "target": "catalogproviderpipeline_catalogproviderpipeline_deduplicate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogProviderPipeline.kt",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_src": "catalogproviderpipeline_catalogproviderpipeline",
+      "_tgt": "catalogproviderpipeline_catalogproviderpipeline_dedupekey",
+      "source": "catalogproviderpipeline_catalogproviderpipeline",
+      "target": "catalogproviderpipeline_catalogproviderpipeline_dedupekey",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogProvider.kt",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "backend_src_main_kotlin_com_boontory_backend_catalog_catalogprovider_kt",
+      "_tgt": "catalogprovider_catalogprovider",
+      "source": "backend_src_main_kotlin_com_boontory_backend_catalog_catalogprovider_kt",
+      "target": "catalogprovider_catalogprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogProvider.kt",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "catalogprovider_catalogprovider",
+      "_tgt": "catalogprovider_catalogprovider_search",
+      "source": "catalogprovider_catalogprovider",
+      "target": "catalogprovider_catalogprovider_search",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/CatalogProvider.kt",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "catalogprovider_catalogprovider",
+      "_tgt": "catalogprovider_catalogprovider_lookupbyisbn",
+      "source": "catalogprovider_catalogprovider",
+      "target": "catalogprovider_catalogprovider_lookupbyisbn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/GoogleBooksCatalogProvider.kt",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "backend_src_main_kotlin_com_boontory_backend_catalog_googlebookscatalogprovider_kt",
+      "_tgt": "googlebookscatalogprovider_googlebookscatalogprovider",
+      "source": "backend_src_main_kotlin_com_boontory_backend_catalog_googlebookscatalogprovider_kt",
+      "target": "googlebookscatalogprovider_googlebookscatalogprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/GoogleBooksCatalogProvider.kt",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_src": "googlebookscatalogprovider_googlebookscatalogprovider",
+      "_tgt": "googlebookscatalogprovider_googlebookscatalogprovider_search",
+      "source": "googlebookscatalogprovider_googlebookscatalogprovider",
+      "target": "googlebookscatalogprovider_googlebookscatalogprovider_search",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/GoogleBooksCatalogProvider.kt",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_src": "googlebookscatalogprovider_googlebookscatalogprovider",
+      "_tgt": "googlebookscatalogprovider_googlebookscatalogprovider_lookupbyisbn",
+      "source": "googlebookscatalogprovider_googlebookscatalogprovider",
+      "target": "googlebookscatalogprovider_googlebookscatalogprovider_lookupbyisbn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/GoogleBooksCatalogProvider.kt",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_src": "googlebookscatalogprovider_googlebookscatalogprovider",
+      "_tgt": "googlebookscatalogprovider_googlebookscatalogprovider_volumesuri",
+      "source": "googlebookscatalogprovider_googlebookscatalogprovider",
+      "target": "googlebookscatalogprovider_googlebookscatalogprovider_volumesuri",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/GoogleBooksCatalogProvider.kt",
+      "source_location": "L59",
+      "weight": 1.0,
+      "_src": "googlebookscatalogprovider_googlebookscatalogprovider",
+      "_tgt": "googlebookscatalogprovider_googlebookscatalogprovider_getjson",
+      "source": "googlebookscatalogprovider_googlebookscatalogprovider",
+      "target": "googlebookscatalogprovider_googlebookscatalogprovider_getjson",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/GoogleBooksCatalogProvider.kt",
+      "source_location": "L66",
+      "weight": 1.0,
+      "_src": "googlebookscatalogprovider_googlebookscatalogprovider",
+      "_tgt": "googlebookscatalogprovider_googlebookscatalogprovider_mapvolume",
+      "source": "googlebookscatalogprovider_googlebookscatalogprovider",
+      "target": "googlebookscatalogprovider_googlebookscatalogprovider_mapvolume",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/src/main/kotlin/com/boontory/backend/catalog/GoogleBooksCatalogProvider.kt",
+      "source_location": "L97",
+      "weight": 1.0,
+      "_src": "googlebookscatalogprovider_googlebookscatalogprovider",
+      "_tgt": "googlebookscatalogprovider_googlebookscatalogprovider_normalizecoverurl",
+      "source": "googlebookscatalogprovider_googlebookscatalogprovider",
+      "target": "googlebookscatalogprovider_googlebookscatalogprovider_normalizecoverurl",
       "confidence_score": 1.0
     },
     {

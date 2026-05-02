@@ -312,6 +312,66 @@ class ApiEndpointsTest {
             .andExpect(jsonPath("$.results", hasSize<Any>(1)))
             .andExpect(jsonPath("$.results[0].title").value("To Kill a Mockingbird"))
             .andExpect(jsonPath("$.results[0].coverUrl").value("https://covers.openlibrary.org/b/id/123-M.jpg"))
+        verify(restTemplate, never()).getForObject(
+            eq("https://www.googleapis.com/books/v1/volumes?q=mockingbird&maxResults=12"),
+            eq(JsonNode::class.java),
+        )
+
+        whenever(restTemplate.getForObject(eq("https://openlibrary.org/search.json?q=googleonly&limit=12"), eq(JsonNode::class.java)))
+            .thenReturn(json("""{"docs": []}"""))
+        whenever(restTemplate.getForObject(eq("https://www.googleapis.com/books/v1/volumes?q=googleonly&maxResults=12"), eq(JsonNode::class.java)))
+            .thenReturn(
+                json(
+                    """
+                    {
+                      "items": [
+                        {
+                          "volumeInfo": {
+                            "title": "Google Search Result",
+                            "authors": ["Search Author"],
+                            "publishedDate": "2019",
+                            "industryIdentifiers": [
+                              {"type": "ISBN_13", "identifier": "9780000000003"}
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                    """.trimIndent(),
+                ),
+            )
+
+        mockMvc.perform(get("/api/catalog/search").param("query", "googleonly"))
+            .andExpect(status().isOk)
+            .andExpect(jsonPath("$.query").value("googleonly"))
+            .andExpect(jsonPath("$.results", hasSize<Any>(1)))
+            .andExpect(jsonPath("$.results[0].title").value("Google Search Result"))
+            .andExpect(jsonPath("$.results[0].authors[0]").value("Search Author"))
+
+        whenever(restTemplate.getForObject(eq("https://openlibrary.org/search.json?q=harry%20potter&limit=12"), eq(JsonNode::class.java)))
+            .thenReturn(json("""{"docs": []}"""))
+        whenever(restTemplate.getForObject(eq("https://www.googleapis.com/books/v1/volumes?q=harry%20potter&maxResults=12"), eq(JsonNode::class.java)))
+            .thenReturn(
+                json(
+                    """
+                    {
+                      "items": [
+                        {
+                          "volumeInfo": {
+                            "title": "Harry Potter and the Philosopher's Stone",
+                            "authors": ["J. K. Rowling"]
+                          }
+                        }
+                      ]
+                    }
+                    """.trimIndent(),
+                ),
+            )
+
+        mockMvc.perform(get("/api/catalog/search").param("query", "harry potter"))
+            .andExpect(status().isOk)
+            .andExpect(jsonPath("$.query").value("harry potter"))
+            .andExpect(jsonPath("$.results[0].title").value("Harry Potter and the Philosopher's Stone"))
 
         mockMvc.perform(get("/api/catalog/isbn/{isbn}", existingBookIsbn))
             .andExpect(status().isOk)
@@ -319,6 +379,50 @@ class ApiEndpointsTest {
             .andExpect(jsonPath("$.alreadyInLibrary").value(true))
             .andExpect(jsonPath("$.book.title").value("To Kill a Mockingbird"))
             .andExpect(jsonPath("$.book.description").value("Classic novel"))
+
+        val googleOnlyIsbn = "9780000000002"
+        whenever(
+            restTemplate.getForObject(
+                eq("https://openlibrary.org/api/books?bibkeys=ISBN:9780000000002&jscmd=data&format=json"),
+                eq(JsonNode::class.java),
+            ),
+        ).thenReturn(json("{}"))
+        whenever(
+            restTemplate.getForObject(
+                eq("https://www.googleapis.com/books/v1/volumes?q=isbn:9780000000002&maxResults=1"),
+                eq(JsonNode::class.java),
+            ),
+        ).thenReturn(
+            json(
+                """
+                {
+                  "items": [
+                    {
+                      "volumeInfo": {
+                        "title": "Google Books Only",
+                        "authors": ["Fallback Author"],
+                        "description": "Found after Open Library missed it",
+                        "publishedDate": "2021-04-15",
+                        "imageLinks": {"thumbnail": "http://books.google.com/cover.jpg"},
+                        "industryIdentifiers": [
+                          {"type": "ISBN_13", "identifier": "9780000000002"}
+                        ]
+                      }
+                    }
+                  ]
+                }
+                """.trimIndent(),
+            ),
+        )
+
+        mockMvc.perform(get("/api/catalog/isbn/{isbn}", googleOnlyIsbn))
+            .andExpect(status().isOk)
+            .andExpect(jsonPath("$.isbn").value(googleOnlyIsbn))
+            .andExpect(jsonPath("$.alreadyInLibrary").value(false))
+            .andExpect(jsonPath("$.book.title").value("Google Books Only"))
+            .andExpect(jsonPath("$.book.authors[0]").value("Fallback Author"))
+            .andExpect(jsonPath("$.book.coverUrl").value("https://books.google.com/cover.jpg"))
+            .andExpect(jsonPath("$.book.publishedYear").value(2021))
 
         mockMvc.perform(get("/api/catalog/search").param("query", "   "))
             .andExpect(status().isOk)

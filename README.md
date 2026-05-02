@@ -10,7 +10,7 @@ Boontory is a personal book library MVP built as a small monorepo:
 
 - Public landing page at `/landing` for positioning and acquisition
 - Scan ISBN-13 barcodes with the device camera
-- Look up book metadata through a backend catalog provider pipeline: Open Library first, Google Books fallback
+- Look up book metadata through a backend catalog provider pipeline: Open Library first, BNE SRU second, Google Books fallback
 - Add, edit, delete, search, and filter books
 - Track reading status, rating, notes, and read date
 - Store data in SQLite on the backend
@@ -74,6 +74,7 @@ Use `backend/.env.example` for local development. The backend runtime reads:
 - `BOONTORY_DB_PATH`
 - `BOONTORY_DISABLE_AUTH` (`false` in production; `true` only for local browser QA)
 - `GOOGLE_BOOKS_API_KEY` (optional; enables authenticated Google Books API requests when configured)
+- BNE SRU is enabled by default through the public `https://catalogo.bne.es/view/sru/34BNE_INST` endpoint and needs no API key.
 
 ### Logout behavior (target state)
 

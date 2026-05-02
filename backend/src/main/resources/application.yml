@@ -29,6 +29,7 @@ management:
 
 boontory:
   open-library-base-url: https://openlibrary.org
+  bne-sru-base-url: https://catalogo.bne.es/view/sru/34BNE_INST
   google-books-base-url: https://www.googleapis.com/books/v1
   google-books-api-key: ${GOOGLE_BOOKS_API_KEY:}
   frontend-origin-patterns: ${FRONTEND_ORIGIN_PATTERNS:http://localhost:5173,http://127.0.0.1:5173,https://boontory.etharlia.com}

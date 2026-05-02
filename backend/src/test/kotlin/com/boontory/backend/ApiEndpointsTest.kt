@@ -348,6 +348,48 @@ class ApiEndpointsTest {
             .andExpect(jsonPath("$.results[0].title").value("Google Search Result"))
             .andExpect(jsonPath("$.results[0].authors[0]").value("Search Author"))
 
+        whenever(restTemplate.getForObject(eq("https://openlibrary.org/search.json?q=bneonly&limit=12"), eq(JsonNode::class.java)))
+            .thenReturn(json("""{"docs": []}"""))
+        whenever(
+            restTemplate.getForObject(
+                eq("https://catalogo.bne.es/view/sru/34BNE_INST?operation=searchRetrieve&version=1.2&query=alma.title%3D%22bneonly%22&recordSchema=marcxml&maximumRecords=12"),
+                eq(String::class.java),
+            ),
+        ).thenReturn(
+            """
+            <srw:searchRetrieveResponse xmlns:srw="http://www.loc.gov/zing/srw/" xmlns:marc="http://www.loc.gov/MARC21/slim">
+              <srw:records>
+                <srw:record>
+                  <srw:recordData>
+                    <marc:record>
+                      <marc:datafield tag="020"><marc:subfield code="a">9788400000001</marc:subfield></marc:datafield>
+                      <marc:datafield tag="100"><marc:subfield code="a">Autora BNE</marc:subfield></marc:datafield>
+                      <marc:datafield tag="245">
+                        <marc:subfield code="a">Libro desde BNE :</marc:subfield>
+                        <marc:subfield code="b">subtítulo SRU</marc:subfield>
+                      </marc:datafield>
+                      <marc:datafield tag="264"><marc:subfield code="c">2020</marc:subfield></marc:datafield>
+                    </marc:record>
+                  </srw:recordData>
+                </srw:record>
+              </srw:records>
+            </srw:searchRetrieveResponse>
+            """.trimIndent(),
+        )
+
+        mockMvc.perform(get("/api/catalog/search").param("query", "bneonly"))
+            .andExpect(status().isOk)
+            .andExpect(jsonPath("$.query").value("bneonly"))
+            .andExpect(jsonPath("$.results", hasSize<Any>(1)))
+            .andExpect(jsonPath("$.results[0].isbn").value("9788400000001"))
+            .andExpect(jsonPath("$.results[0].title").value("Libro desde BNE: subtítulo SRU"))
+            .andExpect(jsonPath("$.results[0].authors[0]").value("Autora BNE"))
+            .andExpect(jsonPath("$.results[0].publishedYear").value(2020))
+        verify(restTemplate, never()).getForObject(
+            eq("https://www.googleapis.com/books/v1/volumes?q=bneonly&maxResults=12"),
+            eq(JsonNode::class.java),
+        )
+
         whenever(restTemplate.getForObject(eq("https://openlibrary.org/search.json?q=harry%20potter&limit=12"), eq(JsonNode::class.java)))
             .thenReturn(json("""{"docs": []}"""))
         whenever(restTemplate.getForObject(eq("https://www.googleapis.com/books/v1/volumes?q=harry%20potter&maxResults=12"), eq(JsonNode::class.java)))
@@ -423,6 +465,49 @@ class ApiEndpointsTest {
             .andExpect(jsonPath("$.book.authors[0]").value("Fallback Author"))
             .andExpect(jsonPath("$.book.coverUrl").value("https://books.google.com/cover.jpg"))
             .andExpect(jsonPath("$.book.publishedYear").value(2021))
+
+        val bneOnlyIsbn = "9788400000002"
+        whenever(
+            restTemplate.getForObject(
+                eq("https://openlibrary.org/api/books?bibkeys=ISBN:9788400000002&jscmd=data&format=json"),
+                eq(JsonNode::class.java),
+            ),
+        ).thenReturn(json("{}"))
+        whenever(
+            restTemplate.getForObject(
+                eq("https://catalogo.bne.es/view/sru/34BNE_INST?operation=searchRetrieve&version=1.2&query=alma.isbn%3D%229788400000002%22&recordSchema=marcxml&maximumRecords=1"),
+                eq(String::class.java),
+            ),
+        ).thenReturn(
+            """
+            <srw:searchRetrieveResponse xmlns:srw="http://www.loc.gov/zing/srw/" xmlns:marc="http://www.loc.gov/MARC21/slim">
+              <srw:records>
+                <srw:record>
+                  <srw:recordData>
+                    <marc:record>
+                      <marc:datafield tag="020"><marc:subfield code="a">978-84-000-0002-0</marc:subfield></marc:datafield>
+                      <marc:datafield tag="100"><marc:subfield code="a">Autor ISBN BNE</marc:subfield></marc:datafield>
+                      <marc:datafield tag="245"><marc:subfield code="a">ISBN desde BNE</marc:subfield></marc:datafield>
+                      <marc:datafield tag="260"><marc:subfield code="c">2018</marc:subfield></marc:datafield>
+                    </marc:record>
+                  </srw:recordData>
+                </srw:record>
+              </srw:records>
+            </srw:searchRetrieveResponse>
+            """.trimIndent(),
+        )
+
+        mockMvc.perform(get("/api/catalog/isbn/{isbn}", bneOnlyIsbn))
+            .andExpect(status().isOk)
+            .andExpect(jsonPath("$.isbn").value(bneOnlyIsbn))
+            .andExpect(jsonPath("$.alreadyInLibrary").value(false))
+            .andExpect(jsonPath("$.book.title").value("ISBN desde BNE"))
+            .andExpect(jsonPath("$.book.authors[0]").value("Autor ISBN BNE"))
+            .andExpect(jsonPath("$.book.publishedYear").value(2018))
+        verify(restTemplate, never()).getForObject(
+            eq("https://www.googleapis.com/books/v1/volumes?q=isbn:9788400000002&maxResults=1"),
+            eq(JsonNode::class.java),
+        )
 
         mockMvc.perform(get("/api/catalog/search").param("query", "   "))
             .andExpect(status().isOk)

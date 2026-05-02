@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate
 import org.springframework.web.util.UriComponentsBuilder
 
 @Service
-@Order(1)
+@Order(2)
 class GoogleBooksCatalogProvider(
     private val restTemplate: RestTemplate,
     @Value("\${boontory.google-books-base-url}") private val baseUrl: String,

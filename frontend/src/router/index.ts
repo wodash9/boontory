@@ -1,19 +1,29 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { auth } from '../auth/authState'
 import AppShell from '../layouts/AppShell.vue'
 import BookDetailPage from '../pages/BookDetailPage.vue'
 import BookEditorPage from '../pages/BookEditorPage.vue'
 import DashboardPage from '../pages/DashboardPage.vue'
+import LandingPage from '../pages/LandingPage.vue'
 import LibraryPage from '../pages/LibraryPage.vue'
 import ScanPage from '../pages/ScanPage.vue'
 import SearchPage from '../pages/SearchPage.vue'
 import ShelvesPage from '../pages/ShelvesPage.vue'
+import { createAuthGuard } from './guards'
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
+      path: '/landing',
+      name: 'landing',
+      component: LandingPage,
+      meta: { requiresAuth: false },
+    },
+    {
       path: '/',
       component: AppShell,
+      meta: { requiresAuth: true },
       children: [
         { path: '', name: 'dashboard', component: DashboardPage },
         { path: 'library', name: 'library', component: LibraryPage },
@@ -27,5 +37,7 @@ const router = createRouter({
     },
   ],
 })
+
+router.beforeEach(createAuthGuard(auth))
 
 export default router

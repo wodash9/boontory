@@ -12,10 +12,23 @@ spring:
         format_sql: false
   jackson:
     default-property-inclusion: non_null
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${KEYCLOAK_ISSUER_URI:https://auth.etharlia.com/realms/etharlia}
 
 server:
   port: ${SERVER_PORT:8080}
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
 boontory:
   open-library-base-url: https://openlibrary.org
-  frontend-origin-patterns: ${FRONTEND_ORIGIN_PATTERNS:http://localhost:*,http://127.0.0.1:*}
+  frontend-origin-patterns: ${FRONTEND_ORIGIN_PATTERNS:http://localhost:5173,http://127.0.0.1:5173,https://boontory.etharlia.com}
+  security:
+    keycloak-client-id: ${KEYCLOAK_CLIENT_ID:boontory-frontend}

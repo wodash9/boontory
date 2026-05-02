@@ -1,3 +1,4 @@
+import { auth } from '../auth/authState'
 import type {
   Book,
   CatalogSearchResponse,
@@ -10,13 +11,22 @@ import type {
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL ?? ''
 
+export function buildHeaders(token: string, initHeaders?: HeadersInit): Headers {
+  const headers = new Headers(initHeaders)
+
+  if (!headers.has('Content-Type')) {
+    headers.set('Content-Type', 'application/json')
+  }
+
+  headers.set('Authorization', `Bearer ${token}`)
+  return headers
+}
+
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
+  const token = await auth.getAccessToken()
   const response = await fetch(`${API_BASE}${path}`, {
-    headers: {
-      'Content-Type': 'application/json',
-      ...(init?.headers ?? {}),
-    },
     ...init,
+    headers: buildHeaders(token, init?.headers),
   })
 
   if (!response.ok) {

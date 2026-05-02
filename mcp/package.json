@@ -1,0 +1,30 @@
+{
+  "name": "boontory-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Standalone MCP package with Coolify and Keycloak stdio servers.",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "dev:coolify": "tsx src/coolify/index.ts",
+    "dev:keycloak": "tsx src/keycloak/index.ts",
+    "start:coolify": "node dist/coolify/index.js",
+    "start:keycloak": "node dist/keycloak/index.js"
+  },
+  "dependencies": {
+    "@keycloak/keycloak-admin-client": "26.5.0",
+    "@modelcontextprotocol/sdk": "^1.17.5",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/node": "^24.6.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  }
+}

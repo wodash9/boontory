@@ -1,0 +1,59 @@
+{
+  "realm": "etharlia",
+  "enabled": true,
+  "roles": {
+    "realm": [
+      {
+        "name": "user"
+      },
+      {
+        "name": "admin"
+      }
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "oauth2-proxy",
+      "name": "oauth2-proxy",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
+      "redirectUris": [
+        "https://oauth.etharlia.com/oauth2/callback",
+        "https://oauth.etharlia.com/oauth2/sign_out"
+      ],
+      "webOrigins": [
+        "https://oauth.etharlia.com"
+      ],
+      "attributes": {
+        "post.logout.redirect.uris": "https://oauth.etharlia.com/oauth2/sign_out,https://boontory.etharlia.com/*"
+      }
+    },
+    {
+      "clientId": "boontory-frontend",
+      "name": "boontory-frontend",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": true,
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "redirectUris": [
+        "https://boontory.etharlia.com/*",
+        "http://localhost:5173/*",
+        "http://127.0.0.1:5173/*"
+      ],
+      "webOrigins": [
+        "https://boontory.etharlia.com",
+        "http://localhost:5173",
+        "http://127.0.0.1:5173"
+      ],
+      "attributes": {
+        "pkce.code.challenge.method": "S256",
+        "post.logout.redirect.uris": "https://boontory.etharlia.com/*,http://localhost:5173/*,http://127.0.0.1:5173/*"
+      }
+    }
+  ]
+}

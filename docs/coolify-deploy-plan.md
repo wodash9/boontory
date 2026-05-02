@@ -2,53 +2,26 @@
 
 ## Deployment model
 
-Deploy Boontory as a Docker Compose application in Coolify with two services:
+Deploy Boontory through the root `Dockerfile` as a single Coolify application:
 
-1. `frontend`: Nginx container serving the built Vue app and reverse-proxying `/api` to the backend
-2. `backend`: Spring Boot container exposing the REST API and writing SQLite data to a persistent volume
+1. Vue is built in the `frontend-build` stage.
+2. The compiled SPA is copied into Spring Boot static resources.
+3. The final app serves the SPA and `/api/**` from the same container on port `8080`.
 
-This keeps the public entrypoint simple and avoids CORS issues in production.
+The live Coolify application is `p7naj0uvggxjs36fifqgsyuh` with FQDN `https://boontory.etharlia.com`.
 
-## Files used
+This is the target rollout once the auth code lands in the Boontory app.
 
-- `docker-compose.coolify.yml`
-- `frontend/Dockerfile`
-- `frontend/docker/nginx.conf`
-- `backend/Dockerfile`
+## Auth rollout
 
-## Coolify steps
-
-1. Create a new project in Coolify and choose `Docker Compose`.
-2. Point it at this repository and set the compose file to `docker-compose.coolify.yml`.
-3. Expose only the `frontend` service publicly.
-4. Add a persistent volume for the `backend-data` volume managed by Compose.
-5. Set `FRONTEND_ORIGIN` on the backend to your final public domain, for example `https://books.example.com`.
-6. Deploy once and verify:
-   - `GET /api/books` returns `200`
-   - the frontend loads from the public domain
-   - adding a book creates or updates `/app/data/boontory.db`
-
-## Environment variables
-
-Backend:
-
-- `SERVER_PORT=8080`
-- `BOONTORY_DB_PATH=/app/data/boontory.db`
-- `FRONTEND_ORIGIN=https://your-domain.example`
-
-Frontend:
-
-- no extra runtime variables are required in the containerized setup because Nginx proxies `/api`
-
-## Post-deploy checks
-
-1. Open the site on mobile and confirm camera permission prompts appear on the scan page.
-2. Scan a valid ISBN-13 barcode and verify Open Library lookup returns a preview.
-3. Add, edit, and delete a book to confirm SQLite persistence survives container restarts.
-4. Review Coolify health, logs, and storage mapping before promoting the deployment.
-
-## Recommended follow-up
-
-- Add a small `/actuator/health` endpoint if you want first-class health checks in Coolify.
-- Add authentication before exposing the app beyond a single trusted user.
-- Split the frontend and backend into separate Coolify apps only if you later need independent scaling or deployments.
+- Keep Keycloak at `https://auth.etharlia.com`.
+- Import/apply `ops/keycloak/etharlia-boontory-clients.json` in Keycloak before deploying oauth2-proxy.
+- Create a new oauth2-proxy app on `https://oauth.etharlia.com` using `quay.io/oauth2-proxy/oauth2-proxy:v7.15.1`.
+- Set `OAUTH2_PROXY_CLIENT_ID`, `OAUTH2_PROXY_CLIENT_SECRET`, and `OAUTH2_PROXY_COOKIE_SECRET` in Coolify for the oauth2-proxy app.
+- `OAUTH2_PROXY_CLIENT_SECRET` must come from the Keycloak `oauth2-proxy` confidential client credentials.
+- `OAUTH2_PROXY_COOKIE_SECRET` must be a 32-byte base64 value.
+- Add the labels from `ops/coolify/boontory-forward-auth.labels` to the Boontory app custom labels, replacing `<ROUTER_ID>` with the live router id.
+- Set build env on the Boontory app for `VITE_KEYCLOAK_URL`, `VITE_KEYCLOAK_REALM`, `VITE_KEYCLOAK_CLIENT_ID`, and `VITE_SSO_LOGOUT_URL` (`https://oauth.etharlia.com/oauth2/sign_out`).
+- Set runtime env on the Boontory app for `KEYCLOAK_ISSUER_URI`, `FRONTEND_ORIGIN_PATTERNS`, and `BOONTORY_DB_PATH`.
+- Verify `https://oauth.etharlia.com/ping` returns `200`, unauthenticated Boontory requests redirect or fail closed, and remove the forward-auth labels to roll back if deployment fails.
+- Chained logout flow: frontend uses `VITE_SSO_LOGOUT_URL` to call oauth2-proxy `sign_out`, oauth2-proxy redirects to Keycloak logout, and Keycloak redirects back to the configured post-logout URI.

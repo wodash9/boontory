@@ -3,4 +3,13 @@ frontend/dist/
 backend/.gradle/
 backend/build/
 backend/data/
+.worktrees/
+mcp/node_modules/
+mcp/dist/
+mcp/.env
+mcp/.env.local
+mcp/.env.*
+!mcp/.env.coolify.example
+!mcp/.env.keycloak.example
+artifacts/
 .DS_Store

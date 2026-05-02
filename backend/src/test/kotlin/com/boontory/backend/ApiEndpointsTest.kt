@@ -10,6 +10,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.mock.mockito.MockBean
 import org.springframework.http.MediaType
+import org.springframework.security.test.context.support.WithMockUser
 import org.springframework.test.context.DynamicPropertyRegistry
 import org.springframework.test.context.DynamicPropertySource
 import org.springframework.test.web.servlet.MockMvc
@@ -30,6 +31,7 @@ import org.mockito.Mockito.`when` as whenever
 
 @SpringBootTest
 @AutoConfigureMockMvc
+@WithMockUser(username = "ventura", roles = ["USER"])
 class ApiEndpointsTest {
     @Autowired
     private lateinit var mockMvc: MockMvc

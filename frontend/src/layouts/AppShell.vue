@@ -38,7 +38,7 @@ async function handleLogout() {
   min-height: 100vh;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 24px 20px 92px;
+  padding: 24px 20px 132px;
 }
 
 .topbar {

@@ -11,6 +11,8 @@ describe('readAuthConfig', () => {
         VITE_SSO_LOGOUT_URL: ' https://oauth.etharlia.com/oauth2/sign_out ',
       }),
     ).toEqual({
+      authMode: 'keycloak',
+      mockUsername: 'boontory-test',
       url: 'https://auth.etharlia.com',
       realm: 'etharlia',
       clientId: 'boontory-frontend',
@@ -27,6 +29,8 @@ describe('readAuthConfig', () => {
         VITE_SSO_LOGOUT_URL: '   ',
       }),
     ).toEqual({
+      authMode: 'keycloak',
+      mockUsername: 'boontory-test',
       url: 'https://auth.etharlia.com',
       realm: 'etharlia',
       clientId: 'boontory-frontend',
@@ -42,5 +46,22 @@ describe('readAuthConfig', () => {
         VITE_KEYCLOAK_CLIENT_ID: 'boontory-frontend',
       }),
     ).toThrow('VITE_KEYCLOAK_REALM is required')
+  })
+
+  it('returns mock auth config without requiring Keycloak values', () => {
+    expect(
+      readAuthConfig({
+        VITE_AUTH_MODE: 'mock',
+        VITE_AUTH_MOCK_USERNAME: ' qa-reader ',
+      }),
+    ).toEqual({
+      authMode: 'mock',
+      mockUsername: 'qa-reader',
+      ssoLogoutUrl: undefined,
+    })
+  })
+
+  it('rejects unknown auth modes', () => {
+    expect(() => readAuthConfig({ VITE_AUTH_MODE: 'disabled' })).toThrow('VITE_AUTH_MODE must be keycloak or mock')
   })
 })

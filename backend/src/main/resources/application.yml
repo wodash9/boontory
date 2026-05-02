@@ -32,3 +32,4 @@ boontory:
   frontend-origin-patterns: ${FRONTEND_ORIGIN_PATTERNS:http://localhost:5173,http://127.0.0.1:5173,https://boontory.etharlia.com}
   security:
     keycloak-client-id: ${KEYCLOAK_CLIENT_ID:boontory-frontend}
+    disable-auth: ${BOONTORY_DISABLE_AUTH:false}

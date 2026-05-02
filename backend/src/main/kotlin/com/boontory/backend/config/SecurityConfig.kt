@@ -18,12 +18,22 @@ class SecurityConfig {
     fun securityFilterChain(
         http: HttpSecurity,
         jwtAuthenticationConverter: JwtAuthenticationConverter,
+        @Value("\${boontory.security.disable-auth:false}") disableAuth: Boolean,
     ): SecurityFilterChain {
-        http
+        val base = http
             .csrf().disable()
             .cors(Customizer.withDefaults())
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and()
+
+        if (disableAuth) {
+            base
+                .authorizeRequests()
+                .anyRequest().permitAll()
+            return http.build()
+        }
+
+        base
             .authorizeRequests()
             .antMatchers("/api/**").access("isAuthenticated() and @jwtClientAccessEvaluator.hasBoontoryClient(authentication)")
             .anyRequest().permitAll()

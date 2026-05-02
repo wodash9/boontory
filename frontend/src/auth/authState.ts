@@ -102,7 +102,42 @@ export function createAuthRuntime(keycloak: KeycloakLike, options: AuthRuntimeOp
   }
 }
 
-type Runtime = ReturnType<typeof createAuthRuntime>
+type Runtime = ReturnType<typeof createAuthRuntime> | ReturnType<typeof createMockAuthRuntime>
+
+export function createMockAuthRuntime(username = 'boontory-test') {
+  const state = reactive<AuthSnapshot>({
+    ready: true,
+    authenticated: true,
+    username,
+    error: null,
+  })
+
+  return {
+    state: readonly(state),
+    async initializeAuth() {
+      state.ready = true
+      state.authenticated = true
+      state.username = username
+      state.error = null
+    },
+    isAuthenticated() {
+      return state.authenticated
+    },
+    async getAccessToken() {
+      return 'boontory-local-qa-token'
+    },
+    async login() {
+      state.ready = true
+      state.authenticated = true
+      state.username = username
+    },
+    async logout() {
+      state.ready = true
+      state.authenticated = false
+      state.username = null
+    },
+  }
+}
 
 const state = reactive<AuthSnapshot>({
   ready: false,
@@ -120,11 +155,25 @@ function syncState(next: AuthSnapshot) {
   state.error = next.error
 }
 
+function requireConfigValue(value: string | undefined, name: string): string {
+  if (!value) throw new Error(`${name} is required`)
+  return value
+}
+
 async function bootstrapAuth() {
   if (!runtime) {
     try {
       const config = readAuthConfig()
-      runtime = createAuthRuntime(createKeycloakClient(config), { ssoLogoutUrl: config.ssoLogoutUrl })
+      runtime = config.authMode === 'mock'
+        ? createMockAuthRuntime(config.mockUsername)
+        : createAuthRuntime(
+          createKeycloakClient({
+            url: requireConfigValue(config.url, 'VITE_KEYCLOAK_URL'),
+            realm: requireConfigValue(config.realm, 'VITE_KEYCLOAK_REALM'),
+            clientId: requireConfigValue(config.clientId, 'VITE_KEYCLOAK_CLIENT_ID'),
+          }),
+          { ssoLogoutUrl: config.ssoLogoutUrl },
+        )
     } catch (error) {
       syncState({
         ready: true,

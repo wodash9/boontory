@@ -88,7 +88,7 @@ class ApiEndpointsTest {
             .andExpect(jsonPath("$.bookCount").value(1))
 
         mockMvc.perform(delete("/api/shelves/{id}", shelfId))
-            .andExpect(status().isOk)
+            .andExpect(status().isNoContent)
 
         mockMvc.perform(get("/api/books/{id}", bookId))
             .andExpect(status().isOk)
@@ -205,7 +205,7 @@ class ApiEndpointsTest {
             .andExpect(jsonPath("$.readByYear.2024").doesNotExist())
 
         mockMvc.perform(delete("/api/books/{id}", duneId))
-            .andExpect(status().isOk)
+            .andExpect(status().isNoContent)
 
         mockMvc.perform(get("/api/books/{id}", duneId))
             .andExpect(status().isNotFound)

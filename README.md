@@ -58,6 +58,8 @@ This is the target auth rollout for Boontory:
 
 Use `frontend/.env.example` for local development. The production Docker build reads:
 
+- `VITE_AUTH_MODE` (`keycloak` in production; `mock` only for local QA)
+- `VITE_AUTH_MOCK_USERNAME` (only used when `VITE_AUTH_MODE=mock`)
 - `VITE_KEYCLOAK_URL`
 - `VITE_KEYCLOAK_REALM`
 - `VITE_KEYCLOAK_CLIENT_ID`
@@ -70,6 +72,7 @@ Use `backend/.env.example` for local development. The backend runtime reads:
 - `KEYCLOAK_ISSUER_URI`
 - `FRONTEND_ORIGIN_PATTERNS`
 - `BOONTORY_DB_PATH`
+- `BOONTORY_DISABLE_AUTH` (`false` in production; `true` only for local browser QA)
 
 ### Logout behavior (target state)
 

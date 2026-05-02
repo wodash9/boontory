@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { createAuthRuntime } from '../../src/auth/authState'
+import { createAuthRuntime, createMockAuthRuntime } from '../../src/auth/authState'
 
 function createKeycloakStub(overrides: Partial<any> = {}) {
   return {
@@ -93,5 +93,16 @@ describe('createAuthRuntime', () => {
 
     expect(keycloak.logout).toHaveBeenCalledTimes(1)
     expect(keycloak.logout).toHaveBeenCalledWith({ redirectUri: window.location.origin })
+  })
+
+  it('provides a local mock runtime for browser QA without Keycloak', async () => {
+    const runtime = createMockAuthRuntime('qa-reader')
+
+    await runtime.initializeAuth()
+
+    expect(runtime.state.ready).toBe(true)
+    expect(runtime.state.authenticated).toBe(true)
+    expect(runtime.state.username).toBe('qa-reader')
+    await expect(runtime.getAccessToken()).resolves.toBe('boontory-local-qa-token')
   })
 })

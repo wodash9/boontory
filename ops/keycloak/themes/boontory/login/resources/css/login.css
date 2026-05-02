@@ -1,0 +1,352 @@
+/* Boontory Keycloak login theme.
+   Designed to style the stock Keycloak login pages without changing OIDC logic. */
+
+:root {
+  --bt-surface: rgba(255, 255, 255, 0.9);
+  --bt-surface-strong: #ffffff;
+  --bt-surface-muted: #f7f1e8;
+  --bt-border: rgba(120, 53, 15, 0.14);
+  --bt-text: #292524;
+  --bt-text-soft: #78716c;
+  --bt-accent: #b45309;
+  --bt-accent-strong: #92400e;
+  --bt-accent-soft: #fef3c7;
+  --bt-success: #166534;
+  --bt-danger: #b91c1c;
+  --bt-shadow: 0 24px 70px rgba(120, 53, 15, 0.14);
+  --bt-radius: 32px;
+  --bt-font: Inter, "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html,
+body,
+.login-pf,
+.login-pf body {
+  min-height: 100%;
+}
+
+body,
+.login-pf body {
+  color: var(--bt-text);
+  font-family: var(--bt-font);
+  background:
+    radial-gradient(circle at top, rgba(253, 224, 71, 0.24), transparent 32%),
+    linear-gradient(180deg, #fef7ed 0%, #fffdf8 100%) !important;
+}
+
+.login-pf-page {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.92fr) minmax(320px, 440px);
+  gap: 42px;
+  align-items: center;
+  width: min(1080px, calc(100% - 40px));
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+#kc-header {
+  align-self: center;
+  margin: 0;
+  color: var(--bt-text);
+}
+
+#kc-header-wrapper {
+  display: grid;
+  max-width: 520px;
+  padding: 0;
+  color: var(--bt-text);
+  font-size: 0;
+  letter-spacing: normal;
+  line-height: 1;
+  text-transform: none;
+  white-space: normal;
+}
+
+#kc-header-wrapper::before {
+  content: "B";
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  margin-bottom: 26px;
+  border-radius: 15px;
+  background: var(--bt-text);
+  color: #fff7ed;
+  box-shadow: var(--bt-shadow);
+  font-size: 1.35rem;
+  font-weight: 900;
+}
+
+#kc-header-wrapper::after {
+  content: "Boontory\A Sign in to your personal library. Scan, organize, and remember your books from one place.";
+  display: block;
+  color: var(--bt-text);
+  font-size: clamp(2.2rem, 5vw, 4.8rem);
+  font-weight: 900;
+  letter-spacing: -0.065em;
+  line-height: 0.92;
+  white-space: pre-line;
+}
+
+:lang(es) #kc-header-wrapper::after {
+  content: "Boontory\A Entra a tu biblioteca personal. Escanea, organiza y recuerda tus libros desde un solo lugar.";
+}
+
+#kc-content {
+  position: relative;
+}
+
+#kc-content::before,
+#kc-content::after {
+  position: absolute;
+  z-index: 0;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--bt-border);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 16px 40px rgba(120, 53, 15, 0.12);
+  color: var(--bt-accent-strong);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+#kc-content::before {
+  content: "ISBN ready";
+  top: -28px;
+  right: -22px;
+  padding: 10px 14px;
+}
+
+:lang(es) #kc-content::before {
+  content: "ISBN listo";
+}
+
+#kc-content::after {
+  content: "Shelves · notes · ratings";
+  bottom: -22px;
+  left: -28px;
+  padding: 10px 14px;
+}
+
+:lang(es) #kc-content::after {
+  content: "Estanterías · notas · ratings";
+}
+
+#kc-content-wrapper,
+.card-pf {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 34px;
+  border: 1px solid var(--bt-border);
+  border-radius: var(--bt-radius);
+  background: var(--bt-surface) !important;
+  box-shadow: var(--bt-shadow);
+  backdrop-filter: blur(18px);
+}
+
+#kc-content-wrapper::before,
+.card-pf::before {
+  content: "Boontory";
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  color: var(--bt-text);
+  font-size: 1.04rem;
+  font-weight: 900;
+}
+
+#kc-page-title,
+#kc-form-login .pf-v5-c-title,
+#kc-form-login .pf-c-title,
+.login-pf-header h1 {
+  margin: 0 0 8px;
+  color: var(--bt-text);
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+#kc-page-title::after {
+  content: "Use your account to continue to your personal library.";
+  display: block;
+  margin-top: 10px;
+  color: var(--bt-text-soft);
+  font-size: 0.98rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  line-height: 1.45;
+}
+
+:lang(es) #kc-page-title::after {
+  content: "Usa tu cuenta para continuar con tu biblioteca personal.";
+}
+
+#kc-form,
+#kc-form-wrapper,
+#kc-form-login {
+  margin-top: 24px;
+}
+
+label,
+.pf-c-form__label,
+.pf-v5-c-form__label {
+  color: var(--bt-text);
+  font-weight: 800;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+.pf-c-form-control,
+.pf-v5-c-form-control {
+  min-height: 48px;
+  border: 1px solid var(--bt-border) !important;
+  border-radius: 16px !important;
+  background: var(--bt-surface-strong) !important;
+  color: var(--bt-text) !important;
+  box-shadow: none !important;
+  font: inherit;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+.pf-c-form-control:focus,
+.pf-v5-c-form-control:focus {
+  border-color: rgba(180, 83, 9, 0.55) !important;
+  outline: 3px solid rgba(180, 83, 9, 0.14) !important;
+}
+
+#kc-form-buttons,
+.pf-c-form__group:last-child,
+.pf-v5-c-form__group:last-child {
+  margin-top: 22px;
+}
+
+#kc-login,
+input[type="submit"],
+button[type="submit"],
+.pf-c-button.pf-m-primary,
+.pf-v5-c-button.pf-m-primary {
+  min-height: 50px;
+  width: 100%;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: var(--bt-text) !important;
+  color: #fff7ed !important;
+  box-shadow: 0 18px 40px rgba(41, 37, 36, 0.22);
+  font-weight: 900;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+#kc-login:hover,
+input[type="submit"]:hover,
+button[type="submit"]:hover,
+.pf-c-button.pf-m-primary:hover,
+.pf-v5-c-button.pf-m-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 20px 44px rgba(41, 37, 36, 0.26);
+}
+
+a,
+#kc-form-options a,
+#kc-registration a,
+.pf-c-login__main-footer-links a,
+.pf-v5-c-login__main-footer-links a {
+  color: var(--bt-accent-strong) !important;
+  font-weight: 800;
+}
+
+#kc-info,
+#kc-registration,
+#kc-form-options,
+.pf-c-form__helper-text,
+.pf-v5-c-form__helper-text {
+  color: var(--bt-text-soft);
+}
+
+#input-error,
+.kc-feedback-text,
+.alert-error,
+.pf-c-alert.pf-m-danger,
+.pf-v5-c-alert.pf-m-danger {
+  color: var(--bt-danger) !important;
+}
+
+.alert,
+.pf-c-alert,
+.pf-v5-c-alert {
+  border: 1px solid var(--bt-border) !important;
+  border-radius: 18px !important;
+  background: var(--bt-surface-strong) !important;
+  box-shadow: none !important;
+}
+
+#kc-form-options,
+#kc-registration {
+  margin-top: 16px;
+}
+
+#kc-form-options .checkbox,
+.pf-c-check,
+.pf-v5-c-check {
+  color: var(--bt-text-soft);
+}
+
+.login-pf-page::after {
+  content: "Your shelves, notes, and ratings stay private.";
+  grid-column: 2;
+  max-width: 440px;
+  margin-top: -24px;
+  color: var(--bt-text-soft);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+:lang(es) .login-pf-page::after {
+  content: "Tus estanterías, notas y valoraciones se mantienen privadas.";
+}
+
+@media (max-width: 820px) {
+  .login-pf-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: min(100% - 28px, 460px);
+    gap: 20px;
+    padding: 28px 0;
+  }
+
+  #kc-header-wrapper::before {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 14px;
+  }
+
+  #kc-header-wrapper::after {
+    font-size: clamp(2rem, 12vw, 3rem);
+    text-align: center;
+  }
+
+  #kc-content-wrapper,
+  .card-pf {
+    width: 100%;
+    padding: 24px;
+    border-radius: 26px;
+  }
+
+  #kc-content::before,
+  #kc-content::after {
+    display: none;
+  }
+
+  .login-pf-page::after {
+    grid-column: auto;
+    margin-top: 0;
+  }
+}

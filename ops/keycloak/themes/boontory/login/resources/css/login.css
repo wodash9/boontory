@@ -1,11 +1,11 @@
 /* Boontory Keycloak login theme.
-   Designed to style the stock Keycloak login pages without changing OIDC logic. */
+   Fully custom native Keycloak login screen that mirrors the Boontory Vue app visual language. */
 
 :root {
-  --bt-surface: rgba(255, 255, 255, 0.9);
+  --bt-surface: rgba(255, 255, 255, 0.82);
   --bt-surface-strong: #ffffff;
   --bt-surface-muted: #f7f1e8;
-  --bt-border: rgba(120, 53, 15, 0.14);
+  --bt-border: rgba(120, 53, 15, 0.12);
   --bt-text: #292524;
   --bt-text-soft: #78716c;
   --bt-accent: #b45309;
@@ -13,198 +13,412 @@
   --bt-accent-soft: #fef3c7;
   --bt-success: #166534;
   --bt-danger: #b91c1c;
-  --bt-shadow: 0 24px 70px rgba(120, 53, 15, 0.14);
-  --bt-radius: 32px;
+  --bt-warning: #b45309;
+  --bt-shadow: 0 16px 40px rgba(120, 53, 15, 0.12);
+  --bt-shadow-strong: 0 28px 80px rgba(120, 53, 15, 0.18);
   --bt-font: Inter, "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html,
-body,
-.login-pf,
-.login-pf body {
+body {
   min-height: 100%;
 }
 
-body,
+body.boontory-login,
 .login-pf body {
+  min-height: 100vh;
+  margin: 0;
   color: var(--bt-text);
   font-family: var(--bt-font);
+  line-height: 1.5;
   background:
     radial-gradient(circle at top, rgba(253, 224, 71, 0.24), transparent 32%),
     linear-gradient(180deg, #fef7ed 0%, #fffdf8 100%) !important;
+  color-scheme: light;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.login-pf-page {
-  display: grid;
-  grid-template-columns: minmax(280px, 0.92fr) minmax(320px, 440px);
-  gap: 42px;
-  align-items: center;
-  width: min(1080px, calc(100% - 40px));
-  min-height: 100vh;
-  margin: 0 auto;
-  padding: 48px 0;
-}
-
-#kc-header {
-  align-self: center;
-  margin: 0;
-  color: var(--bt-text);
-}
-
-#kc-header-wrapper {
-  display: grid;
-  max-width: 520px;
-  padding: 0;
-  color: var(--bt-text);
-  font-size: 0;
-  letter-spacing: normal;
-  line-height: 1;
-  text-transform: none;
-  white-space: normal;
-}
-
-#kc-header-wrapper::before {
-  content: "B";
-  display: grid;
-  width: 48px;
-  height: 48px;
-  place-items: center;
-  margin-bottom: 26px;
-  border-radius: 15px;
-  background: var(--bt-text);
-  color: #fff7ed;
-  box-shadow: var(--bt-shadow);
-  font-size: 1.35rem;
-  font-weight: 900;
-}
-
-#kc-header-wrapper::after {
-  content: "Boontory\A Sign in to your personal library. Scan, organize, and remember your books from one place.";
-  display: block;
-  color: var(--bt-text);
-  font-size: clamp(2.2rem, 5vw, 4.8rem);
-  font-weight: 900;
-  letter-spacing: -0.065em;
-  line-height: 0.92;
-  white-space: pre-line;
-}
-
-:lang(es) #kc-header-wrapper::after {
-  content: "Boontory\A Entra a tu biblioteca personal. Escanea, organiza y recuerda tus libros desde un solo lugar.";
-}
-
-#kc-content {
-  position: relative;
-}
-
-#kc-content::before,
-#kc-content::after {
-  position: absolute;
+body.boontory-login::before,
+body.boontory-login::after {
+  position: fixed;
   z-index: 0;
-  display: inline-flex;
-  align-items: center;
-  border: 1px solid var(--bt-border);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.86);
-  box-shadow: 0 16px 40px rgba(120, 53, 15, 0.12);
-  color: var(--bt-accent-strong);
-  font-size: 0.82rem;
+  pointer-events: none;
+  content: "";
+}
+
+body.boontory-login::before {
+  inset: 0;
+  background:
+    linear-gradient(rgba(120, 53, 15, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 53, 15, 0.035) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(180deg, rgba(0,0,0,0.65), transparent 74%);
+}
+
+body.boontory-login::after {
+  right: -140px;
+  bottom: -160px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(180, 83, 9, 0.12), transparent 66%);
+}
+
+a {
+  color: var(--bt-accent-strong) !important;
+  text-decoration: none;
   font-weight: 800;
 }
 
-#kc-content::before {
-  content: "ISBN ready";
-  top: -28px;
-  right: -22px;
-  padding: 10px 14px;
+a:hover {
+  color: var(--bt-accent) !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
-:lang(es) #kc-content::before {
-  content: "ISBN listo";
+button,
+input,
+select,
+textarea {
+  font: inherit;
 }
 
-#kc-content::after {
-  content: "Shelves · notes · ratings";
-  bottom: -22px;
-  left: -28px;
-  padding: 10px 14px;
-}
-
-:lang(es) #kc-content::after {
-  content: "Estanterías · notas · ratings";
-}
-
-#kc-content-wrapper,
-.card-pf {
+.boontory-page {
   position: relative;
   z-index: 1;
-  margin: 0;
-  padding: 34px;
-  border: 1px solid var(--bt-border);
-  border-radius: var(--bt-radius);
-  background: var(--bt-surface) !important;
-  box-shadow: var(--bt-shadow);
-  backdrop-filter: blur(18px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(340px, 440px);
+  gap: 54px;
+  align-items: center;
+  width: min(1180px, calc(100% - 40px));
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 28px 0 72px;
 }
 
-#kc-content-wrapper::before,
-.card-pf::before {
-  content: "Boontory";
+.boontory-brand-panel,
+.boontory-auth-panel,
+.boontory-product-card,
+.boontory-auth-card {
+  min-width: 0;
+}
+
+.boontory-brand-row {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  margin-bottom: 72px;
+  font-weight: 800;
+}
+
+.boontory-mark {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--bt-text);
+  color: #fff7ed;
+  box-shadow: var(--bt-shadow);
+  font-weight: 900;
+}
+
+.boontory-wordmark {
+  letter-spacing: -0.02em;
+}
+
+.boontory-copy {
+  max-width: 760px;
+}
+
+.boontory-eyebrow {
+  margin: 0 0 12px;
+  color: var(--bt-accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.boontory-copy h1 {
+  max-width: 820px;
+  margin: 0 0 22px;
+  color: var(--bt-text);
+  font-size: clamp(3.35rem, 10vw, 7.1rem);
+  font-weight: 900;
+  line-height: 0.86;
+  letter-spacing: -0.075em;
+}
+
+.boontory-subheadline {
+  max-width: 690px;
+  margin: 0;
+  color: var(--bt-text-soft);
+  font-size: clamp(1.05rem, 2.3vw, 1.28rem);
+}
+
+.boontory-product-card {
+  position: relative;
+  width: min(100%, 480px);
+  margin-top: 38px;
+}
+
+.boontory-phone-shell {
+  min-height: 510px;
+  padding: 18px;
+  border: 1px solid rgba(41, 37, 36, 0.08);
+  border-radius: 42px;
+  background: #1c1917;
+  box-shadow: 0 30px 80px rgba(41, 37, 36, 0.24);
+}
+
+.boontory-phone-topbar {
+  display: flex;
+  gap: 6px;
   margin-bottom: 18px;
+  padding: 4px 8px 0;
+}
+
+.boontory-phone-topbar span {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 247, 237, 0.52);
+}
+
+.boontory-scan-panel,
+.boontory-book-preview {
+  border-radius: 28px;
+  background: #fff7ed;
+}
+
+.boontory-scan-panel {
+  display: grid;
+  place-items: center;
+  min-height: 250px;
+  padding: 24px;
+}
+
+.boontory-scan-panel p {
+  margin: 18px 0 0;
+  color: var(--bt-accent-strong);
+  font-weight: 800;
+}
+
+.boontory-scan-frame {
+  position: relative;
+  width: min(100%, 260px);
+  height: 150px;
+  overflow: hidden;
+  border: 3px solid var(--bt-accent);
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(180, 83, 9, 0.08), rgba(253, 230, 138, 0.18));
+}
+
+.boontory-scan-frame::before,
+.boontory-scan-frame::after {
+  position: absolute;
+  inset: 18px;
+  border-top: 4px solid rgba(41, 37, 36, 0.72);
+  border-bottom: 4px solid rgba(41, 37, 36, 0.72);
+  content: "";
+}
+
+.boontory-scan-frame::after {
+  inset: 44px 38px;
+}
+
+.boontory-scan-frame span {
+  position: absolute;
+  top: 0;
+  left: 12%;
+  z-index: 2;
+  width: 76%;
+  height: 3px;
+  border-radius: 999px;
+  background: #166534;
+  box-shadow: 0 0 18px rgba(22, 101, 52, 0.36);
+  animation: boontory-scan 2.6s ease-in-out infinite;
+}
+
+.boontory-book-preview {
+  display: grid;
+  grid-template-columns: 74px 1fr;
+  gap: 14px;
+  align-items: center;
+  margin-top: 16px;
+  padding: 16px;
+}
+
+.boontory-cover {
+  display: grid;
+  height: 96px;
+  place-items: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #92400e, #f59e0b);
+  color: #fff7ed;
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.boontory-book-preview strong,
+.boontory-book-preview span {
+  display: block;
+}
+
+.boontory-book-preview strong {
+  color: var(--bt-text);
+  font-size: 1.1rem;
+}
+
+.boontory-book-preview span {
+  color: var(--bt-text-soft);
+  font-size: 0.88rem;
+}
+
+.boontory-floating-card {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--bt-border);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: var(--bt-shadow);
+  color: var(--bt-accent-strong);
+  font-size: 0.84rem;
+  font-weight: 900;
+  backdrop-filter: blur(16px);
+}
+
+.boontory-floating-card--top {
+  top: 72px;
+  right: -22px;
+}
+
+.boontory-floating-card--bottom {
+  bottom: 64px;
+  left: -26px;
+}
+
+.boontory-auth-panel {
+  display: grid;
+  gap: 14px;
+}
+
+.boontory-auth-card,
+.card-pf,
+#kc-content-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 34px;
+  border: 1px solid var(--bt-border);
+  border-radius: 32px;
+  background: var(--bt-surface) !important;
+  box-shadow: var(--bt-shadow-strong);
+  backdrop-filter: blur(18px);
+}
+
+.boontory-auth-card::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.68), transparent 42%);
+  content: "";
+}
+
+.boontory-auth-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.boontory-auth-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.boontory-auth-brand img {
+  width: 48px;
+  height: 48px;
+  border-radius: 15px;
+  box-shadow: var(--bt-shadow);
+}
+
+.boontory-auth-brand p,
+.boontory-auth-brand span {
+  display: block;
+  margin: 0;
+}
+
+.boontory-auth-brand p {
   color: var(--bt-text);
   font-size: 1.04rem;
   font-weight: 900;
 }
 
-#kc-page-title,
-#kc-form-login .pf-v5-c-title,
-#kc-form-login .pf-c-title,
-.login-pf-header h1 {
-  margin: 0 0 8px;
-  color: var(--bt-text);
-  font-size: clamp(1.7rem, 3vw, 2.35rem);
-  font-weight: 900;
-  letter-spacing: -0.045em;
-  line-height: 1;
-}
-
-#kc-page-title::after {
-  content: "Use your account to continue to your personal library.";
-  display: block;
-  margin-top: 10px;
+.boontory-auth-brand span {
   color: var(--bt-text-soft);
-  font-size: 0.98rem;
-  font-weight: 500;
-  letter-spacing: normal;
-  line-height: 1.45;
+  font-size: 0.9rem;
 }
 
-:lang(es) #kc-page-title::after {
-  content: "Usa tu cuenta para continuar con tu biblioteca personal.";
+.boontory-auth-header {
+  margin-bottom: 24px;
 }
 
+#kc-page-title,
+.boontory-auth-header h2 {
+  margin: 0;
+  color: var(--bt-text);
+  font-size: clamp(1.85rem, 4vw, 2.65rem);
+  font-weight: 900;
+  line-height: 0.96;
+  letter-spacing: -0.055em;
+}
+
+.boontory-form-area,
 #kc-form,
 #kc-form-wrapper,
-#kc-form-login {
-  margin-top: 24px;
+.boontory-form {
+  display: grid;
+  gap: 18px;
 }
 
+.boontory-field,
+.pf-c-form__group,
+.pf-v5-c-form__group {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.boontory-label,
 label,
 .pf-c-form__label,
 .pf-v5-c-form__label {
-  color: var(--bt-text);
+  color: var(--bt-text) !important;
+  font-size: 0.92rem;
   font-weight: 800;
 }
 
+.boontory-input,
 input[type="text"],
 input[type="password"],
 input[type="email"],
 .pf-c-form-control,
 .pf-v5-c-form-control {
-  min-height: 48px;
+  min-height: 50px;
+  width: 100%;
   border: 1px solid var(--bt-border) !important;
   border-radius: 16px !important;
   background: var(--bt-surface-strong) !important;
@@ -213,6 +427,13 @@ input[type="email"],
   font: inherit;
 }
 
+.boontory-input,
+.pf-c-form-control,
+.pf-v5-c-form-control {
+  padding: 0 14px !important;
+}
+
+.boontory-input:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
@@ -222,18 +443,76 @@ input[type="email"]:focus,
   outline: 3px solid rgba(180, 83, 9, 0.14) !important;
 }
 
-#kc-form-buttons,
-.pf-c-form__group:last-child,
-.pf-v5-c-form__group:last-child {
-  margin-top: 22px;
+.boontory-password-wrap,
+.pf-c-input-group,
+.pf-v5-c-input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
+.boontory-password-wrap .boontory-input {
+  padding-right: 54px !important;
+}
+
+.boontory-password-toggle,
+.pf-c-button.pf-m-control,
+.pf-v5-c-button.pf-m-control {
+  position: absolute;
+  right: 8px;
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 0 !important;
+  border-radius: 12px !important;
+  background: var(--bt-surface-muted) !important;
+  color: var(--bt-text-soft) !important;
+  cursor: pointer;
+}
+
+.boontory-password-toggle:hover,
+.pf-c-button.pf-m-control:hover,
+.pf-v5-c-button.pf-m-control:hover {
+  color: var(--bt-accent-strong) !important;
+}
+
+.boontory-form-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+  margin-top: 2px;
+  color: var(--bt-text-soft);
+  font-size: 0.92rem;
+}
+
+.boontory-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--bt-text-soft) !important;
+  font-weight: 700;
+}
+
+.boontory-check input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--bt-accent);
+}
+
+.boontory-submit-row,
+#kc-form-buttons {
+  margin-top: 4px;
+}
+
+.boontory-submit,
 #kc-login,
 input[type="submit"],
 button[type="submit"],
 .pf-c-button.pf-m-primary,
 .pf-v5-c-button.pf-m-primary {
-  min-height: 50px;
+  min-height: 52px;
   width: 100%;
   border: 0 !important;
   border-radius: 999px !important;
@@ -244,6 +523,7 @@ button[type="submit"],
   transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
+.boontory-submit:hover,
 #kc-login:hover,
 input[type="submit"]:hover,
 button[type="submit"]:hover,
@@ -253,15 +533,100 @@ button[type="submit"]:hover,
   box-shadow: 0 20px 44px rgba(41, 37, 36, 0.26);
 }
 
-a,
-#kc-form-options a,
-#kc-registration a,
-.pf-c-login__main-footer-links a,
-.pf-v5-c-login__main-footer-links a {
-  color: var(--bt-accent-strong) !important;
-  font-weight: 800;
+.boontory-submit:disabled,
+#kc-login:disabled {
+  cursor: wait;
+  opacity: 0.72;
 }
 
+.boontory-try-another-way {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.boontory-try-another-way button,
+#try-another-way {
+  border: 0;
+  background: transparent;
+  color: var(--bt-accent-strong);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 900;
+}
+
+.boontory-try-another-way button:hover,
+#try-another-way:hover {
+  color: var(--bt-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.boontory-attempted-user {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: 14px;
+  color: var(--bt-text-soft);
+  font-size: 0.92rem;
+}
+
+#kc-attempted-username {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  padding: 6px 11px;
+  border: 1px solid var(--bt-border);
+  border-radius: 999px;
+  background: var(--bt-surface-muted);
+  color: var(--bt-text);
+  font-weight: 900;
+}
+
+.boontory-input-error,
+#input-error,
+.kc-feedback-text,
+.alert-error,
+.pf-c-alert.pf-m-danger,
+.pf-v5-c-alert.pf-m-danger {
+  color: var(--bt-danger) !important;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.boontory-alert,
+.alert,
+.pf-c-alert,
+.pf-v5-c-alert {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin: 0 0 20px;
+  padding: 12px 14px;
+  border: 1px solid var(--bt-border) !important;
+  border-radius: 18px !important;
+  background: var(--bt-surface-strong) !important;
+  box-shadow: none !important;
+}
+
+.boontory-alert-dot {
+  flex: 0 0 auto;
+  width: 9px;
+  height: 9px;
+  margin-top: 7px;
+  border-radius: 999px;
+  background: var(--bt-warning);
+}
+
+.boontory-alert--error .boontory-alert-dot {
+  background: var(--bt-danger);
+}
+
+.boontory-alert--success .boontory-alert-dot {
+  background: var(--bt-success);
+}
+
+.boontory-auth-info,
 #kc-info,
 #kc-registration,
 #kc-form-options,
@@ -270,83 +635,158 @@ a,
   color: var(--bt-text-soft);
 }
 
-#input-error,
-.kc-feedback-text,
-.alert-error,
-.pf-c-alert.pf-m-danger,
-.pf-v5-c-alert.pf-m-danger {
-  color: var(--bt-danger) !important;
+.boontory-auth-info {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--bt-border);
+  text-align: center;
 }
 
-.alert,
-.pf-c-alert,
-.pf-v5-c-alert {
-  border: 1px solid var(--bt-border) !important;
-  border-radius: 18px !important;
-  background: var(--bt-surface-strong) !important;
-  box-shadow: none !important;
-}
-
-#kc-form-options,
-#kc-registration {
-  margin-top: 16px;
-}
-
-#kc-form-options .checkbox,
-.pf-c-check,
-.pf-v5-c-check {
+.boontory-registration span {
   color: var(--bt-text-soft);
 }
 
-.login-pf-page::after {
-  content: "Your shelves, notes, and ratings stay private.";
-  grid-column: 2;
+.boontory-social {
+  margin-top: 22px;
+}
+
+.boontory-divider {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 14px;
+  color: var(--bt-text-soft);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.boontory-divider::before,
+.boontory-divider::after {
+  flex: 1;
+  height: 1px;
+  background: var(--bt-border);
+  content: "";
+}
+
+.boontory-social-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.boontory-social-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 46px;
+  padding: 11px 14px;
+  border: 1px solid var(--bt-border);
+  border-radius: 16px;
+  background: var(--bt-surface-strong);
+  color: var(--bt-text) !important;
+  font-weight: 900;
+}
+
+.boontory-privacy-note {
   max-width: 440px;
-  margin-top: -24px;
+  margin: 0;
   color: var(--bt-text-soft);
   font-size: 0.9rem;
   text-align: center;
 }
 
-:lang(es) .login-pf-page::after {
-  content: "Tus estanterías, notas y valoraciones se mantienen privadas.";
+#kc-header,
+#kc-header-wrapper,
+.login-pf-page {
+  display: contents;
 }
 
-@media (max-width: 820px) {
-  .login-pf-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: min(100% - 28px, 460px);
-    gap: 20px;
-    padding: 28px 0;
+#kc-content,
+#kc-content-wrapper {
+  width: 100%;
+}
+
+#kc-locale,
+#kc-locale-wrapper {
+  color: var(--bt-text-soft);
+}
+
+@keyframes boontory-scan {
+  0%, 100% { transform: translateY(18px); }
+  50% { transform: translateY(126px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 960px) {
+  .boontory-page {
+    grid-template-columns: 1fr;
+    width: min(100% - 28px, 620px);
+    gap: 28px;
+    padding: 28px 0 48px;
   }
 
-  #kc-header-wrapper::before {
-    width: 40px;
-    height: 40px;
-    margin: 0 auto 14px;
-  }
-
-  #kc-header-wrapper::after {
-    font-size: clamp(2rem, 12vw, 3rem);
+  .boontory-brand-panel {
+    display: grid;
     text-align: center;
   }
 
-  #kc-content-wrapper,
-  .card-pf {
-    width: 100%;
+  .boontory-brand-row {
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+
+  .boontory-copy h1 {
+    font-size: clamp(2.7rem, 13vw, 4.8rem);
+  }
+
+  .boontory-product-card {
+    display: none;
+  }
+
+  .boontory-auth-panel {
+    justify-items: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .boontory-page {
+    width: min(100% - 24px, 460px);
+    padding: 22px 0 32px;
+  }
+
+  .boontory-brand-row {
+    margin-bottom: 22px;
+  }
+
+  .boontory-subheadline {
+    font-size: 1rem;
+  }
+
+  .boontory-auth-card,
+  .card-pf,
+  #kc-content-wrapper {
     padding: 24px;
     border-radius: 26px;
   }
 
-  #kc-content::before,
-  #kc-content::after {
-    display: none;
+  .boontory-form-options {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
-  .login-pf-page::after {
-    grid-column: auto;
-    margin-top: 0;
+  .boontory-privacy-note {
+    font-size: 0.84rem;
   }
 }

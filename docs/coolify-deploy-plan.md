@@ -15,10 +15,11 @@ This is the target rollout once the auth code lands in the Boontory app.
 ## Auth rollout
 
 - Keep Keycloak at `https://auth.etharlia.com`.
-- Install the Boontory login theme from `ops/keycloak/themes/boontory` into Keycloak before switching the client theme.
+- Install the fully custom Boontory login theme from `ops/keycloak/themes/boontory` into Keycloak before switching the client theme. The theme overrides the native Keycloak `template.ftl` and `login.ftl` while keeping OIDC/security flows intact.
 - Preferred Keycloak image path: build `ops/keycloak/Dockerfile.theme` and deploy that image for the Keycloak service, or mount `ops/keycloak/themes/boontory` at `/opt/keycloak/themes/boontory`.
-- Import/apply `ops/keycloak/etharlia-boontory-clients.json` in Keycloak before deploying oauth2-proxy.
+- Import/apply `ops/keycloak/etharlia-boontory-clients.json` in Keycloak before deploying oauth2-proxy, or preferably set only the `login_theme=boontory` client attribute manually on existing production clients.
 - The client import sets `login_theme=boontory` for both `boontory-frontend` and `oauth2-proxy` so both direct SPA login and edge-auth login use the same visual theme.
+- Operational runbook: `docs/boontory-keycloak-login-theme.md`.
 - Create a new oauth2-proxy app on `https://oauth.etharlia.com` using `quay.io/oauth2-proxy/oauth2-proxy:v7.15.1`.
 - Set `OAUTH2_PROXY_CLIENT_ID`, `OAUTH2_PROXY_CLIENT_SECRET`, and `OAUTH2_PROXY_COOKIE_SECRET` in Coolify for the oauth2-proxy app.
 - `OAUTH2_PROXY_CLIENT_SECRET` must come from the Keycloak `oauth2-proxy` confidential client credentials.

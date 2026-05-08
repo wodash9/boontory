@@ -106,7 +106,6 @@ textarea {
 
 .boontory-brand-panel,
 .boontory-auth-panel,
-.boontory-product-card,
 .boontory-auth-card {
   min-width: 0;
 }
@@ -163,152 +162,6 @@ textarea {
   margin: 0;
   color: var(--bt-text-soft);
   font-size: clamp(1.05rem, 2.3vw, 1.28rem);
-}
-
-.boontory-product-card {
-  position: relative;
-  width: min(100%, 430px);
-  margin-top: 30px;
-}
-
-.boontory-phone-shell {
-  min-height: 420px;
-  padding: 16px;
-  border: 1px solid rgba(41, 37, 36, 0.08);
-  border-radius: 38px;
-  background: #1c1917;
-  box-shadow: 0 24px 64px rgba(41, 37, 36, 0.22);
-}
-
-.boontory-phone-topbar {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 18px;
-  padding: 4px 8px 0;
-}
-
-.boontory-phone-topbar span {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: rgba(255, 247, 237, 0.52);
-}
-
-.boontory-scan-panel,
-.boontory-book-preview {
-  border-radius: 28px;
-  background: #fff7ed;
-}
-
-.boontory-scan-panel {
-  display: grid;
-  place-items: center;
-  min-height: 210px;
-  padding: 20px;
-}
-
-.boontory-scan-panel p {
-  margin: 18px 0 0;
-  color: var(--bt-accent-strong);
-  font-weight: 800;
-}
-
-.boontory-scan-frame {
-  position: relative;
-  width: min(100%, 230px);
-  height: 128px;
-  overflow: hidden;
-  border: 3px solid var(--bt-accent);
-  border-radius: 24px;
-  background: linear-gradient(135deg, rgba(180, 83, 9, 0.08), rgba(253, 230, 138, 0.18));
-}
-
-.boontory-scan-frame::before,
-.boontory-scan-frame::after {
-  position: absolute;
-  inset: 18px;
-  border-top: 4px solid rgba(41, 37, 36, 0.72);
-  border-bottom: 4px solid rgba(41, 37, 36, 0.72);
-  content: "";
-}
-
-.boontory-scan-frame::after {
-  inset: 44px 38px;
-}
-
-.boontory-scan-frame span {
-  position: absolute;
-  top: 0;
-  left: 12%;
-  z-index: 2;
-  width: 76%;
-  height: 3px;
-  border-radius: 999px;
-  background: #166534;
-  box-shadow: 0 0 18px rgba(22, 101, 52, 0.36);
-  animation: boontory-scan 2.6s ease-in-out infinite;
-}
-
-.boontory-book-preview {
-  display: grid;
-  grid-template-columns: 74px 1fr;
-  gap: 14px;
-  align-items: center;
-  margin-top: 16px;
-  padding: 16px;
-}
-
-.boontory-cover {
-  display: grid;
-  height: 96px;
-  place-items: center;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #92400e, #f59e0b);
-  color: #fff7ed;
-  font-size: 0.82rem;
-  font-weight: 900;
-  letter-spacing: 0.1em;
-}
-
-.boontory-book-preview strong,
-.boontory-book-preview span {
-  display: block;
-}
-
-.boontory-book-preview strong {
-  color: var(--bt-text);
-  font-size: 1.1rem;
-}
-
-.boontory-book-preview span {
-  color: var(--bt-text-soft);
-  font-size: 0.88rem;
-}
-
-.boontory-floating-card {
-  position: absolute;
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding: 10px 14px;
-  border: 1px solid var(--bt-border);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.88);
-  box-shadow: var(--bt-shadow);
-  color: var(--bt-accent-strong);
-  font-size: 0.84rem;
-  font-weight: 900;
-  backdrop-filter: blur(16px);
-}
-
-.boontory-floating-card--top {
-  top: 72px;
-  right: -22px;
-}
-
-.boontory-floating-card--bottom {
-  bottom: 64px;
-  left: -26px;
 }
 
 .boontory-auth-panel {
@@ -501,17 +354,6 @@ button[type="submit"],
   color: #fff7ed !important;
   box-shadow: 0 18px 40px rgba(41, 37, 36, 0.22);
   font-weight: 900;
-  transition: transform 160ms ease, box-shadow 160ms ease;
-}
-
-.boontory-submit:hover,
-#kc-login:hover,
-input[type="submit"]:hover,
-button[type="submit"]:hover,
-.pf-c-button.pf-m-primary:hover,
-.pf-v5-c-button.pf-m-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 20px 44px rgba(41, 37, 36, 0.26);
 }
 
 .boontory-submit:disabled,
@@ -694,22 +536,6 @@ button[type="submit"]:hover,
   color: var(--bt-text-soft);
 }
 
-@keyframes boontory-scan {
-  0%, 100% { transform: translateY(14px); }
-  50% { transform: translateY(106px); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
 @media (max-width: 960px) {
   .boontory-page {
     grid-template-columns: 1fr;
@@ -732,10 +558,6 @@ button[type="submit"]:hover,
     font-size: clamp(2.45rem, 11.5vw, 4.1rem);
     line-height: 0.94;
     letter-spacing: -0.06em;
-  }
-
-  .boontory-product-card {
-    display: none;
   }
 
   .boontory-auth-panel {

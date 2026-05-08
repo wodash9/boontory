@@ -77,24 +77,6 @@
         <p class="boontory-subheadline">${msg("boontoryLoginSubheadline")}</p>
       </div>
 
-      <div class="boontory-product-card" aria-hidden="true">
-        <div class="boontory-phone-shell">
-          <div class="boontory-phone-topbar"><span></span><span></span><span></span></div>
-          <div class="boontory-scan-panel">
-            <div class="boontory-scan-frame"><span></span></div>
-            <p>${msg("boontoryScanReady")}</p>
-          </div>
-          <div class="boontory-book-preview">
-            <div class="boontory-cover">DUNE</div>
-            <div>
-              <strong>Dune</strong>
-              <span>Frank Herbert · Read · ★★★★★</span>
-            </div>
-          </div>
-        </div>
-        <span class="boontory-floating-card boontory-floating-card--top">${msg("boontoryMetadataBadge")}</span>
-        <span class="boontory-floating-card boontory-floating-card--bottom">${msg("boontoryPrivateBadge")}</span>
-      </div>
     </section>
 
     <main class="boontory-auth-panel" aria-label="${msg('boontoryAuthPanelLabel')}">

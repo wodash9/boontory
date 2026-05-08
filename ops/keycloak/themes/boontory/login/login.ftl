@@ -24,11 +24,8 @@
 
             <div class="boontory-field ${properties.kcFormGroupClass!}">
               <label for="password" class="boontory-label ${properties.kcLabelClass!}">${msg("password")}</label>
-              <div class="boontory-password-wrap ${properties.kcInputGroup!}" dir="ltr">
+              <div class="boontory-password-wrap" dir="ltr">
                 <input tabindex="3" id="password" class="boontory-input ${properties.kcInputClass!}" name="password" type="password" autocomplete="current-password" aria-invalid="<#if messagesPerField.existsError('username','password')>true</#if>" />
-                <button class="boontory-password-toggle ${properties.kcFormPasswordVisibilityButtonClass!}" type="button" aria-label="${msg("showPassword")}" aria-controls="password" data-password-toggle tabindex="4" data-icon-show="${properties.kcFormPasswordVisibilityIconShow!}" data-icon-hide="${properties.kcFormPasswordVisibilityIconHide!}" data-label-show="${msg('showPassword')}" data-label-hide="${msg('hidePassword')}">
-                  <i class="${properties.kcFormPasswordVisibilityIconShow!}" aria-hidden="true"></i>
-                </button>
               </div>
 
               <#if usernameHidden?? && messagesPerField.existsError('username','password')>
@@ -66,7 +63,6 @@
         </#if>
       </div>
     </div>
-    <script type="module" src="${url.resourcesPath}/js/passwordVisibility.js"></script>
   <#elseif section = "info" >
     <#if realm.password && realm.registrationAllowed && !registrationDisabled??>
       <div id="kc-registration-container" class="boontory-registration">

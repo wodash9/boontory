@@ -1,5 +1,5 @@
 {
-  "realm": "etharlia",
+  "realm": "Boontory",
   "enabled": true,
   "roles": {
     "realm": [
@@ -34,8 +34,8 @@
       }
     },
     {
-      "clientId": "boontory-frontend",
-      "name": "boontory-frontend",
+      "clientId": "boontory_frontend",
+      "name": "boontory_frontend",
       "enabled": true,
       "protocol": "openid-connect",
       "publicClient": true,

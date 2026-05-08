@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component
 
 @Component("jwtClientAccessEvaluator")
 class JwtClientAccessEvaluator(
-    @Value("\${boontory.security.keycloak-client-id:boontory-frontend}")
+    @Value("\${boontory.security.keycloak-client-id:boontory_frontend}")
     private val keycloakClientId: String,
 ) {
     fun hasBoontoryClient(authentication: Authentication?): Boolean {

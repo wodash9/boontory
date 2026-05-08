@@ -10,7 +10,7 @@ function createKeycloakStub(overrides: Partial<any> = {}) {
     updateToken: vi.fn().mockResolvedValue(true),
     login: vi.fn().mockResolvedValue(undefined),
     logout: vi.fn().mockResolvedValue(undefined),
-    createLogoutUrl: vi.fn().mockReturnValue('https://auth.etharlia.com/realms/etharlia/protocol/openid-connect/logout?post_logout_redirect_uri=https%3A%2F%2Fboontory.etharlia.com'),
+    createLogoutUrl: vi.fn().mockReturnValue('https://auth.etharlia.com/realms/Boontory/protocol/openid-connect/logout?post_logout_redirect_uri=https%3A%2F%2Fboontory.etharlia.com'),
     ...overrides,
   }
 }
@@ -65,7 +65,7 @@ describe('createAuthRuntime', () => {
 
     await runtime.logout()
 
-    expect(redirectToUrl).toHaveBeenCalledWith('https://oauth.etharlia.com/oauth2/sign_out?rd=https%3A%2F%2Fauth.etharlia.com%2Frealms%2Fetharlia%2Fprotocol%2Fopenid-connect%2Flogout%3Fpost_logout_redirect_uri%3Dhttps%253A%252F%252Fboontory.etharlia.com')
+    expect(redirectToUrl).toHaveBeenCalledWith('https://oauth.etharlia.com/oauth2/sign_out?rd=https%3A%2F%2Fauth.etharlia.com%2Frealms%2FBoontory%2Fprotocol%2Fopenid-connect%2Flogout%3Fpost_logout_redirect_uri%3Dhttps%253A%252F%252Fboontory.etharlia.com')
     expect(keycloak.logout).not.toHaveBeenCalled()
     expect(runtime.state.authenticated).toBe(false)
   })
@@ -82,7 +82,7 @@ describe('createAuthRuntime', () => {
 
     await runtime.logout()
 
-    expect(redirectToUrl).toHaveBeenCalledWith('https://oauth.etharlia.com/oauth2/sign_out?foo=bar&rd=https%3A%2F%2Fauth.etharlia.com%2Frealms%2Fetharlia%2Fprotocol%2Fopenid-connect%2Flogout%3Fpost_logout_redirect_uri%3Dhttps%253A%252F%252Fboontory.etharlia.com')
+    expect(redirectToUrl).toHaveBeenCalledWith('https://oauth.etharlia.com/oauth2/sign_out?foo=bar&rd=https%3A%2F%2Fauth.etharlia.com%2Frealms%2FBoontory%2Fprotocol%2Fopenid-connect%2Flogout%3Fpost_logout_redirect_uri%3Dhttps%253A%252F%252Fboontory.etharlia.com')
   })
 
   it('falls back to keycloak logout when SSO logout url not set', async () => {

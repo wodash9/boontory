@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 import org.springframework.security.oauth2.jwt.Jwt
 
 class KeycloakJwtAuthoritiesConverterTest {
-    private val converter = KeycloakJwtAuthoritiesConverter("boontory-frontend")
+    private val converter = KeycloakJwtAuthoritiesConverter("boontory_frontend")
 
     @Test
     fun `maps realm and target client roles to spring authorities`() {
@@ -17,7 +17,7 @@ class KeycloakJwtAuthoritiesConverterTest {
             .claim(
                 "resource_access",
                 mapOf(
-                    "boontory-frontend" to mapOf("roles" to listOf("admin")),
+                    "boontory_frontend" to mapOf("roles" to listOf("admin")),
                 ),
             )
             .build()
@@ -68,7 +68,7 @@ class KeycloakJwtAuthoritiesConverterTest {
             .claim(
                 "resource_access",
                 mapOf(
-                    "boontory-frontend" to mapOf("roles" to listOf("user", "USER")),
+                    "boontory_frontend" to mapOf("roles" to listOf("user", "USER")),
                 ),
             )
             .build()

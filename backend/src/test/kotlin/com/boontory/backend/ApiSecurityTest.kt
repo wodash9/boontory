@@ -30,7 +30,7 @@ class ApiSecurityTest {
             get("/api/books").with(
                 jwt().jwt {
                     it.claim("realm_access", mapOf("roles" to listOf("user")))
-                    it.claim("azp", "boontory-frontend")
+                    it.claim("azp", "boontory_frontend")
                 },
             ),
         ).andExpect(status().isOk)
@@ -42,7 +42,7 @@ class ApiSecurityTest {
             get("/api/books").with(
                 jwt().jwt {
                     it.claim("realm_access", mapOf("roles" to listOf("user")))
-                    it.audience(listOf("boontory-frontend"))
+                    it.audience(listOf("boontory_frontend"))
                 },
             ),
         ).andExpect(status().isOk)

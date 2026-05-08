@@ -44,7 +44,7 @@
 ### Deployment and ops artifacts
 - Create: `frontend/.env.example` — concrete local/prod frontend auth env values
 - Create: `backend/.env.example` — concrete backend runtime env values
-- Create: `ops/keycloak/etharlia-boontory-clients.json` — repo-managed realm/client config artifact
+- Create: `ops/keycloak/boontory-clients.json` — repo-managed realm/client config artifact
 - Create: `ops/oauth2-proxy/oauth2-proxy.env.example` — repo-managed oauth2-proxy config example with placeholder secret keys clearly marked for Coolify-only storage
 - Create: `ops/coolify/boontory-forward-auth.labels` — reusable forward-auth label template plus live router example note
 - Modify: `Dockerfile` — pass Vite Keycloak env into the frontend build stage used by the live Coolify app
@@ -161,13 +161,13 @@ describe('readAuthConfig', () => {
     expect(
       readAuthConfig({
         VITE_KEYCLOAK_URL: ' https://auth.etharlia.com ',
-        VITE_KEYCLOAK_REALM: ' etharlia ',
-        VITE_KEYCLOAK_CLIENT_ID: ' boontory-frontend ',
+        VITE_KEYCLOAK_REALM: ' Boontory ',
+        VITE_KEYCLOAK_CLIENT_ID: ' boontory_frontend ',
       }),
     ).toEqual({
       url: 'https://auth.etharlia.com',
       realm: 'etharlia',
-      clientId: 'boontory-frontend',
+      clientId: 'boontory_frontend',
     })
   })
 
@@ -176,7 +176,7 @@ describe('readAuthConfig', () => {
       readAuthConfig({
         VITE_KEYCLOAK_URL: 'https://auth.etharlia.com',
         VITE_KEYCLOAK_REALM: '',
-        VITE_KEYCLOAK_CLIENT_ID: 'boontory-frontend',
+        VITE_KEYCLOAK_CLIENT_ID: 'boontory_frontend',
       }),
     ).toThrow('VITE_KEYCLOAK_REALM is required')
   })
@@ -980,7 +980,7 @@ class KeycloakJwtAuthoritiesConverterTest {
             .claim(
                 "resource_access",
                 mapOf(
-                    "boontory-frontend" to mapOf("roles" to listOf("admin")),
+                    "boontory_frontend" to mapOf("roles" to listOf("admin")),
                 ),
             )
             .build()
@@ -1034,7 +1034,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: ${KEYCLOAK_ISSUER_URI:https://auth.etharlia.com/realms/etharlia}
+          issuer-uri: ${KEYCLOAK_ISSUER_URI:https://auth.etharlia.com/realms/Boontory}
 
 server:
   port: ${SERVER_PORT:8080}
@@ -1146,7 +1146,7 @@ git commit -m "feat(backend): secure api with keycloak jwt"
 **Files:**
 - Create: `frontend/.env.example`
 - Create: `backend/.env.example`
-- Create: `ops/keycloak/etharlia-boontory-clients.json`
+- Create: `ops/keycloak/boontory-clients.json`
 - Create: `ops/oauth2-proxy/oauth2-proxy.env.example`
 - Create: `ops/coolify/boontory-forward-auth.labels`
 - Modify: `Dockerfile`
@@ -1155,7 +1155,7 @@ git commit -m "feat(backend): secure api with keycloak jwt"
 
 - [ ] **Step 1: Confirm the ops artifacts do not exist yet**
 
-Run: `cd /home/ventura/Documents/boontory && test -f ops/keycloak/etharlia-boontory-clients.json`
+Run: `cd /home/ventura/Documents/boontory && test -f ops/keycloak/boontory-clients.json`
 
 Expected: exit code `1` because the ops artifact tree does not exist yet.
 
@@ -1165,8 +1165,8 @@ Expected: exit code `1` because the ops artifact tree does not exist yet.
 # frontend/.env.example
 VITE_API_BASE_URL=
 VITE_KEYCLOAK_URL=https://auth.etharlia.com
-VITE_KEYCLOAK_REALM=etharlia
-VITE_KEYCLOAK_CLIENT_ID=boontory-frontend
+VITE_KEYCLOAK_REALM=Boontory
+VITE_KEYCLOAK_CLIENT_ID=boontory_frontend
 ```
 
 ```env
@@ -1174,13 +1174,13 @@ VITE_KEYCLOAK_CLIENT_ID=boontory-frontend
 SERVER_PORT=8080
 BOONTORY_DB_PATH=./data/boontory.db
 FRONTEND_ORIGIN_PATTERNS=http://localhost:5173,http://127.0.0.1:5173,https://boontory.etharlia.com
-KEYCLOAK_ISSUER_URI=https://auth.etharlia.com/realms/etharlia
+KEYCLOAK_ISSUER_URI=https://auth.etharlia.com/realms/Boontory
 ```
 
 ```json
-// ops/keycloak/etharlia-boontory-clients.json
+// ops/keycloak/boontory-clients.json
 {
-  "realm": "etharlia",
+  "realm": "Boontory",
   "enabled": true,
   "roles": {
     "realm": [
@@ -1206,8 +1206,8 @@ KEYCLOAK_ISSUER_URI=https://auth.etharlia.com/realms/etharlia
       ]
     },
     {
-      "clientId": "boontory-frontend",
-      "name": "boontory-frontend",
+      "clientId": "boontory_frontend",
+      "name": "boontory_frontend",
       "enabled": true,
       "protocol": "openid-connect",
       "publicClient": true,
@@ -1234,7 +1234,7 @@ KEYCLOAK_ISSUER_URI=https://auth.etharlia.com/realms/etharlia
 ```env
 # ops/oauth2-proxy/oauth2-proxy.env.example
 OAUTH2_PROXY_PROVIDER=oidc
-OAUTH2_PROXY_OIDC_ISSUER_URL=https://auth.etharlia.com/realms/etharlia
+OAUTH2_PROXY_OIDC_ISSUER_URL=https://auth.etharlia.com/realms/Boontory
 OAUTH2_PROXY_REDIRECT_URL=https://oauth.etharlia.com/oauth2/callback
 OAUTH2_PROXY_CLIENT_ID=oauth2-proxy
 OAUTH2_PROXY_CLIENT_SECRET=SET_IN_COOLIFY_ONLY
@@ -1273,8 +1273,8 @@ FROM node:25-alpine AS frontend-build
 WORKDIR /app
 ARG VITE_API_BASE_URL=
 ARG VITE_KEYCLOAK_URL=https://auth.etharlia.com
-ARG VITE_KEYCLOAK_REALM=etharlia
-ARG VITE_KEYCLOAK_CLIENT_ID=boontory-frontend
+ARG VITE_KEYCLOAK_REALM=Boontory
+ARG VITE_KEYCLOAK_CLIENT_ID=boontory_frontend
 ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
 ENV VITE_KEYCLOAK_URL=$VITE_KEYCLOAK_URL
 ENV VITE_KEYCLOAK_REALM=$VITE_KEYCLOAK_REALM
@@ -1301,7 +1301,7 @@ ENTRYPOINT ["java", "-jar", "/app/app.jar"]
 
 - [ ] **Step 4: Validate the new artifacts and the production build path**
 
-Run: `cd /home/ventura/Documents/boontory && python3 -c "import json, pathlib; json.loads(pathlib.Path('ops/keycloak/etharlia-boontory-clients.json').read_text())" && rg "oauth.etharlia.com" ops/coolify/boontory-forward-auth.labels && docker build --build-arg VITE_KEYCLOAK_URL=https://auth.etharlia.com --build-arg VITE_KEYCLOAK_REALM=etharlia --build-arg VITE_KEYCLOAK_CLIENT_ID=boontory-frontend -t boontory-auth .`
+Run: `cd /home/ventura/Documents/boontory && python3 -c "import json, pathlib; json.loads(pathlib.Path('ops/keycloak/boontory-clients.json').read_text())" && rg "oauth.etharlia.com" ops/coolify/boontory-forward-auth.labels && docker build --build-arg VITE_KEYCLOAK_URL=https://auth.etharlia.com --build-arg VITE_KEYCLOAK_REALM=Boontory --build-arg VITE_KEYCLOAK_CLIENT_ID=boontory_frontend -t boontory-auth .`
 
 Expected:
 - the Python command exits `0`
@@ -1317,7 +1317,7 @@ Expected:
 This is the target auth rollout for Boontory:
 
 1. `oauth2-proxy` on `https://oauth.etharlia.com` protects public `*.etharlia.com` hosts at the Traefik edge.
-2. The Vue app uses `keycloak-js` with the `boontory-frontend` public client so API calls carry a bearer token once the app auth slice is deployed.
+2. The Vue app uses `keycloak-js` with the `boontory_frontend` public client so API calls carry a bearer token once the app auth slice is deployed.
 
 ### Frontend env
 
@@ -1355,7 +1355,7 @@ This is the target rollout once the auth code lands in the Boontory app.
 ## Auth rollout
 
 - Keep Keycloak at `https://auth.etharlia.com`.
-- Import or apply `ops/keycloak/etharlia-boontory-clients.json` so the `oauth2-proxy` and `boontory-frontend` clients exist before rollout.
+- Import or apply `ops/keycloak/boontory-clients.json` so the `oauth2-proxy` and `boontory_frontend` clients exist before rollout.
 - Create a new oauth2-proxy app on `https://oauth.etharlia.com` using `quay.io/oauth2-proxy/oauth2-proxy:v7.15.1`.
 - Set `OAUTH2_PROXY_CLIENT_ID`, `OAUTH2_PROXY_CLIENT_SECRET`, and `OAUTH2_PROXY_COOKIE_SECRET` in Coolify for the oauth2-proxy app. Use the Keycloak confidential client secret for `oauth2-proxy`, and generate `OAUTH2_PROXY_COOKIE_SECRET` as a 32-byte base64 value.
 - Add the labels from `ops/coolify/boontory-forward-auth.labels` to the Boontory app custom labels, replacing `<ROUTER_ID>` with the live router id.
@@ -1367,7 +1367,7 @@ This is the target rollout once the auth code lands in the Boontory app.
 - [ ] **Step 6: Commit**
 
 ```bash
-git add Dockerfile README.md docs/coolify-deploy-plan.md frontend/.env.example backend/.env.example ops/keycloak/etharlia-boontory-clients.json ops/oauth2-proxy/oauth2-proxy.env.example ops/coolify/boontory-forward-auth.labels
+git add Dockerfile README.md docs/coolify-deploy-plan.md frontend/.env.example backend/.env.example ops/keycloak/boontory-clients.json ops/oauth2-proxy/oauth2-proxy.env.example ops/coolify/boontory-forward-auth.labels
 
 git commit -m "build(docs): add auth deployment config"
 ```
@@ -1387,11 +1387,11 @@ Use the Keycloak admin console on `https://auth.etharlia.com/admin/`.
 
 Apply these exact values:
 
-- Realm: `etharlia`
+- Realm: `Boontory`
 - Realm role `user`
 - Realm role `admin`
 
-Then import the client settings from `ops/keycloak/etharlia-boontory-clients.json`.
+Then import the client settings from `ops/keycloak/boontory-clients.json`.
 
 - [ ] **Step 2: Create the `oauth2-proxy` confidential client secret and copy it into Coolify**
 
@@ -1426,12 +1426,12 @@ Set these env vars from `ops/oauth2-proxy/oauth2-proxy.env.example`, plus three 
 On app `p7naj0uvggxjs36fifqgsyuh`, add build-time env:
 
 - `VITE_KEYCLOAK_URL=https://auth.etharlia.com`
-- `VITE_KEYCLOAK_REALM=etharlia`
-- `VITE_KEYCLOAK_CLIENT_ID=boontory-frontend`
+- `VITE_KEYCLOAK_REALM=Boontory`
+- `VITE_KEYCLOAK_CLIENT_ID=boontory_frontend`
 
 Add runtime env:
 
-- `KEYCLOAK_ISSUER_URI=https://auth.etharlia.com/realms/etharlia`
+- `KEYCLOAK_ISSUER_URI=https://auth.etharlia.com/realms/Boontory`
 - `FRONTEND_ORIGIN_PATTERNS=http://localhost:5173,http://127.0.0.1:5173,https://boontory.etharlia.com`
 - `BOONTORY_DB_PATH=/app/data/boontory.db`
 
@@ -1484,7 +1484,7 @@ Document these exact facts in the implementation summary:
 - `cd frontend && npm run test`
 - `cd frontend && npm run build`
 - `cd backend && ./gradlew test`
-- `cd /home/ventura/Documents/boontory && docker build --build-arg VITE_KEYCLOAK_URL=https://auth.etharlia.com --build-arg VITE_KEYCLOAK_REALM=etharlia --build-arg VITE_KEYCLOAK_CLIENT_ID=boontory-frontend -t boontory-auth .`
+- `cd /home/ventura/Documents/boontory && docker build --build-arg VITE_KEYCLOAK_URL=https://auth.etharlia.com --build-arg VITE_KEYCLOAK_REALM=Boontory --build-arg VITE_KEYCLOAK_CLIENT_ID=boontory_frontend -t boontory-auth .`
 - `curl -I https://oauth.etharlia.com/ping`
 - `curl -I https://boontory.etharlia.com`
 - Browser check: login on Boontory, then open `hub.etharlia.com`, then sign out and verify a new login is required

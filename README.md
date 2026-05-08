@@ -41,8 +41,8 @@ The Vite dev server runs on `http://localhost:5173` and proxies `/api` to the ba
 ```bash
 docker build \
   --build-arg VITE_KEYCLOAK_URL=https://auth.etharlia.com \
-  --build-arg VITE_KEYCLOAK_REALM=etharlia \
-  --build-arg VITE_KEYCLOAK_CLIENT_ID=boontory-frontend \
+  --build-arg VITE_KEYCLOAK_REALM=Boontory \
+  --build-arg VITE_KEYCLOAK_CLIENT_ID=boontory_frontend \
   --build-arg VITE_SSO_LOGOUT_URL=https://oauth.etharlia.com/oauth2/sign_out \
   -t boontory-auth .
 ```
@@ -52,7 +52,7 @@ docker build \
 This is the target auth rollout for Boontory:
 
 1. `oauth2-proxy` on `https://oauth.etharlia.com` protects public `*.etharlia.com` hosts at the Traefik edge.
-2. The Vue app uses `keycloak-js` with the `boontory-frontend` public client so API calls carry a bearer token once the app auth slice is deployed.
+2. The Vue app uses `keycloak-js` with the `boontory_frontend` public client so API calls carry a bearer token once the app auth slice is deployed.
 
 ### Frontend env
 

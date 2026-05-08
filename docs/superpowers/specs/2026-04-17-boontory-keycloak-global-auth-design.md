@@ -64,7 +64,7 @@ Requirements:
 
 Create one realm:
 
-- Realm: `etharlia`
+- Realm: `Boontory`
 
 Clients:
 
@@ -73,7 +73,7 @@ Clients:
    - Redirect URI: `https://oauth.etharlia.com/oauth2/callback`
    - Purpose: browser SSO session at the proxy layer
 
-2. `boontory-frontend`
+2. `boontory_frontend`
    - Type: public
    - Flow: Authorization Code + PKCE
    - Redirect URIs:
@@ -209,7 +209,7 @@ Frontend env:
 
 Backend env:
 
-- issuer URI: `https://auth.etharlia.com/realms/etharlia`
+- issuer URI: `https://auth.etharlia.com/realms/Boontory`
 - allowed frontend origin patterns for local dev plus `https://boontory.etharlia.com`
 
 oauth2-proxy env:

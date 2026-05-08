@@ -40,7 +40,7 @@ The screen mirrors the Boontory app/landing theme:
 
 A new client is not required if Boontory continues using the existing client:
 
-- Public SPA client: `boontory-frontend`
+- Public SPA client: `boontory_frontend`
 - Optional edge-auth client: `oauth2-proxy`
 
 Both should have the client attribute:
@@ -53,7 +53,7 @@ Both should have the client attribute:
 }
 ```
 
-The repo file `ops/keycloak/etharlia-boontory-clients.json` already includes that attribute. In production, prefer setting only this attribute manually or via targeted admin automation instead of blindly importing the full JSON over an existing realm.
+The repo file `ops/keycloak/boontory-clients.json` already includes that attribute. In production, prefer setting only this attribute manually or via targeted admin automation instead of blindly importing the full JSON over an existing realm.
 
 ## Ventura action required
 
@@ -62,7 +62,7 @@ The repo file `ops/keycloak/etharlia-boontory-clients.json` already includes tha
    - Option B: mount/copy `ops/keycloak/themes/boontory` to `/opt/keycloak/themes/boontory`.
 2. Restart Keycloak or clear the theme cache so the theme is loaded.
 3. In Keycloak Admin Console, set client attribute `login_theme=boontory` on:
-   - `boontory-frontend`
+   - `boontory_frontend`
    - `oauth2-proxy`, if Boontory is protected through oauth2-proxy before the SPA loads.
 4. Verify while logged out:
    - open `https://boontory.etharlia.com`;

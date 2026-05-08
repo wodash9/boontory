@@ -47,7 +47,7 @@ class SecurityConfig {
 
     @Bean
     fun keycloakJwtAuthoritiesConverter(
-        @Value("\${boontory.security.keycloak-client-id:boontory-frontend}") keycloakClientId: String,
+        @Value("\${boontory.security.keycloak-client-id:boontory_frontend}") keycloakClientId: String,
     ): Converter<Jwt, Collection<GrantedAuthority>> = KeycloakJwtAuthoritiesConverter(keycloakClientId)
 
     @Bean

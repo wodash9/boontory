@@ -6,16 +6,16 @@ describe('readAuthConfig', () => {
     expect(
       readAuthConfig({
         VITE_KEYCLOAK_URL: ' https://auth.etharlia.com ',
-        VITE_KEYCLOAK_REALM: ' etharlia ',
-        VITE_KEYCLOAK_CLIENT_ID: ' boontory-frontend ',
+        VITE_KEYCLOAK_REALM: ' Boontory ',
+        VITE_KEYCLOAK_CLIENT_ID: ' boontory_frontend ',
         VITE_SSO_LOGOUT_URL: ' https://oauth.etharlia.com/oauth2/sign_out ',
       }),
     ).toEqual({
       authMode: 'keycloak',
       mockUsername: 'boontory-test',
       url: 'https://auth.etharlia.com',
-      realm: 'etharlia',
-      clientId: 'boontory-frontend',
+      realm: 'Boontory',
+      clientId: 'boontory_frontend',
       ssoLogoutUrl: 'https://oauth.etharlia.com/oauth2/sign_out',
     })
   })
@@ -24,16 +24,16 @@ describe('readAuthConfig', () => {
     expect(
       readAuthConfig({
         VITE_KEYCLOAK_URL: 'https://auth.etharlia.com',
-        VITE_KEYCLOAK_REALM: 'etharlia',
-        VITE_KEYCLOAK_CLIENT_ID: 'boontory-frontend',
+        VITE_KEYCLOAK_REALM: 'Boontory',
+        VITE_KEYCLOAK_CLIENT_ID: 'boontory_frontend',
         VITE_SSO_LOGOUT_URL: '   ',
       }),
     ).toEqual({
       authMode: 'keycloak',
       mockUsername: 'boontory-test',
       url: 'https://auth.etharlia.com',
-      realm: 'etharlia',
-      clientId: 'boontory-frontend',
+      realm: 'Boontory',
+      clientId: 'boontory_frontend',
       ssoLogoutUrl: undefined,
     })
   })
@@ -43,7 +43,7 @@ describe('readAuthConfig', () => {
       readAuthConfig({
         VITE_KEYCLOAK_URL: 'https://auth.etharlia.com',
         VITE_KEYCLOAK_REALM: '',
-        VITE_KEYCLOAK_CLIENT_ID: 'boontory-frontend',
+        VITE_KEYCLOAK_CLIENT_ID: 'boontory_frontend',
       }),
     ).toThrow('VITE_KEYCLOAK_REALM is required')
   })

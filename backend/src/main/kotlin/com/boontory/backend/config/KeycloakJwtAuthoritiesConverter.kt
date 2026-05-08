@@ -6,7 +6,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority
 import org.springframework.security.oauth2.jwt.Jwt
 
 class KeycloakJwtAuthoritiesConverter(
-    private val clientId: String = "boontory-frontend",
+    private val clientId: String = "boontory_frontend",
 ) : Converter<Jwt, Collection<GrantedAuthority>> {
     override fun convert(jwt: Jwt): Collection<GrantedAuthority> {
         val realmRoles = extractRoles(jwt.getClaim<Any>("realm_access"))

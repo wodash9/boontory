@@ -7,7 +7,7 @@ import org.springframework.security.oauth2.jwt.Jwt
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken
 
 class JwtClientAccessEvaluatorTest {
-    private val evaluator = JwtClientAccessEvaluator("boontory-frontend")
+    private val evaluator = JwtClientAccessEvaluator("boontory_frontend")
 
     @Test
     fun `accepts token when azp matches boontory client`() {
@@ -15,7 +15,7 @@ class JwtClientAccessEvaluatorTest {
             Jwt.withTokenValue("token")
                 .header("alg", "none")
                 .claim("sub", "user-1")
-                .claim("azp", "boontory-frontend")
+                .claim("azp", "boontory_frontend")
                 .build(),
         )
 
@@ -28,7 +28,7 @@ class JwtClientAccessEvaluatorTest {
             Jwt.withTokenValue("token")
                 .header("alg", "none")
                 .claim("sub", "user-1")
-                .audience(listOf("boontory-frontend"))
+                .audience(listOf("boontory_frontend"))
                 .build(),
         )
 

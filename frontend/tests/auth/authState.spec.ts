@@ -9,6 +9,7 @@ function createKeycloakStub(overrides: Partial<any> = {}) {
     init: vi.fn().mockResolvedValue(true),
     updateToken: vi.fn().mockResolvedValue(true),
     login: vi.fn().mockResolvedValue(undefined),
+    register: vi.fn().mockResolvedValue(undefined),
     logout: vi.fn().mockResolvedValue(undefined),
     createLogoutUrl: vi.fn().mockReturnValue('https://auth.etharlia.com/realms/Boontory/protocol/openid-connect/logout?post_logout_redirect_uri=https%3A%2F%2Fboontory.etharlia.com'),
     ...overrides,
@@ -53,6 +54,16 @@ describe('createAuthRuntime', () => {
     expect(keycloak.init).toHaveBeenCalledTimes(2)
     expect(runtime.state.error).toBeNull()
     expect(runtime.state.authenticated).toBe(true)
+  })
+
+  it('opens the Keycloak registration flow using the app root as redirect URI', async () => {
+    const keycloak = createKeycloakStub()
+    const runtime = createAuthRuntime(keycloak)
+
+    await runtime.register()
+
+    expect(keycloak.register).toHaveBeenCalledWith({ redirectUri: window.location.origin })
+    expect(keycloak.login).not.toHaveBeenCalled()
   })
 
   it('uses SSO logout redirect with rd keycloak logout url when configured', async () => {

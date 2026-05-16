@@ -1,6 +1,8 @@
 {
   "realm": "Boontory",
   "enabled": true,
+  "registrationAllowed": true,
+  "registrationEmailAsUsername": true,
   "roles": {
     "realm": [
       {

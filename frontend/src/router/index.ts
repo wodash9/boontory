@@ -6,6 +6,7 @@ import BookEditorPage from '../pages/BookEditorPage.vue'
 import DashboardPage from '../pages/DashboardPage.vue'
 import LandingPage from '../pages/LandingPage.vue'
 import LibraryPage from '../pages/LibraryPage.vue'
+import RegisterPage from '../pages/RegisterPage.vue'
 import ScanPage from '../pages/ScanPage.vue'
 import SearchPage from '../pages/SearchPage.vue'
 import ShelvesPage from '../pages/ShelvesPage.vue'
@@ -18,6 +19,12 @@ const router = createRouter({
       path: '/landing',
       name: 'landing',
       component: LandingPage,
+      meta: { requiresAuth: false },
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: RegisterPage,
       meta: { requiresAuth: false },
     },
     {

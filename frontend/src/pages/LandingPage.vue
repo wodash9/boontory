@@ -6,7 +6,10 @@
           <span class="brand-mark">B</span>
           <span>Boontory</span>
         </RouterLink>
-        <RouterLink class="nav-cta" to="/">Open app</RouterLink>
+        <div class="nav-actions">
+          <RouterLink class="nav-cta" to="/register">Create account</RouterLink>
+          <RouterLink class="nav-cta nav-cta--secondary" to="/">Open app</RouterLink>
+        </div>
       </nav>
 
       <div class="hero-grid">
@@ -19,7 +22,8 @@
             reading status, ratings, notes, and read dates in one simple library.
           </p>
           <div class="hero-actions">
-            <RouterLink class="button button--primary" to="/scan">Start scanning</RouterLink>
+            <RouterLink class="button button--primary" to="/register">Create account</RouterLink>
+            <RouterLink class="button button--secondary" to="/scan">Start scanning</RouterLink>
             <RouterLink class="button button--secondary" to="/library/new">Add manually</RouterLink>
           </div>
           <p class="microcopy">No spreadsheet setup. No social feed. Just your books, organized.</p>
@@ -105,7 +109,7 @@
       <p class="eyebrow">Private library-first</p>
       <h2>Your physical books, finally searchable.</h2>
       <p>Boontory is personal-library-first: no public reviews marketplace, no social pressure, no spreadsheet maintenance.</p>
-      <RouterLink class="button button--primary" to="/">Open Boontory</RouterLink>
+      <RouterLink class="button button--primary" to="/register">Create account</RouterLink>
     </section>
   </main>
 </template>
@@ -159,10 +163,23 @@
   box-shadow: var(--shadow);
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 .nav-cta {
   padding: 10px 16px;
   border: 1px solid var(--border);
   border-radius: 999px;
+  background: var(--text);
+  color: #fff7ed;
+}
+
+.nav-cta--secondary {
   background: var(--surface);
   color: var(--accent-strong);
 }
@@ -525,10 +542,15 @@ h3 {
   }
 
   .hero-actions,
+  .nav-actions,
   .brand,
   .nav-cta,
   .button {
     width: 100%;
+  }
+
+  .nav-actions {
+    justify-content: stretch;
   }
 
   .hero-nav {

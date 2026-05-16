@@ -8,7 +8,7 @@ export type KeycloakClientConfig = {
 
 export type KeycloakLike = Pick<
   Keycloak,
-  'authenticated' | 'token' | 'tokenParsed' | 'init' | 'updateToken' | 'login' | 'logout' | 'createLogoutUrl'
+  'authenticated' | 'token' | 'tokenParsed' | 'init' | 'updateToken' | 'login' | 'register' | 'logout' | 'createLogoutUrl'
 >
 
 export function createKeycloakClient(config: KeycloakClientConfig): KeycloakLike {

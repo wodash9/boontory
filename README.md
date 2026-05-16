@@ -53,6 +53,7 @@ This is the target auth rollout for Boontory:
 
 1. `oauth2-proxy` on `https://oauth.etharlia.com` protects public `*.etharlia.com` hosts at the Traefik edge.
 2. The Vue app uses `keycloak-js` with the `boontory_frontend` public client so API calls carry a bearer token once the app auth slice is deployed.
+3. Public users can start self-registration from `/register`, which opens the Keycloak registration flow for the `Boontory` realm. The realm export keeps `registrationAllowed=true` and `registrationEmailAsUsername=true`.
 
 ### Frontend env
 

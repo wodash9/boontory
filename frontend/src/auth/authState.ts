@@ -76,6 +76,10 @@ export function createAuthRuntime(keycloak: KeycloakLike, options: AuthRuntimeOp
     await keycloak.login({ redirectUri: window.location.href })
   }
 
+  async function register() {
+    await keycloak.register({ redirectUri: window.location.origin })
+  }
+
   async function logout() {
     state.ready = false
     state.authenticated = false
@@ -98,6 +102,7 @@ export function createAuthRuntime(keycloak: KeycloakLike, options: AuthRuntimeOp
     isAuthenticated,
     getAccessToken,
     login,
+    register,
     logout,
   }
 }
@@ -127,6 +132,11 @@ export function createMockAuthRuntime(username = 'boontory-test') {
       return 'boontory-local-qa-token'
     },
     async login() {
+      state.ready = true
+      state.authenticated = true
+      state.username = username
+    },
+    async register() {
       state.ready = true
       state.authenticated = true
       state.username = username
@@ -223,6 +233,16 @@ export const auth = {
     }
 
     await runtime.login()
+  },
+  async register() {
+    if (!runtime) {
+      await bootstrapAuth()
+    }
+    if (!runtime) {
+      return
+    }
+
+    await runtime.register()
   },
   async logout() {
     if (!runtime) {
